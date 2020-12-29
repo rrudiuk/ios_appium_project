@@ -2,6 +2,7 @@ from appium.webdriver.common.touch_action import TouchAction
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -27,7 +28,10 @@ class BasePage:
 
     def click_element(self, how, what):
         try:
-            self.driver.find_element(how, what).click()
+            element = self.driver.find_element(how, what)
+            actions = TouchAction(self.driver)
+            actions.tap(element)
+            actions.perform()
         except NoSuchElementException:
             return False
         return True
@@ -36,7 +40,7 @@ class BasePage:
         try:
             element = self.driver.find_element(how, what)
             actions = TouchAction(self.driver)
-            for i in range(10):
+            for i in range(11):
                 actions.tap(element)
                 actions.perform()
         except NoSuchElementException:
@@ -107,3 +111,11 @@ class BasePage:
 
     def tap_back_arrow(self):
         self.click_element(*BasePageLocators.BACK_ARROW)
+
+    def check_bt_dialog_presence_and_accept_it(self):
+        try:
+            self.click_element(*BasePageLocators.ACCEPT_BT_ALERT_BUTTON)
+            print("\nBT permission granted")
+        except NoSuchElementException:
+            return False
+        return True

@@ -11,6 +11,7 @@ class BasePageLocators:
     TOOL_BAR_TITLE = (By.CLASS_NAME, "android.widget.TextView")
     BUTTON_MAIN = (By.ID, f"{APP_PACKAGE_NAME}:id/button")
     PROGRESS_BAR = (By.ID, f"{APP_PACKAGE_NAME}:id/progress_bar")
+    ACCEPT_BT_ALERT_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="OK"]')
 
 
 class WelcomePageLocators:

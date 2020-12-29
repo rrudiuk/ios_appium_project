@@ -3,7 +3,6 @@ import pytest
 from .pages.welcome_page import WelcomePage
 
 
-@pytest.mark.test
 class TestWelcomePage:
     def test_should_be_welcome_screen(self, driver):
         welcome_page = WelcomePage(driver)
@@ -45,6 +44,7 @@ class TestWelcomePage:
     #     welcome_page.close_welcome_setup_code_screen()
     #     welcome_page.should_be_welcome_code_screen_title()
 
+    @pytest.mark.test
     def test_can_access_home_screen(self, driver):
         welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
@@ -52,3 +52,4 @@ class TestWelcomePage:
         welcome_page.should_be_welcome_code_screen_title()
         welcome_page.go_to_home_screen_code()
         welcome_page.tap_screen_code_get_started()
+        welcome_page.check_bt_dialog_presence_and_accept_it()
