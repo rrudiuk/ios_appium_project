@@ -5,10 +5,17 @@ from .locators import LandingPageLocators
 
 class LandingPage(BasePage):
     def should_be_landing_page_title(self):
-        self.check_screen_title("Let’s Get Started")
+        self.check_screen_title(*LandingPageLocators.LANDING_TITLE, "Let’s Get Started")
 
     def should_be_correct_landing_page_subtitle(self):
-        self.check_screen_subtitle("Place your earbuds in the case with the lid open to get started.")
+        self.check_screen_subtitle(*LandingPageLocators.LANDING_SUBTITLE, "Place your earbuds in the case with the "
+                                                                          "lid open to get started.")
+
+    def should_be_case_image(self):
+        assert self.is_element_present(*LandingPageLocators.CASE_IMAGE), "No case image on Landing screen"
+
+    def should_be_loader(self):
+        assert self.is_element_present(*LandingPageLocators.LANDING_LOADER), "Loader doesn't appear on Landing screen"
 
     def should_be_next_button(self):
         assert self.is_element_present(*BasePageLocators.BUTTON_MAIN), "No Next button on the screen"

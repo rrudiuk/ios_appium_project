@@ -125,7 +125,14 @@ class DemoPageLocators:
 
 
 class LandingPageLocators:
-    pass
+    CASE_IMAGE = (By.XPATH, '//XCUIElementTypeImage[@name="earpods_case_outline"]')
+    LANDING_TITLE = (By.XPATH, '//XCUIElementTypeStaticText[@name="Let’s Get Started"]')
+    LANDING_SUBTITLE = (By.XPATH, '//XCUIElementTypeStaticText[@name="Place your earbuds in the case with the lid '
+                                  'open to get started."]')
+    LANDING_LOADER = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                '/XCUIElementTypeOther[3]/XCUIElementTypeOther')
 
 
 class MoldingPageLocators:

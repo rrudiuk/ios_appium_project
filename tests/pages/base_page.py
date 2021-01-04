@@ -40,6 +40,7 @@ class BasePage:
         return True
 
     def click_element_10_times(self, how, what):
+        time.sleep(1)
         try:
             element = self.driver.find_element(how, what)
             actions = TouchAction(self.driver)
