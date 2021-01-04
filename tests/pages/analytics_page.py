@@ -6,11 +6,12 @@ from .locators import BasePageLocators
 class AnalyticsPage(BasePage):
 
     def should_be_analytics_title(self):
-        self.check_screen_title("Help Us Improve Our Products")
+        self.check_screen_title(*AnalyticsPageLocators.ANALYTICS_TITLE, "Help Us Improve Our Products")
 
     def should_be_correct_analytics_subtitle(self):
-        self.check_screen_subtitle("Help Ultimate Ears improve its products and services by automatically sending "
-                                   "diagnostic and usage data.")
+        self.check_screen_subtitle(*AnalyticsPageLocators.ANALYTICS_SUBTITLE, "Help Ultimate Ears improve its "
+                                                                              "products and services by automatically"
+                                                                              " sending diagnostic and usage data.")
 
     def should_be_correct_share_analytics_button_text(self):
         expected_result = "Yes, Share Analytics Data"

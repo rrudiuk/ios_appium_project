@@ -1,3 +1,4 @@
+from appium.webdriver.common.mobileby import MobileBy
 from selenium.webdriver.common.by import By
 
 APP_PACKAGE_NAME = ""
@@ -36,9 +37,13 @@ class WelcomePageLocators:
 
 
 class AnalyticsPageLocators:
-    ANALYTICS_SHARE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_main")
-    ANALYTICS_NOT_SHARE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_secondary")
-    ANALYTICS_REASON_DESCRIPTION = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_analytics_reasons")
+    ANALYTICS_TITLE = (By.XPATH, '//XCUIElementTypeStaticText[@name="Help Us Improve Our Products"]')
+    ANALYTICS_SUBTITLE = (By.XPATH, '//XCUIElementTypeStaticText[@name="Help Ultimate Ears improve its products and '
+                                    'services by automatically sending diagnostic and usage data."]')
+    ANALYTICS_SHARE_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Yes, Share Analytics Data"]')
+    ANALYTICS_NOT_SHARE_BUTTON = (By.XPATH, '//XCUIElementTypeStaticText[@name="NO THANKS"]')
+    ANALYTICS_LEARN_MORE = (By.XPATH, 'This can be changed from the Main Menu under Support. Learn more about '
+                                            'our Privacy Policy.')
 
 
 class DemoPageLocators:

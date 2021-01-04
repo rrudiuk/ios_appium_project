@@ -8,6 +8,8 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from .locators import BasePageLocators
 
+import time
+
 
 class BasePage:
 
@@ -18,15 +20,16 @@ class BasePage:
     def background_app_for_10_seconds(self):
         self.driver.background_app(10)
 
-    def check_screen_title(self, expected_result):
-        actual_result = self.get_text(*BasePageLocators.SCREEN_TITLE)
+    def check_screen_title(self, how, what, expected_result):
+        actual_result = self.driver.find_element(how, what).text
         assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
 
-    def check_screen_subtitle(self, expected_result):
-        actual_result = self.get_text(*BasePageLocators.SCREEN_SUBTITLE)
+    def check_screen_subtitle(self, how, what, expected_result):
+        actual_result = self.driver.find_element(how, what).text
         assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
 
     def click_element(self, how, what):
+        time.sleep(1)
         try:
             element = self.driver.find_element(how, what)
             actions = TouchAction(self.driver)

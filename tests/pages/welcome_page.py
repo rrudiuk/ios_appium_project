@@ -28,11 +28,11 @@ class WelcomePage(BasePage):
         assert actual_result == expected_result, f"Incorrect button text '{actual_result}', should be '{expected_result}'"
 
     def tap_welcome_screen_get_started(self):
-        # self.click_element(*WelcomePageLocators.WELCOME_SCREEN_BUTTON), "Get started button not found"
-        element = self.locate_element(*WelcomePageLocators.WELCOME_SCREEN_BUTTON)
-        actions = TouchAction(self.driver)
-        actions.tap(element)
-        actions.perform()
+        self.click_element(*WelcomePageLocators.WELCOME_SCREEN_BUTTON), "Get started button not found"
+        # element = self.locate_element(*WelcomePageLocators.WELCOME_SCREEN_BUTTON)
+        # actions = TouchAction(self.driver)
+        # actions.tap(element)
+        # actions.perform()
 
     def tap_welcome_screen_10_times(self):
         self.click_element_10_times(*WelcomePageLocators.WELCOME_SCREEN_TITLE)

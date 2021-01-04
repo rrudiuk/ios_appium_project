@@ -44,7 +44,6 @@ class TestWelcomePage:
     #     welcome_page.close_welcome_setup_code_screen()
     #     welcome_page.should_be_welcome_code_screen_title()
 
-    @pytest.mark.test
     def test_can_access_home_screen(self, driver):
         welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
