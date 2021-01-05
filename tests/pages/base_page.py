@@ -1,5 +1,5 @@
 from appium.webdriver.common.touch_action import TouchAction
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
@@ -120,6 +120,6 @@ class BasePage:
         try:
             self.click_element(*BasePageLocators.ACCEPT_BT_ALERT_BUTTON)
             print("\nBT permission granted")
-        except NoSuchElementException:
+        except StaleElementReferenceException:
             return False
         return True

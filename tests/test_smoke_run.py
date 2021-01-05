@@ -1,7 +1,7 @@
 import pytest
 
 from .pages.analytics_page import AnalyticsPage
-from .pages.demo_page import DemoSendCommandsPage
+from .pages.demo_page import DemoPage
 from .pages.dialogs_page import EditPresetsDialogPage
 from .pages.eq_presets_page import EditPresetsPage
 from .pages.eq_presets_page import EqPresetsPage
@@ -54,7 +54,7 @@ class TestSmokeTest:
 
     def test_access_demo_molding_screen(self, driver):
         welcome_page = WelcomePage(driver)
-        demo_commands_page = DemoSendCommandsPage(driver)
+        demo_commands_page = DemoPage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_10_times()
         welcome_page.should_be_welcome_code_screen_title()
@@ -65,7 +65,7 @@ class TestSmokeTest:
 
     def test_access_demo_debug_screen(self, driver):
         welcome_page = WelcomePage(driver)
-        demo_commands_page = DemoSendCommandsPage(driver)
+        demo_commands_page = DemoPage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_10_times()
         welcome_page.should_be_welcome_code_screen_title()
@@ -78,7 +78,7 @@ class TestSmokeTest:
 
     def test_curring_mode_activation(self, driver):
         welcome_page = WelcomePage(driver)
-        demo_commands_page = DemoSendCommandsPage(driver)
+        demo_commands_page = DemoPage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_10_times()
         welcome_page.tap_welcome_screen_10_times()
