@@ -17,7 +17,7 @@ class TestDemoPage:
         welcome_page.go_to_demo_screen_code()
         welcome_page.tap_screen_code_get_started()
         demo_page.check_bt_dialog_presence_and_accept_it()
-        time.sleep(5)
+        time.sleep(6)
         demo_page.should_be_debug_button()
 
     def test_access_demo_debug_screen(self, driver):
@@ -29,12 +29,11 @@ class TestDemoPage:
         welcome_page.go_to_demo_screen_code()
         welcome_page.tap_screen_code_get_started()
         demo_page.check_bt_dialog_presence_and_accept_it()
-        time.sleep(5)
+        time.sleep(6)
         demo_page.should_be_debug_button()
         demo_page.tap_debug_button()
         demo_page.should_be_demo_debug_screen()
 
-    @pytest.mark.test
     def test_check_first_two_items_codes(self, driver):
         welcome_page = WelcomePage(driver)
         demo_page = DemoPage(driver)
@@ -44,7 +43,7 @@ class TestDemoPage:
         welcome_page.go_to_demo_screen_code()
         welcome_page.tap_screen_code_get_started()
         demo_page.check_bt_dialog_presence_and_accept_it()
-        time.sleep(5)
+        time.sleep(6)
         demo_page.should_be_debug_button()
         demo_page.tap_debug_button()
         demo_page.should_be_demo_debug_screen()
@@ -52,6 +51,7 @@ class TestDemoPage:
         demo_page.tap_second_commands_list_item()
 
     @pytest.mark.activate_curing
+    @pytest.mark.first_molding
     def test_curring_mode_activation(self, driver):
         welcome_page = WelcomePage(driver)
         demo_page = DemoPage(driver)

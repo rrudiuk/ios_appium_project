@@ -14,3 +14,4 @@ class TestAnalyticsPage:
         analytics_page.should_be_correct_analytics_subtitle()
         analytics_page.should_be_correct_share_analytics_button_text()
         analytics_page.should_be_correct_not_share_analytics_button_text()
+        analytics_page.should_be_privacy_notice()

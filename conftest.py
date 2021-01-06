@@ -22,8 +22,8 @@ def driver(request):
     dc["automationName"] = "XCUITest"
     # dc["bundleId"] = "com.logitech.ohboy"
     # accept alerts and grant permissions
-    dc['autoAcceptAlerts'] = 'true'
-    dc['autoGrantPermissions'] = 'true'
+    # dc['autoAcceptAlerts'] = 'true'
+    # dc['autoGrantPermissions'] = 'true'
     # Creating the Driver by passing Desired Capabilities
     driver = webdriver.Remote('http://localhost:4723/wd/hub', dc)
 

@@ -17,8 +17,13 @@ class BasePage:
         self.driver = driver
         self.driver.implicitly_wait(timeout)
 
-    def background_app_for_10_seconds(self):
-        self.driver.background_app(10)
+    def background_app_for_5_seconds(self):
+        self.driver.background_app(5)
+
+    def check_button_text(self, how, what, expected_result):
+        actual_result = self.driver.find_element(how, what).text
+        assert actual_result == expected_result, f"Incorrect button text '{actual_result}', should be " \
+                                                 f"'{expected_result}'"
 
     def check_screen_title(self, how, what, expected_result):
         actual_result = self.driver.find_element(how, what).text
@@ -27,6 +32,10 @@ class BasePage:
     def check_screen_subtitle(self, how, what, expected_result):
         actual_result = self.driver.find_element(how, what).text
         assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
+
+    def check_message(self, how, what, expected_result):
+        actual_result = self.driver.find_element(how, what).text
+        assert actual_result == expected_result, f"Incorrect message '{actual_result}', should be '{expected_result}'"
 
     def click_element(self, how, what):
         time.sleep(1)
@@ -56,6 +65,14 @@ class BasePage:
             return len(self.driver.find_elements(how, what))
         except NoSuchElementException:
             return 0
+
+    def check_bt_dialog_presence_and_accept_it(self):
+        try:
+            self.click_element(*BasePageLocators.ACCEPT_BT_ALERT_BUTTON)
+            print("\nBT permission granted")
+        except StaleElementReferenceException:
+            return False
+        return True
 
     def get_text(self, how, what, encoding=None):
 
@@ -116,10 +133,9 @@ class BasePage:
     def tap_back_arrow(self):
         self.click_element(*BasePageLocators.BACK_ARROW)
 
-    def check_bt_dialog_presence_and_accept_it(self):
-        try:
-            self.click_element(*BasePageLocators.ACCEPT_BT_ALERT_BUTTON)
-            print("\nBT permission granted")
-        except StaleElementReferenceException:
-            return False
-        return True
+    def tap_keyboard_return_key(self):
+        self.click_element(*BasePageLocators.KEYBOARD_RETURN)
+
+    def show_available_elements(self):
+        self.driver.execute_script("mobile: source", {'format': 'description'})
+        print("\n-----------------Values---------------")

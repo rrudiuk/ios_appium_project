@@ -2,11 +2,14 @@ from appium.webdriver.common.mobileby import MobileBy
 from selenium.webdriver.common.by import By
 
 APP_PACKAGE_NAME = ""
+
+
 # Add your locators below
 
 
 class BasePageLocators:
     BACK_ARROW = (By.XPATH, '//XCUIElementTypeButton[@name="Back"]')
+    KEYBOARD_RETURN = (MobileBy.ACCESSIBILITY_ID, 'Return')
     SCREEN_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_title")
     SCREEN_SUBTITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_subtitle")
     TOOL_BAR_TITLE = (By.CLASS_NAME, "android.widget.TextView")
@@ -16,31 +19,34 @@ class BasePageLocators:
 
 
 class WelcomePageLocators:
-    CODE_SCREEN_TITLE = (By.XPATH, '//XCUIElementTypeStaticText[@name="WELCOME"]')
-    SEND_CODE_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="GET STARTED"]')
-    WELCOME_SCREEN_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Get Started"]')
-    WELCOME_SCREEN_TITLE = (By.XPATH, '//XCUIElementTypeButton[@name="Welcome to Your Perfect Fit"]')
-    WELCOME_SCREEN_SUBTITLE = (By.XPATH, '//XCUIElementTypeStaticText[@name="In just a few minutes, you’ll have a '
-                                         'pair of perfectly fitting, incredibly comfortable earbuds."]')
-    WELCOME_SCREEN_EDIT_TEXT_CODE = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
-                                               'beta"]/XCUIElementTypeWindow['
-                                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                               '/XCUIElementTypeTextField')
-    WELCOME_SCREEN_WRAPPER = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
-                                        'beta"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther'
-                                        '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                        '/XCUIElementTypeOther')
+    CODE_SCREEN_TITLE = (MobileBy.ACCESSIBILITY_ID, 'WELCOME')
+    SEND_CODE_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="GET STARTED"]')
+    WELCOME_SCREEN_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Get Started"]')
+    # WELCOME_SCREEN_TITLE = (By.XPATH, '//XCUIElementTypeButton[@name="Welcome to Your Perfect Fit"]')
+    WELCOME_SCREEN_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Welcome to Your\nPerfect Fit')
+    # WELCOME_SCREEN_SUBTITLE = (By.XPATH, '//XCUIElementTypeStaticText[@name="In just a few minutes, you’ll have a '
+    #                                      'pair of perfectly fitting, incredibly comfortable earbuds."]')
+    WELCOME_SCREEN_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'In just a few minutes, you’ll have a pair\nof perfectly '
+                                                          'fitting, incredibly\ncomfortable earbuds.')
+    WELCOME_SCREEN_EDIT_TEXT_CODE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                                     'beta"]/XCUIElementTypeWindow['
+                                                     '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                     '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                     '/XCUIElementTypeTextField')
+    WELCOME_SCREEN_WRAPPER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                              'beta"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther'
+                                              '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                              '/XCUIElementTypeOther')
 
 
 class AnalyticsPageLocators:
-    ANALYTICS_TITLE = (By.XPATH, '//XCUIElementTypeStaticText[@name="Help Us Improve Our Products"]')
-    ANALYTICS_SUBTITLE = (By.XPATH, '//XCUIElementTypeStaticText[@name="Help Ultimate Ears improve its products and '
-                                    'services by automatically sending diagnostic and usage data."]')
+    ANALYTICS_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Help Us Improve\nOur Products')
+    ANALYTICS_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Help Ultimate Ears improve its products\nand services by '
+                                                     'automatically sending\ndiagnostic and usage data.')
     ANALYTICS_SHARE_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Yes, Share Analytics Data"]')
     ANALYTICS_NOT_SHARE_BUTTON = (By.XPATH, '//XCUIElementTypeStaticText[@name="NO THANKS"]')
-    ANALYTICS_LEARN_MORE = (By.XPATH, 'This can be changed from the Main Menu under Support. Learn more about '
-                                            'our Privacy Policy.')
+    ANALYTICS_LEARN_MORE = (MobileBy.ACCESSIBILITY_ID, 'This can be changed from the Main Menu under Support.\nLearn'
+                                                       ' more about our Privacy Policy.')
 
 
 class DemoPageLocators:
@@ -50,25 +56,27 @@ class DemoPageLocators:
     DEMO_START_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Start"]')
     DEMO_STATE_BUTTON = (By.XPATH, '//XCUIElementTypeStaticText[@name="IDLE"]')
     DEMO_CLEAR_HISTORY_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Delete"]')
-    DEMO_VENDOR_ID_LABEL = (By.XPATH, '//XCUIElementTypeStaticText[@name="Vendor ID: 0x"]')
-    # DEMO_VENDOR_ID = (By.ID, f"{APP_PACKAGE_NAME}:id/vendor_id")
+    # Vendor ID
+    DEMO_VENDOR_ID_LABEL = (MobileBy.ACCESSIBILITY_ID, 'Vendor ID: 0x')
     DEMO_VENDOR_ID = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                                 '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                 '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                 '/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeTextField[1]')
-    DEMO_COMMAND_LABEL = (By.XPATH, '//XCUIElementTypeStaticText[@name="Command ID: 0x"]')
-    # DEMO_COMMAND = (By.ID, f"{APP_PACKAGE_NAME}:id/command_id")
+    # Command
+    DEMO_COMMAND_LABEL = (MobileBy.ACCESSIBILITY_ID, 'Command ID: 0x')
     DEMO_COMMAND = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther['
                               '2]/XCUIElementTypeOther[2]/XCUIElementTypeTextField[2]')
-    DEMO_PAYLOAD_LABEL = (By.XPATH, '//XCUIElementTypeStaticText[@name="Payload: 0x"]')
-    # DEMO_PAYLOAD = (By.ID, f"{APP_PACKAGE_NAME}:id/payload")
+    # Payload
+    DEMO_PAYLOAD_LABEL = (MobileBy.ACCESSIBILITY_ID, 'Payload: 0x')
     DEMO_PAYLOAD = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther['
                               '2]/XCUIElementTypeOther[2]/XCUIElementTypeTextField[3]')
+    # Send command
     DEMO_SEND_COMMAND_BUTTON = (By.XPATH, '//XCUIElementTypeStaticText[@name="Send"]')
+    # Check responses
     DEMO_LIST_OF_RESPONSES = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                                         '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                         '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
@@ -90,10 +98,9 @@ class DemoPageLocators:
 
 
 class LandingPageLocators:
-    CASE_IMAGE = (By.XPATH, '//XCUIElementTypeImage[@name="earpods_case_outline"]')
-    LANDING_TITLE = (By.XPATH, '//XCUIElementTypeStaticText[@name="Let’s Get Started"]')
-    LANDING_SUBTITLE = (By.XPATH, '//XCUIElementTypeStaticText[@name="Place your earbuds in the case with the lid '
-                                  'open to get started."]')
+    CASE_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'earpods_case_outline')
+    LANDING_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Let’s Get Started')
+    LANDING_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Place your earbuds in the case\nwith the lid open to get started.')
     LANDING_LOADER = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                                 '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                 '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
@@ -101,18 +108,52 @@ class LandingPageLocators:
 
 
 class MoldingPageLocators:
-    MOLDING_TEXT_VIEW_MSG_TITLE1 = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_msg_title_1")
-    MOLDING_TEXT_VIEW_MSG_TITLE2 = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_msg_title_2")
-    MOLDING_TEXT_VIEW_MSG_TITLE3 = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_msg_title_3")
-    MOLDING_TEXT_VIEW_MSG1 = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_msg_1")
-    MOLDING_TEXT_VIEW_MSG2 = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_msg_2")
-    MOLDING_TEXT_VIEW_MSG3 = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_msg_3")
-    MOLDING_SMILE_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_smile")
-    MOLDING_IMAGE_VOLUME = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_volume")
-    MOLDING_BAR_ADJUST_VOLUME = (By.ID, f"{APP_PACKAGE_NAME}:id/seek_bar_adjust_volume")
-    MOLDING_CANCEL_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_cancel")
-    MOLDING_START_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_start_title")
-    MOLDING_START_SUBTITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_start_subtitle")
+    # Try them on
+    TRY_THEM_PAGE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Try Them On')
+    TRY_THEM_PAGE_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Pop your earbuds into your ears. Gently adjust\nthem until'
+                                                         ' they feel comfortable and secure. ')
+    TRY_THEM_PAGE_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Next"]')
+    TRY_THEM_PAGE_ANIMATION = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                         '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                         '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                         '/XCUIElementTypeOther[2]')
+    # Get ready screen
+    GET_READY_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Let’s Do This"]')
+    GET_READY_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Get Ready')
+    MOLDING_TEXT_VIEW_TITLE1 = (MobileBy.ACCESSIBILITY_ID, '1')
+    MOLDING_TEXT_VIEW_TITLE2 = (MobileBy.ACCESSIBILITY_ID, '2')
+    MOLDING_TEXT_VIEW_TITLE3 = (MobileBy.ACCESSIBILITY_ID, '3')
+    MOLDING_TEXT_VIEW_MSG1 = (MobileBy.ACCESSIBILITY_ID, 'We’ll do a quick sound test to ensure a\nsound-isolating '
+                                                         'fit before we mold.')
+    MOLDING_TEXT_VIEW_MSG2 = (MobileBy.ACCESSIBILITY_ID, 'We’ll share some quick tips for\nachieving the best mold.')
+    MOLDING_TEXT_VIEW_MSG3 = (MobileBy.ACCESSIBILITY_ID, 'The 60 second molding magic starts.')
+    MOLDING_SMILE_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'Union')
+    MOLDING_STAND_BY_MIRROR = (MobileBy.ACCESSIBILITY_ID, 'Try standing by a mirror for this part')
+    # How's the bass
+    HOW_IS_THE_BASS_TITLE = (MobileBy.ACCESSIBILITY_ID, 'How’s the Bass?')
+    HOW_IS_THE_BASS_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Gently adjust your earbuds until you find the\nposition'
+                                                           ' that maximizes the bass.')
+    MOLDING_IMAGE_VOLUME = (MobileBy.ACCESSIBILITY_ID, 'soundOn')
+    MOLDING_BAR_ADJUST_VOLUME = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                           '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                           '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                           '/XCUIElementTypeOther[2]/XCUIElementTypeSlider')
+    MOLDING_CANCEL_BUTTON = (By.XPATH, '//XCUIElementTypeStaticText[@name="CANCEL"]')
+    # Starting soon
+    MOLDING_START_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Starting Soon')
+    MOLDING_START_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'During the molding process,\nthe tips will feel warm\nas '
+                                                         'they mold to your ears.')
+    MOLDING_START_SUBTITLE2 = (MobileBy.ACCESSIBILITY_ID, 'Gently hold your earbuds\nin place the entire time.')
+    # Molding running
+    MOLDING_PROGRESS_BAR = (By.XPATH, '//XCUIElementTypeProgressIndicator[@name="Progress"]')
+    # Congratulations
+    CONGRATULATIONS_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Congratulations!')
+    CONGRATULATIONS_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'You now have perfectly fitting earbuds.\n\nTake the tour '
+                                                           'to learn about the features\nof the app and how to make '
+                                                           'the most of\nyour UE FITS.')
+    CONGRATULATIONS_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'magic')
+    TAKE_TOUR_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Take the Tour"]')
+    SKIP_FOR_NOW_BUTTON = (By.XPATH, '//XCUIElementTypeStaticText[@name="Skip For Now"]')
 
 
 class PairYourEarbudsLocators:

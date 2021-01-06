@@ -8,8 +8,8 @@ class LandingPage(BasePage):
         self.check_screen_title(*LandingPageLocators.LANDING_TITLE, "Let’s Get Started")
 
     def should_be_correct_landing_page_subtitle(self):
-        self.check_screen_subtitle(*LandingPageLocators.LANDING_SUBTITLE, "Place your earbuds in the case with the "
-                                                                          "lid open to get started.")
+        self.check_screen_subtitle(*LandingPageLocators.LANDING_SUBTITLE, "Place your earbuds in the case\nwith the"
+                                                                          " lid open to get started.")
 
     def should_be_case_image(self):
         assert self.is_element_present(*LandingPageLocators.CASE_IMAGE), "No case image on Landing screen"

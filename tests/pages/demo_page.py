@@ -79,7 +79,7 @@ class DemoPage(BasePage):
 
     def send_command(self, set_vendor, set_command, set_payload, expected_payload):
         expected_status = "success"
-
+        # Enter necessary values
         vendor_id = self.locate_element(*DemoPageLocators.DEMO_VENDOR_ID)
         vendor_id.clear()
         vendor_id.send_keys(set_vendor)
@@ -89,26 +89,29 @@ class DemoPage(BasePage):
         payload = self.locate_element(*DemoPageLocators.DEMO_PAYLOAD)
         payload.clear()
         payload.send_keys(set_payload)
-
+        # Send values
+        self.tap_keyboard_return_key()
         self.tap_send_command_button()
 
         time.sleep(3)
-
+        # Open two top elements
         self.click_element(*DemoPageLocators.DEMO_FIRST_RESPONSE)
         self.click_element(*DemoPageLocators.DEMO_SECOND_RESPONSE)
-
+        # Get the results
         first_earbud_code = self.get_text(*DemoPageLocators.DEMO_SENT_COMMAND_FIRST)
         first_earbud_status = self.get_text(*DemoPageLocators.DEMO_SENT_COMMAND_FIRST_STATUS)
         first_earbud_payload = self.get_text(*DemoPageLocators.DEMO_SENT_COMMAND_FIRST_PAYLOAD)
         second_earbud_code = self.get_text(*DemoPageLocators.DEMO_SENT_COMMAND_SECOND)
         second_earbud_status = self.get_text(*DemoPageLocators.DEMO_SENT_COMMAND_SECOND_STATUS)
         second_earbud_payload = self.get_text(*DemoPageLocators.DEMO_SENT_COMMAND_SECOND_PAYLOAD)
-
-        assert first_earbud_code == "0x" + set_command, f"Code `{first_earbud_code}` appears, should be \
-                                                          `'0x' + {set_command}` "
-        assert second_earbud_code == "0x" + set_command, f"Code `{second_earbud_code}` appears, should be \
-                                                                  `'0x' + {set_command}` "
-        assert first_earbud_status == expected_status, f"Status `{first_earbud_status}`, should be `{expected_status}`"
-        assert second_earbud_status == expected_status, f"Status `{second_earbud_status}`, should be `{expected_status}`"
-        assert first_earbud_payload == expected_payload, f"Payload {first_earbud_payload}, should be {expected_payload}"
-        assert second_earbud_payload == expected_payload, f"Payload {second_earbud_payload}, should be {expected_payload}"
+        # Compare result to expectations
+        assert first_earbud_code == "0x" + set_command, f"Code {first_earbud_code} appears, should be \
+                                                          '0x' + {set_command} "
+        assert second_earbud_code == "0x" + set_command, f"Code {second_earbud_code} appears, should be \
+                                                                  '0x' + {set_command} "
+        assert first_earbud_status == expected_status, f"Status {first_earbud_status}, should be {expected_status}"
+        assert second_earbud_status == expected_status, f"Status {second_earbud_status}, should be {expected_status}"
+        assert first_earbud_payload == expected_payload, f"Payload {first_earbud_payload}, should be " \
+                                                         f"{expected_payload}"
+        assert second_earbud_payload == expected_payload, f"Payload {second_earbud_payload}, should be " \
+                                                          f"{expected_payload}"
