@@ -26,7 +26,7 @@ class TestSmokeTest:
         welcome_page.should_be_correct_welcome_title()
         welcome_page.should_be_correct_welcome_subtitle()
         welcome_page.should_be_welcome_screen_button()
-        welcome_page.should_be_welcome_get_started_button_text()
+        welcome_page.should_be_welcome_get_started_button()
 
     @pytest.mark.xfail
     def test_should_be_welcome_screen_after_background(self, driver):
@@ -34,12 +34,12 @@ class TestSmokeTest:
         welcome_page.should_be_correct_welcome_title()
         welcome_page.should_be_correct_welcome_subtitle()
         welcome_page.should_be_welcome_screen_button()
-        welcome_page.should_be_welcome_get_started_button_text()
+        welcome_page.should_be_welcome_get_started_button()
         welcome_page.background_app_for_10_seconds()
         welcome_page.should_be_correct_welcome_title()
         welcome_page.should_be_correct_welcome_subtitle()
         welcome_page.should_be_welcome_screen_button()
-        welcome_page.should_be_welcome_get_started_button_text()
+        welcome_page.should_be_welcome_get_started_button()
 
     def test_access_setup_code_screen(self, driver):
         welcome_page = WelcomePage(driver)
@@ -111,7 +111,7 @@ class TestSmokeTest:
         welcome_page.should_be_correct_welcome_title()
         welcome_page.should_be_correct_welcome_subtitle()
         welcome_page.should_be_welcome_screen_button()
-        welcome_page.should_be_welcome_get_started_button_text()
+        welcome_page.should_be_welcome_get_started_button()
 
     def test_should_be_landing_page_after_accepting_analytics(self, driver):
         analytics_page = AnalyticsPage(driver)
@@ -198,7 +198,7 @@ class TestSmokeTest:
         molding_page.should_be_image_volume()
         molding_page.should_be_adjust_volume_bar()
         molding_page.should_be_cancel_button()
-        molding_page.should_be_cancel_button_text()
+        molding_page.should_be_cancel_button()
         molding_page.tap_cancel_button()
         molding_page.should_be_get_ready_page_title()
 

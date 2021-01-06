@@ -16,7 +16,7 @@ class AnalyticsPage(BasePage):
                                                                               "usage data.")
 
     def should_be_correct_share_analytics_button_text(self):
-        self.check_button_text(*AnalyticsPageLocators.ANALYTICS_SHARE_BUTTON, "Yes, Share Analytics Data")
+        self.check_button(*AnalyticsPageLocators.ANALYTICS_SHARE_BUTTON, "Yes, Share Analytics Data")
 
     def should_be_privacy_notice(self):
         self.check_message(*AnalyticsPageLocators.ANALYTICS_LEARN_MORE, 'This can be changed from the Main Menu under '
@@ -28,7 +28,7 @@ class AnalyticsPage(BasePage):
         self.click_element(*AnalyticsPageLocators.ANALYTICS_SHARE_BUTTON)
 
     def should_be_correct_not_share_analytics_button_text(self):
-        self.check_button_text(*AnalyticsPageLocators.ANALYTICS_NOT_SHARE_BUTTON, "NO THANKS")
+        self.check_button(*AnalyticsPageLocators.ANALYTICS_NOT_SHARE_BUTTON, "NO THANKS")
 
     def tap_not_share_analytics_button(self):
         time.sleep(1)

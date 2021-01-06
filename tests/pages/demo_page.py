@@ -35,6 +35,7 @@ class DemoPage(BasePage):
         payload.send_keys("01")
 
     def tap_send_command_button(self):
+        assert self.is_element_present(*DemoPageLocators.DEMO_SEND_COMMAND_BUTTON), "Send button not found"
         self.click_element(*DemoPageLocators.DEMO_SEND_COMMAND_BUTTON)
 
     def activate_curring_mode(self):

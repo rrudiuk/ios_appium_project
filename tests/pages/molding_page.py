@@ -18,8 +18,7 @@ class MoldingPage(BasePage):
                                                                                       "Try them on screen"
 
     def should_be_try_them_button(self):
-        assert self.is_element_present(*MoldingPageLocators.TRY_THEM_PAGE_BUTTON), "Next button on try them on screen" \
-                                                                                   " not found"
+        self.check_button(*MoldingPageLocators.TRY_THEM_PAGE_BUTTON, "Next")
 
     def tap_try_them_button(self):
         self.click_element(*MoldingPageLocators.TRY_THEM_PAGE_BUTTON)
@@ -55,10 +54,7 @@ class MoldingPage(BasePage):
         self.check_message(*MoldingPageLocators.MOLDING_STAND_BY_MIRROR, "Try standing by a mirror for this part")
 
     def should_be_do_this_button(self):
-        assert self.is_element_present(*MoldingPageLocators.GET_READY_BUTTON), "Let's do this button not found"
-
-    def should_be_do_this_button_text(self):
-        self.check_button_text(*MoldingPageLocators.GET_READY_BUTTON, "Let’s Do This")
+        self.check_button(*MoldingPageLocators.GET_READY_BUTTON, "Let’s Do This")
 
     def tap_do_this_button(self):
         self.click_element(*MoldingPageLocators.GET_READY_BUTTON)
@@ -73,11 +69,7 @@ class MoldingPage(BasePage):
                                                                                   "maximizes the bass.")
 
     def should_be_cancel_button(self):
-        assert self.is_element_present(*MoldingPageLocators.MOLDING_CANCEL_BUTTON), "No Cancel button on How is the " \
-                                                                                    "bass screen"
-
-    def should_be_cancel_button_text(self):
-        self.check_button_text(*MoldingPageLocators.MOLDING_CANCEL_BUTTON, "CANCEL")
+        self.check_button(*MoldingPageLocators.MOLDING_CANCEL_BUTTON, "CANCEL")
 
     def tap_cancel_button(self):
         self.click_element(*MoldingPageLocators.MOLDING_CANCEL_BUTTON)
@@ -119,19 +111,13 @@ class MoldingPage(BasePage):
         assert self.is_element_present(*MoldingPageLocators.CONGRATULATIONS_IMAGE), "No image on Congrats screen"
 
     def should_be_take_the_tour_button(self):
-        assert self.is_element_present(*MoldingPageLocators.TAKE_TOUR_BUTTON), "Take tour button not found"
-
-    def should_be_take_the_tour_button_text(self):
-        self.check_button_text(*MoldingPageLocators.TAKE_TOUR_BUTTON, "Take the Tour")
+        self.check_button(*MoldingPageLocators.TAKE_TOUR_BUTTON, "Take the Tour")
 
     def tap_take_the_tour_button(self):
         self.click_element(*MoldingPageLocators.TAKE_TOUR_BUTTON)
 
     def should_skip_for_now_button(self):
-        assert self.is_element_present(*MoldingPageLocators.SKIP_FOR_NOW_BUTTON), "Skip for now button not found"
-
-    def should_skip_for_now_button_text(self):
-        self.check_button_text(*MoldingPageLocators.SKIP_FOR_NOW_BUTTON, "Skip For Now")
+        self.check_button(*MoldingPageLocators.SKIP_FOR_NOW_BUTTON, "Skip For Now")
 
     def tap_skip_for_now_button(self):
         self.click_element(*MoldingPageLocators.SKIP_FOR_NOW_BUTTON)

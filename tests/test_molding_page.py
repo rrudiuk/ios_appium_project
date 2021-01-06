@@ -54,7 +54,6 @@ class TestMoldingPage:
         molding_page.should_be_smile()
         molding_page.should_be_stand_by_mirror_text()
         molding_page.should_be_do_this_button()
-        molding_page.should_be_do_this_button_text()
 
     def test_should_be_how_is_bass_page(self, driver):
         analytics_page = AnalyticsPage(driver)
@@ -77,7 +76,6 @@ class TestMoldingPage:
         molding_page.should_be_image_volume()
         molding_page.should_be_adjust_volume_bar()
         molding_page.should_be_cancel_button()
-        molding_page.should_be_cancel_button_text()
         molding_page.tap_cancel_button()
         molding_page.should_be_get_ready_page_title()
 
@@ -192,9 +190,9 @@ class TestMoldingPage:
         molding_page.should_be_congratulations_title()
         molding_page.should_be_congratulations_subtitle()
         molding_page.should_be_take_the_tour_button()
-        molding_page.should_be_take_the_tour_button_text()
+        molding_page.should_be_take_the_tour_button()
         molding_page.should_skip_for_now_button()
-        molding_page.should_skip_for_now_button_text()
+        molding_page.should_skip_for_now_button()
         # molding_page.tap_skip_for_now_button()
         time.sleep(5)
 

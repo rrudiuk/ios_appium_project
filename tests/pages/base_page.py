@@ -20,22 +20,26 @@ class BasePage:
     def background_app_for_5_seconds(self):
         self.driver.background_app(5)
 
-    def check_button_text(self, how, what, expected_result):
+    def check_button(self, how, what, expected_result):
+        assert self.is_element_present(how, what), f"Button with text {expected_result} not found"
         actual_result = self.driver.find_element(how, what).text
         assert actual_result == expected_result, f"Incorrect button text '{actual_result}', should be " \
                                                  f"'{expected_result}'"
 
     def check_screen_title(self, how, what, expected_result):
+        assert self.is_element_present(how, what), f"Element with title {expected_result} not found"
         actual_result = self.driver.find_element(how, what).text
         assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
 
     def check_screen_subtitle(self, how, what, expected_result):
+        assert self.is_element_present(how, what), f"Element with subtitle {expected_result} not found"
         actual_result = self.driver.find_element(how, what).text
         assert actual_result == expected_result, f"Incorrect subtitle '{actual_result}', should be '{expected_result}'"
 
     def check_message(self, how, what, expected_result):
+        assert self.is_element_present(how, what), f"Element with text {expected_result} not found"
         actual_result = self.driver.find_element(how, what).text
-        assert actual_result == expected_result, f"Incorrect message '{actual_result}', should be '{expected_result}'"
+        assert actual_result == expected_result, f"Incorrect text '{actual_result}', should be '{expected_result}'"
 
     def click_element(self, how, what):
         time.sleep(1)
