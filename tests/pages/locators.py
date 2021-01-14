@@ -20,6 +20,7 @@ class BasePageLocators:
 
 class WelcomePageLocators:
     CODE_SCREEN_TITLE = (MobileBy.ACCESSIBILITY_ID, 'WELCOME')
+    DEMO_FLOW_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Demo Flow"]')
     SEND_CODE_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="GET STARTED"]')
     WELCOME_SCREEN_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Get Started"]')
     # WELCOME_SCREEN_TITLE = (By.XPATH, '//XCUIElementTypeButton[@name="Welcome to Your Perfect Fit"]')
@@ -170,35 +171,39 @@ class DialogPageLocators:
 
 
 class HomePageLocators:
-    EARBUDS_NAME = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_name")
-    EARBUDS_STATUS = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_status")
+    EARBUDS_NAME = (MobileBy.ACCESSIBILITY_ID, 'FITS BP4')
+    EARBUDS_STATUS_CONNECTED = (MobileBy.ACCESSIBILITY_ID, 'Connected')
+    EARBUDS_STATUS_SCANNING = (MobileBy.ACCESSIBILITY_ID, 'Scanning')
     CONNECT_EARBUDS_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_connect")
-    HOME_SCREEN_LEFT_MENU = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android"
-                                       ".widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout"
-                                       "/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout"
-                                       "/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android"
-                                       ".view.ViewGroup[1]/android.widget.ImageButton")
-    HOME_SCREEN_SETTINGS = (By.ID, f"{APP_PACKAGE_NAME}:id/item_settings")
-    LEFT_EARBUD_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_left_earphone")
-    RIGHT_EARBUD_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_right_earphone")
-    CASE_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_case")
-    LEFT_BATTERY_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_left_battery")
-    RIGHT_BATTERY_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_right_battery")
-    CASE_BATTERY_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_case_battery")
+    HOME_SCREEN_LEFT_MENU = (MobileBy.ACCESSIBILITY_ID, 'menu')
+    HOME_SCREEN_SETTINGS = (MobileBy.ACCESSIBILITY_ID, 'settings')
+    LEFT_EARBUD_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                         '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                         '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                         '/XCUIElementTypeButton[3]')
+    RIGHT_EARBUD_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeButton[4]')
+    CASE_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                  '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                  '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                  '/XCUIElementTypeImage[4]')
+    LEFT_BATTERY_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeOther[2]/XCUIElementTypeImage')
+    RIGHT_BATTERY_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                           '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                           '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                           '/XCUIElementTypeOther[3]/XCUIElementTypeImage')
+    CASE_BATTERY_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeOther[4]/XCUIElementTypeImage')
     LEFT_BATTERY_PERCENTS = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_left_percents")
     RIGHT_BATTERY_PERCENTS = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_right_percents")
     CASE_BATTERY_PERCENTS = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_case_percents")
-
-
-class TutorialHomePageLocators:
-    ARROW_TUTORIAL = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_skip_tutorial")
-    CUSTOM_EQ_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_custom_eq_title")
-    CUSTOM_EQ_MESSAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_custom_eq_message")
-    GOT_IT_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_got_it")
-    TUTORIAL_CONTAINER = (By.ID, f"{APP_PACKAGE_NAME}:id/container")
-    TUTORIAL_MESSAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_message")
-    TUTORIAL_NEXT_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_next")
-    SKIP_TUTORIAL_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_skip_tutorial")
 
 
 class EqPresetsPageLocators:
@@ -235,38 +240,49 @@ class EqPresetsPageLocators:
 
 
 class MenuPageLocators:
-    HEADER_CONTAINER = (By.ID, f"{APP_PACKAGE_NAME}:id/navigation_header_container")
-    APPLICATION_LOGO = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_logo")
-    CLOSE_ICON = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_close")
-    HOME_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
-                           ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
-                           ".FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx.drawerlayout"
-                           ".widget.DrawerLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView"
-                           "/androidx.appcompat.widget.LinearLayoutCompat[1]/android.widget.CheckedTextView")
-    MOLD_NEW_TIPS_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
-                                    ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android"
-                                    ".widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx"
-                                    ".drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/androidx"
-                                    ".recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat["
-                                    "2]/android.widget.CheckedTextView")
-    TEST_YOUR_FIT_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
-                                    ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android"
-                                    ".widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx"
-                                    ".drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/androidx"
-                                    ".recyclerview.widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat["
-                                    "3]/android.widget.CheckedTextView")
-    LEARN_MORE_ITEM = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
-                                 ".FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget"
-                                 ".FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx"
-                                 ".drawerlayout.widget.DrawerLayout/android.widget.FrameLayout/androidx.recyclerview"
-                                 ".widget.RecyclerView/androidx.appcompat.widget.LinearLayoutCompat["
-                                 "4]/android.widget.CheckedTextView")
-    SUPPORT_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_title")
+    HEADER_CONTAINER = (MobileBy.ACCESSIBILITY_ID, 'UE_FITS_beta.LeftMenuView')
+    APPLICATION_LOGO = (MobileBy.ACCESSIBILITY_ID, 'ue-fits-dark')
+    CLOSE_ICON = (MobileBy.ACCESSIBILITY_ID, 'Close')
+    HOME_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Home"]')
+    MOLD_NEW_TIPS_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Mold New Tips"]')
+    TEST_YOUR_FIT_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Test Your Fit"]')
+    LEARN_MORE_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Learn More"]')
+    SUPPORT_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Support"]')
 
 
 class SupportPageLocators:
-    FIRMWARE_ITEM = (By.ID, f"{APP_PACKAGE_NAME}:id/view_firmware_clickable")
+    FIRMWARE_ITEM = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                     '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                     '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                     '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeButton[4]')
 
 
 class FirmwareUpdatePageLocators:
-    UPDATE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_update")
+    UPDATE_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                     '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                     '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                     '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeButton[4]')
+    TITLE_WRAPPER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                     '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                     '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                     '/XCUIElementTypeOther')
+    UP_TO_DATE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Up to Date')
+    UPDATE_AVAILABLE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Update Available')
+    UPDATE_EARBUDS_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Update Earbuds"]')
+    READY_TO_UPDATE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Ready to Update')
+    INSTALL_NOW_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Install Now"]')
+    CANCEL_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Cancel"]')
+    INSTALLING_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Installing')
+    AN_ERROR_OCCURRED_TITLE = (MobileBy.ACCESSIBILITY_ID, 'An Error Occurred')
+    RESTARTING_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Restarting')
+    YOU_ARE_ALL_SET_TITLE = (MobileBy.ACCESSIBILITY_ID, 'You’re All Set!')
+    RECONNECTING_DIALOG_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Reconnecting...')
+    ERROR_DIALOG_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Error')
+    ERROR_MESSAGE_TEXT = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther['
+                                          '2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]')
+
+
+class TutorialHomePageLocators:
+    pass

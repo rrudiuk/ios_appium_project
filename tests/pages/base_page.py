@@ -64,6 +64,16 @@ class BasePage:
             return False
         return True
 
+    def two_finger_tap_element_10_times(self, how, what):
+        time.sleep(1)
+        try:
+            el = self.driver.find_element(how, what)
+            for i in range(10):
+                self.driver.execute_script('mobile:twoFingerTap', {'element': el})
+        except NoSuchElementException:
+            return False
+        return True
+
     def count_elements(self, how, what):
         try:
             return len(self.driver.find_elements(how, what))

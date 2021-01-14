@@ -9,21 +9,19 @@ class TestWelcomePage:
         welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.should_be_correct_welcome_subtitle()
-        welcome_page.should_be_welcome_screen_button()
         welcome_page.should_be_welcome_get_started_button()
 
     def test_should_be_welcome_screen_after_background(self, driver):
         welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.should_be_correct_welcome_subtitle()
-        welcome_page.should_be_welcome_screen_button()
         welcome_page.should_be_welcome_get_started_button()
         welcome_page.background_app_for_5_seconds()
         welcome_page.should_be_correct_welcome_title()
         welcome_page.should_be_correct_welcome_subtitle()
-        welcome_page.should_be_welcome_screen_button()
         welcome_page.should_be_welcome_get_started_button()
 
+    @pytest.mark.skip
     def test_should_be_welcome_code_screen(self, driver):
         welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
@@ -31,9 +29,9 @@ class TestWelcomePage:
         welcome_page.should_be_welcome_code_screen_title()
         welcome_page.should_be_welcome_edit_text_input()
         welcome_page.should_be_welcome_edit_text_input_text()
-        welcome_page.should_be_welcome_send_code_button()
         welcome_page.should_be_welcome_code_get_started_button()
 
+    @pytest.mark.skip
     def test_can_access_home_screen(self, driver):
         welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()

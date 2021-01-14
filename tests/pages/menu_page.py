@@ -10,7 +10,7 @@ class MenuPage(BasePage):
         assert self.is_element_present(*MenuPageLocators.APPLICATION_LOGO), "App logog is missing"
 
     def should_be_exit_x_button(self):
-        assert self.is_element_present(*MenuPageLocators.CLOSE_ICON)
+        assert self.is_element_present(*MenuPageLocators.CLOSE_ICON), "No exit button in Menu"
 
     def tap_exit_x_button(self):
         self.click_element(*MenuPageLocators.CLOSE_ICON)
@@ -36,9 +36,7 @@ class MenuPage(BasePage):
         assert actual_result == expected_result, f"Item text {actual_result}, should be {expected_result}"
 
     def should_be_support_item(self):
-        expected_result = "Support"
-        actual_result = self.get_text(*MenuPageLocators.SUPPORT_ITEM)
-        assert actual_result == expected_result, f"Item text {actual_result}, should be {expected_result}"
+        self.check_message(*MenuPageLocators.SUPPORT_ITEM, "Support")
 
     def tap_support_item(self):
         self.click_element(*MenuPageLocators.SUPPORT_ITEM)

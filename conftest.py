@@ -21,6 +21,7 @@ def driver(request):
     dc["deviceName"] = "iPhone (2)"
     dc["automationName"] = "XCUITest"
     # dc["bundleId"] = "com.logitech.ohboy"
+    # dc["showIOSLog"] = "true"
     # accept alerts and grant permissions
     # dc['autoAcceptAlerts'] = 'true'
     # dc['autoGrantPermissions'] = 'true'
