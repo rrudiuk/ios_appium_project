@@ -4,7 +4,6 @@ from .pages.welcome_page import WelcomePage
 
 
 class TestWelcomePage:
-    @pytest.mark.test
     def test_should_be_welcome_screen(self, driver):
         welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
@@ -20,6 +19,12 @@ class TestWelcomePage:
         welcome_page.should_be_correct_welcome_title()
         welcome_page.should_be_correct_welcome_subtitle()
         welcome_page.should_be_welcome_get_started_button()
+
+    def test_should_be_flow_selection_screen(self, driver):
+        welcome_page = WelcomePage(driver)
+        welcome_page.should_be_correct_welcome_title()
+        welcome_page.tap_welcome_screen_10_times()
+        welcome_page.should_be_demo_flow_button()
 
     @pytest.mark.skip
     def test_should_be_welcome_code_screen(self, driver):

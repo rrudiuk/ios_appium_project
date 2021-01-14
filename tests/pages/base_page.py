@@ -57,7 +57,7 @@ class BasePage:
         try:
             element = self.driver.find_element(how, what)
             actions = TouchAction(self.driver)
-            for i in range(11):
+            for i in range(10):
                 actions.tap(element)
                 actions.perform()
         except NoSuchElementException:
