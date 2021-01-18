@@ -25,6 +25,9 @@ class MenuPage(BasePage):
         actual_result = self.get_text(*MenuPageLocators.MOLD_NEW_TIPS_ITEM)
         assert actual_result == expected_result, f"Item text {actual_result}, should be {expected_result}"
 
+    def tap_mold_new_tips_item(self):
+        self.click_element(*MenuPageLocators.MOLD_NEW_TIPS_ITEM)
+
     def should_be_test_your_fit_item(self):
         expected_result = "Test Your Fit"
         actual_result = self.get_text(*MenuPageLocators.TEST_YOUR_FIT_ITEM)

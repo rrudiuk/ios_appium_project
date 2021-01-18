@@ -155,6 +155,49 @@ class MoldingPageLocators:
     CONGRATULATIONS_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'magic')
     TAKE_TOUR_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Take the Tour"]')
     SKIP_FOR_NOW_BUTTON = (By.XPATH, '//XCUIElementTypeStaticText[@name="Skip For Now"]')
+    # Mold new tips
+    BACK_ARROW = (MobileBy.ACCESSIBILITY_ID, 'backArrow')
+    SCROLL_ELEMENTS = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                       '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                       '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                       '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypePageIndicator')
+    NEXT_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Next"]')
+    # CHANGE YOUR TIPS
+    CHANGE_YOUR_TIPS_ANIMATION = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                                  'beta"]/XCUIElementTypeWindow['
+                                                  '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                  '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                  '/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                  '/XCUIElementTypeScrollView/XCUIElementTypeOther'
+                                                  '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther')
+    CHANGE_YOUR_TIPS_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Change Your Tips')
+    CHANGE_YOUR_TIPS_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'To remove tips, position one finger at the\ntop of the '
+                                                            'tip and gently peel off.\nThen, open your new tips!')
+    # REMOVE INSERTS
+    REMOVE_INSERTS_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Remove Inserts')
+    REMOVE_INSERTS_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Remove the hard plastic inserts from your new\ntips by '
+                                                          'pulling on the insert tab.')
+    REMOVE_INSERTS_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'yt_2')
+    # MATCH THEM UP
+    MATCH_THEM_UP_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Match Them Up')
+    MATCH_THEM_UP_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Match the tips to the correct earbud. You’ll\nsee an ‘R’ '
+                                                         'and ‘L’ on the inside of the tips.')
+    MATCH_THEM_UP_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'yt_3')
+    # Attach your tips
+    ATTACH_YOUR_TIPS_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Attach Your Tips')
+    ATTACH_YOUR_TIPS_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Insert each earbud into the tip.\nYou won’t have to '
+                                                            'press too hard to attach them.')
+    ATTACH_YOUR_TIPS_IMAGE = (MobileBy.XPATH,
+                              '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                              '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther '
+                              '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                              '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeScrollView'
+                              '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                              '/XCUIElementTypeOther')
+    # CHECK THE FIT
+    CHECK_THE_FIT_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Check The Fit')
+    CHECK_THE_FIT_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Make sure the tips are flush with the earphones.')
+    CHECK_THE_FIT_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'tips_attached_diagram')
 
 
 class PairYourEarbudsLocators:

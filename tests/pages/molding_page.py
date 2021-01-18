@@ -124,68 +124,83 @@ class MoldingPage(BasePage):
 
 
 class MoldNewTipsPage(MoldingPage):
-    def should_be_close_button(self):
-        self.is_element_present(*BasePageLocators.CLOSE_BUTTON), "Close button not found"
+    def should_be_back_arrow(self):
+        assert self.is_element_present(*MoldingPageLocators.BACK_ARROW), "Back arrow not found"
 
     def tap_close_button(self):
-        self.click_element(*BasePageLocators.CLOSE_BUTTON)
+        self.click_element(*MoldingPageLocators.BACK_ARROW)
 
     def should_be_scroll_dots(self):
         self.is_element_present(*MoldingPageLocators.SCROLL_ELEMENTS), "Scrolling dots do not appear"
 
     def should_be_next_button(self):
-        assert self.is_element_present(*BasePageLocators.BUTTON_MAIN)
-
-    def should_be_next_button_text(self):
-        expected_result = "Next"
-        actual_result = self.get_text(*BasePageLocators.BUTTON_MAIN)
-        assert actual_result == expected_result, f"Incorrect text '{actual_result}', should be '{expected_result}'"
+        self.check_button(*MoldingPageLocators.NEXT_BUTTON, 'Next')
 
     def tap_next_button(self):
-        self.click_element(*BasePageLocators.BUTTON_MAIN)
+        self.click_element(*MoldingPageLocators.NEXT_BUTTON)
 
     def next_button_enabled(self):
-        assert self.is_element_enabled(*BasePageLocators.BUTTON_MAIN), "Next button is not enabled, but it should"
+        assert self.is_element_enabled(*MoldingPageLocators.NEXT_BUTTON), "Next button is not enabled, but it should"
 
     def next_button_not_enabled(self):
-        assert not self.is_element_enabled(*BasePageLocators.BUTTON_MAIN), "Next button is enabled, but it shouldn't"
-
-    def should_be_image_item(self):
-        self.is_element_present(*MoldingPageLocators.IMAGE_VIEW), "Image / Animation not located"
+        assert not self.is_element_enabled(*MoldingPageLocators.NEXT_BUTTON), "Next button is enabled, but it shouldn't"
 
     # Change your tips screen
     def should_be_change_tips_title(self):
-        self.check_screen_title("Change Your Tips")
+        self.check_screen_title(*MoldingPageLocators.CHANGE_YOUR_TIPS_TITLE, "Change Your Tips")
 
     def should_be_change_tips_subtitle(self):
-        self.check_screen_subtitle("To remove your current tips, position one finger at the top of the tip and gently "
-                                   "peel off.")
+        self.check_screen_subtitle(*MoldingPageLocators.CHANGE_YOUR_TIPS_SUBTITLE, 'To remove tips, position one '
+                                                                                   'finger at the\ntop of the tip and'
+                                                                                   ' gently peel off.\nThen, '
+                                                                                   'open your new tips!')
+
+    def should_be_change_tips_animation(self):
+        self.is_element_present(*MoldingPageLocators.CHANGE_YOUR_TIPS_ANIMATION), "Image / Animation not located"
 
     # Remove inserts screen
     def should_be_remove_inserts_title(self):
-        self.check_screen_title("Remove Inserts")
+        self.check_screen_title(*MoldingPageLocators.REMOVE_INSERTS_TITLE, "Remove Inserts")
 
     def should_be_remove_inserts_subtitle(self):
-        self.check_screen_subtitle("Remove the hard plastic inserts from your new tips by pulling on the insert tab.")
+        self.check_screen_subtitle(*MoldingPageLocators.REMOVE_INSERTS_SUBTITLE, 'Remove the hard plastic inserts '
+                                                                                 'from your new\ntips by pulling on '
+                                                                                 'the insert tab.')
+
+    def should_be_remove_inserts_image(self):
+        assert self.is_element_present(*MoldingPageLocators.REMOVE_INSERTS_IMAGE), 'Remove inserts image not found'
 
     # Match them up screen
     def should_be_match_them_up_title(self):
-        self.check_screen_title("Match Them Up")
+        self.check_screen_title(*MoldingPageLocators.MATCH_THEM_UP_TITLE, "Match Them Up")
 
     def should_be_match_them_up_subtitle(self):
-        self.check_screen_subtitle("Match the tips to the correct earbud. You’ll see an ‘R’ and ‘L’ on the inside of "
-                                   "the tips.")
+        self.check_screen_subtitle(*MoldingPageLocators.MATCH_THEM_UP_SUBTITLE, 'Match the tips to the correct '
+                                                                                'earbud. You’ll\nsee an ‘R’ and ‘L’ '
+                                                                                'on the inside of the tips.')
+
+    def should_be_match_them_image(self):
+        assert self.is_element_present(*MoldingPageLocators.MATCH_THEM_UP_IMAGE), 'Match them image not found'
 
     # Attach your tips screen
     def should_be_attach_your_tips_title(self):
-        self.check_screen_title("Attach Your Tips")
+        self.check_screen_title(*MoldingPageLocators.ATTACH_YOUR_TIPS_TITLE, "Attach Your Tips")
 
     def should_be_attach_your_tips_subtitle(self):
-        self.check_screen_subtitle("Insert each earbud into the tip. You won't have to press too hard to attach them.")
+        self.check_screen_subtitle(*MoldingPageLocators.ATTACH_YOUR_TIPS_SUBTITLE, 'Insert each earbud into the '
+                                                                                   'tip.\nYou won’t have to press too'
+                                                                                   ' hard to attach them.')
+
+    def should_be_attach_tips_image(self):
+        assert self.is_element_present(*MoldingPageLocators.ATTACH_YOUR_TIPS_IMAGE), 'Attach tips image not found'
 
     # Check the fit screen
     def should_be_check_the_fit_title(self):
-        self.check_screen_title("Check The Fit")
+        self.check_screen_title(*MoldingPageLocators.CHECK_THE_FIT_TITLE, "Check The Fit")
 
     def should_be_check_the_fit_subtitle(self):
-        self.check_screen_subtitle("Make sure the tips are flush with the earbuds.")
+        self.check_screen_subtitle(*MoldingPageLocators.CHECK_THE_FIT_SUBTITLE, 'Make sure the tips are flush with '
+                                                                                'the earphones.')
+
+    def should_be_check_the_fit_image(self):
+        assert self.is_element_present(*MoldingPageLocators.CHECK_THE_FIT_IMAGE), 'Check the fit image not found'

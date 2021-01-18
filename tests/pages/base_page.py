@@ -93,7 +93,7 @@ class BasePage:
     def check_bt_dialog_presence_and_accept_it(self):
         try:
             self.click_element(*BasePageLocators.ACCEPT_BT_ALERT_BUTTON)
-            logger.LOGGER.info("\nBT permission granted")
+            logger.LOGGER.info("BT permission granted")
         except StaleElementReferenceException:
             return False
         return True
@@ -106,18 +106,6 @@ class BasePage:
             return False
         return text.encode(encoding) if encoding else text
 
-    def locate_element(self, how, what):
-        try:
-            return self.driver.find_element(how, what)
-        except NoSuchElementException:
-            return False
-
-    def locate_elements(self, how, what):
-        try:
-            return self.driver.find_elements(how, what)
-        except NoSuchElementException:
-            return False
-
     def is_disappeared(self, how, what, timeout=4):
         try:
             WebDriverWait(self.driver, timeout, 1, TimeoutException).\
@@ -126,6 +114,12 @@ class BasePage:
             return False
 
         return True
+
+    def is_element_enabled(self, how, what):
+        try:
+            return self.driver.find_element(how, what).is_enabled()
+        except NoSuchElementException:
+            return False
 
     def is_element_present(self, how, what):
         try:
@@ -142,14 +136,26 @@ class BasePage:
 
         return False
 
+    def locate_element(self, how, what):
+        try:
+            return self.driver.find_element(how, what)
+        except NoSuchElementException:
+            return False
+
+    def locate_elements(self, how, what):
+        try:
+            return self.driver.find_elements(how, what)
+        except NoSuchElementException:
+            return False
+
     def should_be_back_arrow(self):
         assert self.is_element_present(*BasePageLocators.BACK_ARROW)
 
     def swipe_left(self):
-        TouchAction(self.driver).press(x=855, y=1215).move_to(x=268, y=1222).release().perform()
+        self.driver.execute_script('mobile:swipe', {'direction': 'left'})
 
     def swipe_right(self):
-        TouchAction(self.driver).press(x=218, y=1176).move_to(x=829, y=1176).release().perform()
+        self.driver.execute_script('mobile:swipe', {'direction': 'right'})
 
     def scroll_down(self):
         TouchAction(self.driver).press(x=443, y=1965).move_to(x=436, y=1470).release().perform()
