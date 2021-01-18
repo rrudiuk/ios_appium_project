@@ -11,6 +11,8 @@ from .locators import BasePageLocators
 import time
 from pathlib import Path
 
+from ..utilities import logger
+
 
 class BasePage:
 
@@ -28,9 +30,10 @@ class BasePage:
                                                  f"'{expected_result}'"
 
     def check_screen_title(self, how, what, expected_result):
-        assert self.is_element_present(how, what), f"Element with title {expected_result} not found"
+        assert self.is_element_present(how, what), f'Element with title {expected_result} not found'
+
         actual_result = self.driver.find_element(how, what).text
-        assert actual_result == expected_result, f"Incorrect title '{actual_result}', should be '{expected_result}'"
+        assert actual_result == expected_result, f'Incorrect title {actual_result}, should be {expected_result}'
 
     def check_screen_subtitle(self, how, what, expected_result):
         assert self.is_element_present(how, what), f"Element with subtitle {expected_result} not found"
@@ -90,7 +93,7 @@ class BasePage:
     def check_bt_dialog_presence_and_accept_it(self):
         try:
             self.click_element(*BasePageLocators.ACCEPT_BT_ALERT_BUTTON)
-            print("\nBT permission granted")
+            logger.LOGGER.info("\nBT permission granted")
         except StaleElementReferenceException:
             return False
         return True
@@ -159,4 +162,4 @@ class BasePage:
 
     def show_available_elements(self):
         self.driver.execute_script("mobile: source", {'format': 'description'})
-        print("\n-----------------Values---------------")
+        logger.LOGGER.info("\n-----------------Values---------------")

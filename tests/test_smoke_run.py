@@ -827,4 +827,4 @@ class TestSmokeTest:
         home_page.should_be_earbuds_name()
 
 # run with
-# pytest -v --reruns 2 --tb=line -m smoke_test --html=/Users/rudiuk/PyCharmProjects/ios_appium_project/test_report/report.html
+# pytest -v --reruns 2 --tb=line -m smoke_test --html=/Users/rudiuk/PyCharmProjects/ios_appium_project/test_report/report.html --capture sys

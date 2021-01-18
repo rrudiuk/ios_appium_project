@@ -1,6 +1,8 @@
 from .base_page import BasePage
 from .locators import FirmwareUpdatePageLocators
 
+from ..utilities import logger
+
 import time
 
 
@@ -10,25 +12,15 @@ class FirmwareUpdatePage(BasePage):
         while tries > 0:
             title = self.get_text(*FirmwareUpdatePageLocators.FW_ACTIVATION_TITLE)
             if title == 'Up to Date':
-                print("\nStart fw update activation")
+                logger.LOGGER.info("Start fw update activation")
                 self.two_finger_tap_element_10_times(*FirmwareUpdatePageLocators.FW_ACTIVATION_TITLE)
                 tries = tries - 1
                 time.sleep(3)
-            else:
-                print("Quit fw update activation")
+            elif title == 'Update Available':
+                logger.LOGGER.info("Update activated")
                 break
-
-    def activate_fw_update1(self):
-        # self.two_finger_tap_element_10_times(*FirmwareUpdatePageLocators.UP_TO_DATE_TITLE)
-        tries = 10
-        while tries > 0:
-            if self.locate_element(*FirmwareUpdatePageLocators.UP_TO_DATE_TITLE):
-                print("\nStart fw update activation")
-                self.two_finger_tap_element_10_times(*FirmwareUpdatePageLocators.UP_TO_DATE_TITLE)
-                tries = tries - 1
-                time.sleep(3)
             else:
-                print("Quit fw update activation")
+                logger.LOGGER.error("Update activation error")
                 break
 
     def tap_page_title_10_times(self):
@@ -51,6 +43,7 @@ class FirmwareUpdatePage(BasePage):
     def tap_install_now_button(self):
         assert self.is_element_present(*FirmwareUpdatePageLocators.INSTALL_NOW_BUTTON), "Install now button not found"
         self.click_element(*FirmwareUpdatePageLocators.INSTALL_NOW_BUTTON)
+        logger.LOGGER.info("FW update started")
 
     def check_active_update(self):
         tries = 45
@@ -64,70 +57,31 @@ class FirmwareUpdatePage(BasePage):
                 time.sleep(check_period)
                 duration = duration + check_period
             else:
+                logger.LOGGER.info("Exit installing screen")
                 break
 
         if self.locate_element(*FirmwareUpdatePageLocators.RECONNECTING_DIALOG_TITLE):
-            print("Earbuds disconnected. Reconnecting is shown")
-            self.take_screenshot()
-            print("Screenshot created")
+            logger.LOGGER.error("Earbuds disconnected. Reconnecting is shown")
         elif self.get_text(*FirmwareUpdatePageLocators.FW_UPDATE_TITLE) == error_occurred_title:
             checks = 3
-            print("Error occurred. Checking...")
+            logger.LOGGER.info("Error occurred. Checking...")
             while checks > 0:
-                print(f"Checks left {checks}")
+                logger.LOGGER.info(f"Checks left: {checks}")
                 self.two_finger_tap_element_10_times(*FirmwareUpdatePageLocators.FW_UPDATE_TITLE)
                 if self.locate_element(*FirmwareUpdatePageLocators.ERROR_DIALOG_TITLE):
-                    print(self.get_text(*FirmwareUpdatePageLocators.ERROR_MESSAGE_TEXT))
+                    logger.LOGGER.error(self.get_text(*FirmwareUpdatePageLocators.ERROR_MESSAGE_TEXT))
                     break
                 checks = checks - 1
-            self.take_screenshot()
-            print("Screenshot created")
 
         if self.get_text(*FirmwareUpdatePageLocators.FW_UPDATE_TITLE) == "Restarting":
+            logger.LOGGER.info("Restarting")
             time.sleep(30)
             duration = duration + 30
 
-        print(f"Update duration: {duration}")
+        logger.LOGGER.info(f"FW update duration: {duration}")
 
-        assert self.locate_element(*FirmwareUpdatePageLocators.UPDATE_BUTTON) or \
-               self.locate_element(*FirmwareUpdatePageLocators.YOU_ARE_ALL_SET_TITLE), "Update failed"
-
-    def check_active_update1(self):
-        tries = 45
-        duration = 0
-        check_period = 20
-        while tries > 0:
-            if self.locate_element(*FirmwareUpdatePageLocators.INSTALLING_TITLE):
-                tries = tries - 1
-                time.sleep(check_period)
-                duration = duration + check_period
-            else:
-                break
-
-        if self.locate_element(*FirmwareUpdatePageLocators.RECONNECTING_DIALOG_TITLE):
-            print("Earbuds disconnected. Reconnecting is shown")
-            # ts = time.strftime("%Y_%m_%d_%H%M%S")
-            # self.driver.save_screenshot("/Users/rudiuk/PyCharmProjects/ios_appium_project/Screenshots/"
-            #                             + ts + ".png")
-            self.take_screenshot()
-            print("Screenshot created")
-        elif self.locate_element(*FirmwareUpdatePageLocators.AN_ERROR_OCCURRED_TITLE):
-            checks = 3
-            print("Error occurred. Checking...")
-            while checks > 0:
-                print(f"Checks left {checks}")
-                self.two_finger_tap_element_10_times(*FirmwareUpdatePageLocators.AN_ERROR_OCCURRED_TITLE)
-                if self.locate_element(*FirmwareUpdatePageLocators.ERROR_DIALOG_TITLE):
-                    break
-                checks = checks - 1
-            self.take_screenshot()
-            print("Screenshot created")
-
-        if self.locate_element(*FirmwareUpdatePageLocators.RESTARTING_TITLE):
-            time.sleep(30)
-            duration = duration + 30
-
-        print(f"Update duration: {duration}")
+        self.take_screenshot()
+        logger.LOGGER.info("Screenshot captured")
 
         assert self.locate_element(*FirmwareUpdatePageLocators.UPDATE_BUTTON) or \
                self.locate_element(*FirmwareUpdatePageLocators.YOU_ARE_ALL_SET_TITLE), "Update failed"
