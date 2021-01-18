@@ -266,6 +266,8 @@ class FirmwareUpdatePageLocators:
                                      '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                      '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                      '/XCUIElementTypeOther')
+    FW_ACTIVATION_TITLE = (MobileBy.ACCESSIBILITY_ID, 'FwTitle')
+    FW_UPDATE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'FwUpdateTitle')
     UP_TO_DATE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Up to Date')
     UPDATE_AVAILABLE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Update Available')
     UPDATE_EARBUDS_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Update Earbuds"]')
@@ -277,11 +279,8 @@ class FirmwareUpdatePageLocators:
     RESTARTING_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Restarting')
     YOU_ARE_ALL_SET_TITLE = (MobileBy.ACCESSIBILITY_ID, 'You’re All Set!')
     RECONNECTING_DIALOG_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Reconnecting...')
-    ERROR_DIALOG_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Error')
-    ERROR_MESSAGE_TEXT = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther['
-                                          '2]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                          '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]')
+    ERROR_DIALOG_TITLE = (MobileBy.ACCESSIBILITY_ID, 'PopupTitle')
+    ERROR_MESSAGE_TEXT = (MobileBy.ACCESSIBILITY_ID, 'PopupSubtitle')
 
 
 class TutorialHomePageLocators:

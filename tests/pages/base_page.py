@@ -9,6 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from .locators import BasePageLocators
 
 import time
+from pathlib import Path
 
 
 class BasePage:
@@ -63,6 +64,12 @@ class BasePage:
         except NoSuchElementException:
             return False
         return True
+
+    def take_screenshot(self):
+        ts = time.strftime("%Y_%m_%d_%H%M%S")
+        path_to_current_directory = Path().absolute()
+        path_to_screenshots_folder = str(path_to_current_directory) + '/Screenshots/'
+        self.driver.save_screenshot(path_to_screenshots_folder + ts + ".png")
 
     def two_finger_tap_element_10_times(self, how, what):
         time.sleep(1)
