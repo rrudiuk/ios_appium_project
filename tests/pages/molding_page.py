@@ -4,14 +4,34 @@ from .locators import MoldingPageLocators
 
 
 class MoldingPage(BasePage):
+    # How to Pair
+    def should_be_how_to_pair_title(self):
+        self.check_screen_title(*MoldingPageLocators.HOW_TO_PAIR_TITLE, 'How To Pair')
+
+    def should_be_how_to_pair_subtitle(self):
+        self.check_screen_title(*MoldingPageLocators.HOW_TO_PAIR_SUBTITLE, 'Each of your earbuds must be connected '
+                                                                           'to\nseparately. They are listed as UE '
+                                                                           'FITS L and R.\nWatch the video below to '
+                                                                           'learn how to pair them.')
+
+    def should_be_how_to_pair_animation(self):
+        assert self.is_element_present(*MoldingPageLocators.HOW_TO_PAIR_VIDEO), 'How to pair video animation not found'
+
+    def should_be_got_it_button(self):
+        self.check_button(*MoldingPageLocators.HOW_TO_PAIR_BUTTON, 'Got it!')
+
+    def tap_got_it_button(self):
+        self.click_element(*MoldingPageLocators.HOW_TO_PAIR_BUTTON)
+
     # Try them on screen
     def should_be_try_them_page_title(self):
         self.check_screen_title(*MoldingPageLocators.TRY_THEM_PAGE_TITLE, "Try Them On")
 
     def should_be_correct_try_them_page_subtitle(self):
-        self.check_screen_subtitle(*MoldingPageLocators.TRY_THEM_PAGE_SUBTITLE, "Pop your earbuds into your ears. "
-                                                                                "Gently adjust\nthem until they feel "
-                                                                                "comfortable and secure. ")
+        self.check_screen_subtitle(*MoldingPageLocators.TRY_THEM_PAGE_SUBTITLE,
+                                   'Pop both earbuds into your ears. Gently adjust\nthem until '
+                                   'they feel comfortable and secure.\nYou will mold both sides '
+                                   'at the same time.')
 
     def should_be_try_them_animation(self):
         assert self.is_element_present(*MoldingPageLocators.TRY_THEM_PAGE_ANIMATION), "Animation doesn't appear on " \
@@ -64,9 +84,9 @@ class MoldingPage(BasePage):
         self.check_screen_title(*MoldingPageLocators.HOW_IS_THE_BASS_TITLE, "How’s the Bass?")
 
     def should_be_correct_how_is_bass_subtitle(self):
-        self.check_screen_subtitle(*MoldingPageLocators.HOW_IS_THE_BASS_SUBTITLE, "Gently adjust your earbuds until "
-                                                                                  "you find the\nposition that "
-                                                                                  "maximizes the bass.")
+        self.check_screen_subtitle(*MoldingPageLocators.HOW_IS_THE_BASS_SUBTITLE,
+                                   'Gently adjust both earbuds until you find the\nposition '
+                                   'that maximizes the bass.')
 
     def should_be_cancel_button(self):
         self.check_button(*MoldingPageLocators.MOLDING_CANCEL_BUTTON, "CANCEL")
@@ -124,10 +144,10 @@ class MoldingPage(BasePage):
 
 
 class MoldNewTipsPage(MoldingPage):
-    def should_be_back_arrow(self):
+    def should_be_return_arrow(self):
         assert self.is_element_present(*MoldingPageLocators.BACK_ARROW), "Back arrow not found"
 
-    def tap_close_button(self):
+    def tap_return_arrow(self):
         self.click_element(*MoldingPageLocators.BACK_ARROW)
 
     def should_be_scroll_dots(self):
@@ -204,3 +224,16 @@ class MoldNewTipsPage(MoldingPage):
 
     def should_be_check_the_fit_image(self):
         assert self.is_element_present(*MoldingPageLocators.CHECK_THE_FIT_IMAGE), 'Check the fit image not found'
+
+    # Congratulations
+    def should_be_congratulations_subtitle(self):
+        self.check_screen_subtitle(*MoldingPageLocators.CONGRATULATIONS_SUBTITLE_FINISH, 'You now have perfectly '
+                                                                                         'fitting earbuds.\nThrow on '
+                                                                                         'your favorite song and '
+                                                                                         'take\nthem for a spin.')
+
+    def should_be_finish_button(self):
+        self.check_button(*MoldingPageLocators.FINISH_BUTTON, 'Finish')
+
+    def tap_finish_button(self):
+        self.click_element(*MoldingPageLocators.FINISH_BUTTON)

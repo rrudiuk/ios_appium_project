@@ -8,7 +8,8 @@ APP_PACKAGE_NAME = ""
 
 
 class BasePageLocators:
-    BACK_ARROW = (By.XPATH, '//XCUIElementTypeButton[@name="Back"]')
+    # BACK_ARROW = (By.XPATH, '//XCUIElementTypeButton[@name="Back"]')
+    BACK_ARROW = (MobileBy.ACCESSIBILITY_ID, 'Back')
     KEYBOARD_RETURN = (MobileBy.ACCESSIBILITY_ID, 'Return')
     SCREEN_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_title")
     SCREEN_SUBTITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_subtitle")
@@ -109,10 +110,21 @@ class LandingPageLocators:
 
 
 class MoldingPageLocators:
+    # How to pair
+    HOW_TO_PAIR_TITLE = (MobileBy.ACCESSIBILITY_ID, 'How To Pair')
+    HOW_TO_PAIR_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Each of your earbuds must be connected to\nseparately. They '
+                                                       'are listed as UE FITS L and R.\nWatch the video below to '
+                                                       'learn how to pair them.')
+    HOW_TO_PAIR_VIDEO = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                         '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                         '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                         '/XCUIElementTypeOther')
+    HOW_TO_PAIR_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Got it!"]')
     # Try them on
     TRY_THEM_PAGE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Try Them On')
-    TRY_THEM_PAGE_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Pop your earbuds into your ears. Gently adjust\nthem until'
-                                                         ' they feel comfortable and secure. ')
+    TRY_THEM_PAGE_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Pop both earbuds into your ears. Gently adjust\nthem until '
+                                                         'they feel comfortable and secure.\nYou will mold both sides '
+                                                         'at the same time.')
     TRY_THEM_PAGE_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Next"]')
     TRY_THEM_PAGE_ANIMATION = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
@@ -132,8 +144,8 @@ class MoldingPageLocators:
     MOLDING_STAND_BY_MIRROR = (MobileBy.ACCESSIBILITY_ID, 'Try standing by a mirror for this part')
     # How's the bass
     HOW_IS_THE_BASS_TITLE = (MobileBy.ACCESSIBILITY_ID, 'How’s the Bass?')
-    HOW_IS_THE_BASS_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Gently adjust your earbuds until you find the\nposition'
-                                                           ' that maximizes the bass.')
+    HOW_IS_THE_BASS_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Gently adjust both earbuds until you find the\nposition '
+                                                           'that maximizes the bass.')
     MOLDING_IMAGE_VOLUME = (MobileBy.ACCESSIBILITY_ID, 'soundOn')
     MOLDING_BAR_ADJUST_VOLUME = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                                            '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
@@ -155,6 +167,9 @@ class MoldingPageLocators:
     CONGRATULATIONS_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'magic')
     TAKE_TOUR_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Take the Tour"]')
     SKIP_FOR_NOW_BUTTON = (By.XPATH, '//XCUIElementTypeStaticText[@name="Skip For Now"]')
+    FINISH_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Finish"]')
+    CONGRATULATIONS_SUBTITLE_FINISH = (MobileBy.ACCESSIBILITY_ID, 'You now have perfectly fitting earbuds.\nThrow on '
+                                                                  'your favorite song and take\nthem for a spin.')
     # Mold new tips
     BACK_ARROW = (MobileBy.ACCESSIBILITY_ID, 'backArrow')
     SCROLL_ELEMENTS = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
