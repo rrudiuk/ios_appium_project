@@ -1,10 +1,10 @@
 import pytest
 
 from .pages.analytics_page import AnalyticsPage
-from .pages.dialogs_page import HomeScreenWelcomeDialogPage
 from .pages.landing_page import LandingPage
+from .pages.learn_more_page import LearnMorePage
 from .pages.menu_page import MenuPage
-from .pages.molding_page import MoldingPage, MoldNewTipsPage
+from .pages.molding_page import MoldingPage
 from .pages.home_page import HomePage
 from .pages.welcome_page import WelcomePage
 
@@ -197,8 +197,7 @@ class TestMoldingPage:
         molding_page.tap_cancel_button()
         molding_page.should_be_get_ready_page_title()
 
-    @pytest.mark.first_molding
-    @pytest.mark.test
+    # @pytest.mark.first_molding
     def test_molding_complete(self, driver):
         analytics_page = AnalyticsPage(driver)
         # eq_presets_page = EqPresetsPage(driver)
@@ -240,7 +239,7 @@ class TestMoldingPage:
         molding_page.should_be_take_the_tour_button()
         molding_page.should_skip_for_now_button()
         molding_page.should_skip_for_now_button()
-        # molding_page.tap_skip_for_now_button()
+        molding_page.tap_skip_for_now_button()
         time.sleep(5)
 
         # home_page.should_be_earbuds_name()
@@ -261,48 +260,55 @@ class TestMoldingPage:
         # eq_presets_page.should_be_ue_signature_eq_selected()
         # eq_presets_page.should_be_eq_curve_image()
 
-    # def test_molding_complete_and_open_learn_more(self, driver):
-    #     analytics_page = AnalyticsPage(driver)
-    #     eq_presets_page = EqPresetsPage(driver)
-    #     landing_page = LandingPage(driver)
-    #     learn_more_page = LearnMorePage(driver)
-    #     molding_page = MoldingPage(driver)
-    #     home_page = HomePage(driver)
-    #     welcome_page = WelcomePage(driver)
-    #     welcome_page.should_be_correct_welcome_title()
-    #     welcome_page.tap_welcome_screen_get_started()
-    #     analytics_page.should_be_analytics_title()
-    #     analytics_page.tap_share_analytics_button()
-    #     landing_page.check_bt_dialog_presence_and_accept_it()
-    #     landing_page.should_be_landing_page_title()
-    #     time.sleep(12)
-    #     molding_page.should_be_try_them_page_title()
-    #     molding_page.tap_main_button()
-    #     molding_page.should_be_get_ready_page_title()
-    #     molding_page.tap_main_button()
-    #     molding_page.should_be_how_is_bass_title()
-    #     time.sleep(19)
-    #     molding_page.should_be_starting_soon_title()
-    #     molding_page.should_be_starting_soon_subtitle1()
-    #     time.sleep(6)
-    #     molding_page.should_be_starting_soon_title()
-    #     molding_page.should_be_starting_soon_subtitle2()
-    #     time.sleep(45)
-    #     molding_page.should_be_progress_bar()
-    #     time.sleep(40)
-    #
-    #     molding_page.should_congratulations_title()
-    #     molding_page.should_congratulations_subtitle_after_first_molding()
-    #     molding_page.should_skip_for_now_button()
-    #     molding_page.should_skip_for_now_button_text()
-    #     molding_page.should_be_take_the_tour_button()
-    #     molding_page.should_be_take_the_tour_button_text()
-    #     molding_page.tap_take_the_tour_button()
-    #     learn_more_page.should_be_double_tap_control_title()
-    #     learn_more_page.should_be_double_tap_control_message()
-    #     learn_more_page.should_be_double_tap_control_video()
-    #     learn_more_page.should_be_close_button()
-    #     learn_more_page.tap_close_button()
+    @pytest.mark.first_molding
+    def test_molding_complete_and_open_learn_more(self, driver):
+        analytics_page = AnalyticsPage(driver)
+        # eq_presets_page = EqPresetsPage(driver)
+        landing_page = LandingPage(driver)
+        learn_more_page = LearnMorePage(driver)
+        molding_page = MoldingPage(driver)
+        # home_page = HomePage(driver)
+        welcome_page = WelcomePage(driver)
+        welcome_page.should_be_correct_welcome_title()
+        welcome_page.tap_welcome_screen_get_started()
+        analytics_page.should_be_analytics_title()
+        analytics_page.tap_share_analytics_button()
+        landing_page.check_bt_dialog_presence_and_accept_it()
+        landing_page.should_be_landing_page_title()
+        time.sleep(10)
+        # Try them on
+        molding_page.should_be_try_them_page_title()
+        molding_page.tap_try_them_button()
+        # Get ready
+        molding_page.should_be_get_ready_page_title()
+        molding_page.tap_do_this_button()
+        # How is the bass
+        molding_page.should_be_how_is_bass_title()
+        time.sleep(20)
+        # Starting soon 1
+        molding_page.should_be_starting_soon_title()
+        molding_page.should_be_starting_soon_subtitle1()
+        time.sleep(6)
+        # Starting soon 2
+        molding_page.should_be_starting_soon_title()
+        molding_page.should_be_starting_soon_subtitle2()
+        # Molding starts
+        time.sleep(45)
+        molding_page.should_be_progress_bar()
+        time.sleep(40)
+        # Congratulations
+        molding_page.should_be_congratulations_title()
+        molding_page.should_be_congratulations_subtitle()
+        molding_page.should_be_take_the_tour_button()
+        molding_page.should_be_take_the_tour_button()
+        molding_page.should_skip_for_now_button()
+        molding_page.should_skip_for_now_button()
+        molding_page.tap_take_the_tour_button()
+        learn_more_page.should_be_double_tap_control_title()
+        learn_more_page.should_be_double_tap_control_subtitle()
+        learn_more_page.should_be_double_tap_control_animation()
+        learn_more_page.should_be_learn_more_close_button()
+        learn_more_page.tap_learn_more_close_button()
     #
     #     home_page.should_be_earbuds_name()
     #     home_page.should_be_connected_state()
