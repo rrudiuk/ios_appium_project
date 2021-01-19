@@ -44,6 +44,7 @@ class TestMoldingPage:
         landing_page.check_bt_dialog_presence_and_accept_it()
         landing_page.should_be_landing_page_title()
         time.sleep(10)
+        # Try them on
         molding_page.should_be_try_them_page_title()
         molding_page.should_be_correct_try_them_page_subtitle()
         molding_page.should_be_try_them_animation()
@@ -61,8 +62,10 @@ class TestMoldingPage:
         landing_page.check_bt_dialog_presence_and_accept_it()
         landing_page.should_be_landing_page_title()
         time.sleep(10)
+        # Try them on
         molding_page.should_be_try_them_page_title()
         molding_page.tap_try_them_button()
+        # Get ready
         molding_page.should_be_get_ready_page_title()
         molding_page.should_be_message_title1()
         molding_page.should_be_message_title2()
@@ -86,11 +89,14 @@ class TestMoldingPage:
         landing_page.check_bt_dialog_presence_and_accept_it()
         landing_page.should_be_landing_page_title()
         time.sleep(10)
+        # Try them on
         molding_page.should_be_try_them_page_title()
         molding_page.tap_try_them_button()
+        # Get ready
         molding_page.should_be_get_ready_page_title()
         molding_page.tap_do_this_button()
         molding_page.should_be_how_is_bass_title()
+        # How is the bass
         molding_page.should_be_correct_how_is_bass_subtitle()
         molding_page.should_be_image_volume()
         molding_page.should_be_adjust_volume_bar()
@@ -110,12 +116,16 @@ class TestMoldingPage:
         landing_page.check_bt_dialog_presence_and_accept_it()
         landing_page.should_be_landing_page_title()
         time.sleep(10)
+        # Try them on
         molding_page.should_be_try_them_page_title()
         molding_page.tap_try_them_button()
+        # Get ready
         molding_page.should_be_get_ready_page_title()
         molding_page.tap_do_this_button()
+        # How is the bass
         molding_page.should_be_how_is_bass_title()
         time.sleep(20)
+        # Starting soon 1
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle1()
         molding_page.background_app_for_5_seconds()
@@ -133,15 +143,20 @@ class TestMoldingPage:
         landing_page.check_bt_dialog_presence_and_accept_it()
         landing_page.should_be_landing_page_title()
         time.sleep(10)
+        # Try them on
         molding_page.should_be_try_them_page_title()
         molding_page.tap_try_them_button()
+        # Get ready
         molding_page.should_be_get_ready_page_title()
         molding_page.tap_do_this_button()
+        # How is the bass
         molding_page.should_be_how_is_bass_title()
         time.sleep(20)
+        # Starting soon 1
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle1()
         time.sleep(6)
+        # Starting soon 2
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle2()
         molding_page.should_be_cancel_button()
@@ -160,23 +175,30 @@ class TestMoldingPage:
         landing_page.check_bt_dialog_presence_and_accept_it()
         landing_page.should_be_landing_page_title()
         time.sleep(10)
+        # Try them on
         molding_page.should_be_try_them_page_title()
         molding_page.tap_try_them_button()
+        # Get ready
         molding_page.should_be_get_ready_page_title()
         molding_page.tap_do_this_button()
+        # How is the bass
         molding_page.should_be_how_is_bass_title()
         time.sleep(20)
+        # Starting soon 1
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle1()
         time.sleep(6)
+        # Starting soon 2
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle2()
         time.sleep(3)
+        # Countdown
         molding_page.should_be_cancel_button()
         molding_page.tap_cancel_button()
         molding_page.should_be_get_ready_page_title()
 
     @pytest.mark.first_molding
+    @pytest.mark.test
     def test_molding_complete(self, driver):
         analytics_page = AnalyticsPage(driver)
         # eq_presets_page = EqPresetsPage(driver)
@@ -190,7 +212,7 @@ class TestMoldingPage:
         analytics_page.tap_share_analytics_button()
         landing_page.check_bt_dialog_presence_and_accept_it()
         landing_page.should_be_landing_page_title()
-        time.sleep(12)
+        time.sleep(10)
         # Try them on
         molding_page.should_be_try_them_page_title()
         molding_page.tap_try_them_button()

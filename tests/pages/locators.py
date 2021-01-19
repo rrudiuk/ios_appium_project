@@ -19,28 +19,6 @@ class BasePageLocators:
     ACCEPT_BT_ALERT_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="OK"]')
 
 
-class WelcomePageLocators:
-    CODE_SCREEN_TITLE = (MobileBy.ACCESSIBILITY_ID, 'WELCOME')
-    DEMO_FLOW_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Demo Flow"]')
-    SEND_CODE_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="GET STARTED"]')
-    WELCOME_SCREEN_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Get Started"]')
-    # WELCOME_SCREEN_TITLE = (By.XPATH, '//XCUIElementTypeButton[@name="Welcome to Your Perfect Fit"]')
-    WELCOME_SCREEN_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Welcome to Your\nPerfect Fit')
-    # WELCOME_SCREEN_SUBTITLE = (By.XPATH, '//XCUIElementTypeStaticText[@name="In just a few minutes, you’ll have a '
-    #                                      'pair of perfectly fitting, incredibly comfortable earbuds."]')
-    WELCOME_SCREEN_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'In just a few minutes, you’ll have a pair\nof perfectly '
-                                                          'fitting, incredibly\ncomfortable earbuds.')
-    WELCOME_SCREEN_EDIT_TEXT_CODE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
-                                                     'beta"]/XCUIElementTypeWindow['
-                                                     '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                                     '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                                     '/XCUIElementTypeTextField')
-    WELCOME_SCREEN_WRAPPER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
-                                              'beta"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther'
-                                              '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                              '/XCUIElementTypeOther')
-
-
 class AnalyticsPageLocators:
     ANALYTICS_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Help Us Improve\nOur Products')
     ANALYTICS_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Help Ultimate Ears improve its products\nand services by '
@@ -99,6 +77,107 @@ class DemoPageLocators:
     DEMO_SENT_COMMAND_SECOND_PAYLOAD = (By.XPATH, '(//XCUIElementTypeStaticText[@name="00"])[2]')
 
 
+class DialogPageLocators:
+    DIALOG_MESSAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_message")
+    DIALOG_ACTION_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_action")
+    DIALOG_ADDITIONAL_ACTION_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_additional_action")
+
+
+class EqPresetsPageLocators:
+    # Toolbar locators
+    TOOLBAR = (By.ID, f"{APP_PACKAGE_NAME}:id/toolbar")
+    LEFT_BATTERY_IMAGE_COLLAPSED = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_left_battery_collapsed")
+    RIGHT_BATTERY_IMAGE_COLLAPSED = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_right_battery_collapsed")
+    CASE_BATTERY_IMAGE_COLLAPSED = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_case_battery_collapsed")
+    SAVE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/item_save")
+    # Expandable EQ block locators
+    EXPANDABLE_BLOCK = (By.ID, f"{APP_PACKAGE_NAME}:id/group_expandable_part")
+    CUSTOMIZE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_customize")
+    DIVIDER_LINE = (By.ID, f"{APP_PACKAGE_NAME}:id/separator")
+    PRESETS_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_presets")
+    EDIT_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_edit")
+    ADD_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_add")
+    PRESETS_RECYCLER_VIEW = (By.ID, f"{APP_PACKAGE_NAME}:id/recycler_view_presets")
+    PRESET_NAME = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view")
+    PRESET_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view")
+    PRESET_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator")
+    EXPAND_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_expand")
+    CHOSEN_PRESET_NAME = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_chosen_preset")
+    EQ_CURVE_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/equalizer_view")
+    # Edit Presets screen locators
+    REMOVE_PRESET_ICON = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_remove")
+    DRAG_PRESET_ICON = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_drag")
+    EDIT_PRESETS_LIST = (By.ID, f"{APP_PACKAGE_NAME}:id/recycler_view")
+    # Preset configurator locators
+    EQ_EDITOR = (By.ID, f"{APP_PACKAGE_NAME}:id/equalizer_view")
+    HISTORY_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_history_title")
+    BACKWARD_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_backward")
+    FORWARD_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_forward")
+    PROGRESS_HISTORY_BAR = (By.ID, f"{APP_PACKAGE_NAME}:id/seek_bar_history")
+
+
+class FirmwareUpdatePageLocators:
+    UPDATE_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                     '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                     '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                     '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeButton[4]')
+    TITLE_WRAPPER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                     '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                     '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                     '/XCUIElementTypeOther')
+    FW_ACTIVATION_TITLE = (MobileBy.ACCESSIBILITY_ID, 'FwTitle')
+    FW_UPDATE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'FwUpdateTitle')
+    UP_TO_DATE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Up to Date')
+    UPDATE_AVAILABLE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Update Available')
+    UPDATE_EARBUDS_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Update Earbuds"]')
+    READY_TO_UPDATE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Ready to Update')
+    INSTALL_NOW_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Install Now"]')
+    CANCEL_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Cancel"]')
+    INSTALLING_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Installing')
+    AN_ERROR_OCCURRED_TITLE = (MobileBy.ACCESSIBILITY_ID, 'An Error Occurred')
+    RESTARTING_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Restarting')
+    YOU_ARE_ALL_SET_TITLE = (MobileBy.ACCESSIBILITY_ID, 'You’re All Set!')
+    RECONNECTING_DIALOG_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Reconnecting...')
+    ERROR_DIALOG_TITLE = (MobileBy.ACCESSIBILITY_ID, 'PopupTitle')
+    ERROR_MESSAGE_TEXT = (MobileBy.ACCESSIBILITY_ID, 'PopupSubtitle')
+
+
+class HomePageLocators:
+    EARBUDS_NAME = (MobileBy.ACCESSIBILITY_ID, 'FITS BP4')
+    EARBUDS_STATUS_CONNECTED = (MobileBy.ACCESSIBILITY_ID, 'Connected')
+    EARBUDS_STATUS_SCANNING = (MobileBy.ACCESSIBILITY_ID, 'Scanning')
+    CONNECT_EARBUDS_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_connect")
+    HOME_SCREEN_LEFT_MENU = (MobileBy.ACCESSIBILITY_ID, 'menu')
+    HOME_SCREEN_SETTINGS = (MobileBy.ACCESSIBILITY_ID, 'settings')
+    LEFT_EARBUD_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                         '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                         '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                         '/XCUIElementTypeButton[3]')
+    RIGHT_EARBUD_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeButton[4]')
+    CASE_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                  '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                  '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                  '/XCUIElementTypeImage[4]')
+    LEFT_BATTERY_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeOther[2]/XCUIElementTypeImage')
+    RIGHT_BATTERY_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                           '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                           '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                           '/XCUIElementTypeOther[3]/XCUIElementTypeImage')
+    CASE_BATTERY_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeOther[4]/XCUIElementTypeImage')
+    LEFT_BATTERY_PERCENTS = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_left_percents")
+    RIGHT_BATTERY_PERCENTS = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_right_percents")
+    CASE_BATTERY_PERCENTS = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_case_percents")
+
+
 class LandingPageLocators:
     CASE_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'earpods_case_outline')
     LANDING_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Let’s Get Started')
@@ -107,6 +186,17 @@ class LandingPageLocators:
                                 '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                 '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                 '/XCUIElementTypeOther[3]/XCUIElementTypeOther')
+
+
+class MenuPageLocators:
+    HEADER_CONTAINER = (MobileBy.ACCESSIBILITY_ID, 'UE_FITS_beta.LeftMenuView')
+    APPLICATION_LOGO = (MobileBy.ACCESSIBILITY_ID, 'ue-fits-dark')
+    CLOSE_ICON = (MobileBy.ACCESSIBILITY_ID, 'Close')
+    HOME_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Home"]')
+    MOLD_NEW_TIPS_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Mold New Tips"]')
+    TEST_YOUR_FIT_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Test Your Fit"]')
+    LEARN_MORE_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Learn More"]')
+    SUPPORT_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Support"]')
 
 
 class MoldingPageLocators:
@@ -222,92 +312,6 @@ class PairYourEarbudsLocators:
                                     ".TextView")
 
 
-class DialogPageLocators:
-    DIALOG_MESSAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_message")
-    DIALOG_ACTION_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_action")
-    DIALOG_ADDITIONAL_ACTION_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_additional_action")
-
-
-class HomePageLocators:
-    EARBUDS_NAME = (MobileBy.ACCESSIBILITY_ID, 'FITS BP4')
-    EARBUDS_STATUS_CONNECTED = (MobileBy.ACCESSIBILITY_ID, 'Connected')
-    EARBUDS_STATUS_SCANNING = (MobileBy.ACCESSIBILITY_ID, 'Scanning')
-    CONNECT_EARBUDS_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_connect")
-    HOME_SCREEN_LEFT_MENU = (MobileBy.ACCESSIBILITY_ID, 'menu')
-    HOME_SCREEN_SETTINGS = (MobileBy.ACCESSIBILITY_ID, 'settings')
-    LEFT_EARBUD_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                                         '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                         '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                         '/XCUIElementTypeButton[3]')
-    RIGHT_EARBUD_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                          '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                          '/XCUIElementTypeButton[4]')
-    CASE_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                                  '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                  '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                  '/XCUIElementTypeImage[4]')
-    LEFT_BATTERY_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                          '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                          '/XCUIElementTypeOther[2]/XCUIElementTypeImage')
-    RIGHT_BATTERY_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                                           '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                           '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                           '/XCUIElementTypeOther[3]/XCUIElementTypeImage')
-    CASE_BATTERY_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                          '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                          '/XCUIElementTypeOther[4]/XCUIElementTypeImage')
-    LEFT_BATTERY_PERCENTS = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_left_percents")
-    RIGHT_BATTERY_PERCENTS = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_right_percents")
-    CASE_BATTERY_PERCENTS = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_case_percents")
-
-
-class EqPresetsPageLocators:
-    # Toolbar locators
-    TOOLBAR = (By.ID, f"{APP_PACKAGE_NAME}:id/toolbar")
-    LEFT_BATTERY_IMAGE_COLLAPSED = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_left_battery_collapsed")
-    RIGHT_BATTERY_IMAGE_COLLAPSED = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_right_battery_collapsed")
-    CASE_BATTERY_IMAGE_COLLAPSED = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_case_battery_collapsed")
-    SAVE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/item_save")
-    # Expandable EQ block locators
-    EXPANDABLE_BLOCK = (By.ID, f"{APP_PACKAGE_NAME}:id/group_expandable_part")
-    CUSTOMIZE_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_customize")
-    DIVIDER_LINE = (By.ID, f"{APP_PACKAGE_NAME}:id/separator")
-    PRESETS_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_presets")
-    EDIT_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_edit")
-    ADD_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_add")
-    PRESETS_RECYCLER_VIEW = (By.ID, f"{APP_PACKAGE_NAME}:id/recycler_view_presets")
-    PRESET_NAME = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view")
-    PRESET_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view")
-    PRESET_DIVIDER = (By.ID, f"{APP_PACKAGE_NAME}:id/separator")
-    EXPAND_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_expand")
-    CHOSEN_PRESET_NAME = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_chosen_preset")
-    EQ_CURVE_IMAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/equalizer_view")
-    # Edit Presets screen locators
-    REMOVE_PRESET_ICON = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_remove")
-    DRAG_PRESET_ICON = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_drag")
-    EDIT_PRESETS_LIST = (By.ID, f"{APP_PACKAGE_NAME}:id/recycler_view")
-    # Preset configurator locators
-    EQ_EDITOR = (By.ID, f"{APP_PACKAGE_NAME}:id/equalizer_view")
-    HISTORY_TITLE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_history_title")
-    BACKWARD_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_backward")
-    FORWARD_ARROW = (By.ID, f"{APP_PACKAGE_NAME}:id/image_view_forward")
-    PROGRESS_HISTORY_BAR = (By.ID, f"{APP_PACKAGE_NAME}:id/seek_bar_history")
-
-
-class MenuPageLocators:
-    HEADER_CONTAINER = (MobileBy.ACCESSIBILITY_ID, 'UE_FITS_beta.LeftMenuView')
-    APPLICATION_LOGO = (MobileBy.ACCESSIBILITY_ID, 'ue-fits-dark')
-    CLOSE_ICON = (MobileBy.ACCESSIBILITY_ID, 'Close')
-    HOME_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Home"]')
-    MOLD_NEW_TIPS_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Mold New Tips"]')
-    TEST_YOUR_FIT_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Test Your Fit"]')
-    LEARN_MORE_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Learn More"]')
-    SUPPORT_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Support"]')
-
-
 class SupportPageLocators:
     FIRMWARE_ITEM = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                                      '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
@@ -315,31 +319,24 @@ class SupportPageLocators:
                                      '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeButton[4]')
 
 
-class FirmwareUpdatePageLocators:
-    UPDATE_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                                     '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                     '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                     '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeButton[4]')
-    TITLE_WRAPPER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                                     '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                     '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                     '/XCUIElementTypeOther')
-    FW_ACTIVATION_TITLE = (MobileBy.ACCESSIBILITY_ID, 'FwTitle')
-    FW_UPDATE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'FwUpdateTitle')
-    UP_TO_DATE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Up to Date')
-    UPDATE_AVAILABLE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Update Available')
-    UPDATE_EARBUDS_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Update Earbuds"]')
-    READY_TO_UPDATE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Ready to Update')
-    INSTALL_NOW_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Install Now"]')
-    CANCEL_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Cancel"]')
-    INSTALLING_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Installing')
-    AN_ERROR_OCCURRED_TITLE = (MobileBy.ACCESSIBILITY_ID, 'An Error Occurred')
-    RESTARTING_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Restarting')
-    YOU_ARE_ALL_SET_TITLE = (MobileBy.ACCESSIBILITY_ID, 'You’re All Set!')
-    RECONNECTING_DIALOG_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Reconnecting...')
-    ERROR_DIALOG_TITLE = (MobileBy.ACCESSIBILITY_ID, 'PopupTitle')
-    ERROR_MESSAGE_TEXT = (MobileBy.ACCESSIBILITY_ID, 'PopupSubtitle')
-
-
 class TutorialHomePageLocators:
     pass
+
+
+class WelcomePageLocators:
+    CODE_SCREEN_TITLE = (MobileBy.ACCESSIBILITY_ID, 'WELCOME')
+    DEMO_FLOW_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Demo Flow"]')
+    SEND_CODE_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="GET STARTED"]')
+    WELCOME_SCREEN_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Get Started"]')
+    WELCOME_SCREEN_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Welcome to Your\nPerfect Fit')
+    WELCOME_SCREEN_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'In just a few minutes, you’ll have a pair\nof perfectly '
+                                                          'fitting, incredibly\ncomfortable earbuds.')
+    WELCOME_SCREEN_EDIT_TEXT_CODE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                                     'beta"]/XCUIElementTypeWindow['
+                                                     '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                     '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                     '/XCUIElementTypeTextField')
+    WELCOME_SCREEN_WRAPPER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                              'beta"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther'
+                                              '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                              '/XCUIElementTypeOther')
