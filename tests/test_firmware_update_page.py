@@ -38,7 +38,7 @@ class TestFirmwareUpdatePage:
         time.sleep(15)
         firmware_update_page.check_active_update()
 
-    @pytest.mark.test
+    @pytest.mark.skip
     def test_firmware_update_no_installation(self, driver):
         firmware_update_page = FirmwareUpdatePage(driver)
         home_page = HomePage(driver)

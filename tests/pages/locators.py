@@ -189,16 +189,17 @@ class LandingPageLocators:
 
 
 class LearnMoreLocators:
-    CLOSE_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeNavigationBar['
-                                    '@name="UE_FITS_beta.LearnMoreView"]/XCUIElementTypeButton')
+    MENU_ICON = (MobileBy.XPATH, '//XCUIElementTypeNavigationBar['
+                                 '@name="UE_FITS_beta.LearnMoreView"]/XCUIElementTypeButton')
     PAGE_INDICATOR = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                                       '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                       '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                       '/XCUIElementTypeOther/XCUIElementTypePageIndicator')
     # Double tap control
     DOUBLE_TAP_CONTROL_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Double Tap Control')
-    DOUBLE_TAP_CONTROL_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Double-tap the left or right earbud to\nPlay/Pause '
+    DOUBLE_TAP_CONTROL_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Double-tap the left or right earbud to Play/Pause '
                                                               'audio or Answer/End calls.')
+
     DOUBLE_TAP_CONTROL_ANIMATION = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
                                                     'beta"]/XCUIElementTypeWindow['
                                                     '1]/XCUIElementTypeOther/XCUIElementTypeOther'
@@ -208,45 +209,46 @@ class LearnMoreLocators:
                                                     '/XCUIElementTypeOther/XCUIElementTypeOther')
     # Custom Control
     CUSTOM_CONTROL_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Custom Control')
-    CUSTOM_CONTROL_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Left and Right Double tap controls can be\ncustomized'
+    CUSTOM_CONTROL_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Left and Right Double tap controls can be customized'
                                                           ' independently in the Settings menu.')
     CUSTOM_CONTROL_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'learn_more_custom_control')
     # Switching devices
     SWITCHING_DEVICES_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Switching Devices')
-    SWITCHING_DEVICES_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'When switching to a new device, make sure '
-                                                             'the\npreviously connected device is disconnected.\nThen'
-                                                             ' connect to your new device.')
+    SWITCHING_DEVICES_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'To connect to another device that has been previously '
+                                                             'paired, go to the Bluetooth menu of the new device and '
+                                                             'select UE FITS.')
     SWITCHING_DEVICES_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'learn_more_switch_devices')
     # EQ Customization
     EQ_CUSTOMIZATION_TITLE = (MobileBy.ACCESSIBILITY_ID, 'EQ Customization')
     EQ_CUSTOMIZATION_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Select from fine-tuned default UE presets or '
-                                                            'tap\nCustomize to create your own.')
+                                                            'tap Customize to create your own.')
     EQ_CUSTOMIZATION_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'learn_more_eq')
     # Test your fit
     TEST_YOUR_FIT_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Test Your Fit')
     TEST_YOUR_FIT_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Your fit is guaranteed for 30 days.\nFrom the main menu, '
-                                                         'you can take a short quiz to\nconfirm you have the perfect '
+                                                         'you can take a short quiz to confirm you have the perfect '
                                                          'fit.')
     TEST_YOUR_FIT_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'learn_more_tyf')
     # Pair a new device
     PAIR_NEW_DEVICE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Pair a New Device')
-    PAIR_NEW_DEVICE_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'To pair with a new device, place your earbuds in\nthe '
-                                                           'case and press the case button until the\nearbuds flash '
+    PAIR_NEW_DEVICE_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'To pair with a new device, place your earbuds in the '
+                                                           'case and press the case button until the earbuds flash '
                                                            'white.')
     PAIR_NEW_DEVICE_ANIMATION = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
                                                  'beta"]/XCUIElementTypeWindow['
                                                  '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                                  '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                                 '/XCUIElementTypeOther/XCUIElementTypeScrollView'
-                                                 '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther')
-    PAIR_NEW_DEVICE_NOTICE = (MobileBy.ACCESSIBILITY_ID, 'Note: You can only have one device\nconnected at'
+                                                 '/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                 '/XCUIElementTypeScrollView/XCUIElementTypeOther'
+                                                 '/XCUIElementTypeOther/XCUIElementTypeOther')
+    PAIR_NEW_DEVICE_NOTICE = (MobileBy.ACCESSIBILITY_ID, 'Note: You can only have one device connected at'
                                                          ' any given time.')
     # Status Indicators
     STATUS_INDICATORS_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Status Indicators')
     STATUS_INDICATORS_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Lighting indicators on the charging case and '
-                                                             'the\nearbud indicate charging status of UE FITS.')
+                                                             'the earbud indicate charging status of UE FITS.')
     STATUS_INDICATORS_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'learn_more_statuses')
-    STATUS_INDICATORS_NOTICE = (MobileBy.ACCESSIBILITY_ID, '*To reset your earbuds, press and hold the\ncase button'
+    STATUS_INDICATORS_NOTICE = (MobileBy.ACCESSIBILITY_ID, '*To reset your earbuds, press and hold the case button'
                                                            ' until the earbuds blink amber.')
 
 

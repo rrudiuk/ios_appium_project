@@ -305,8 +305,8 @@ class TestMoldingPage:
         learn_more_page.should_be_double_tap_control_title()
         learn_more_page.should_be_double_tap_control_subtitle()
         learn_more_page.should_be_double_tap_control_animation()
-        learn_more_page.should_be_learn_more_close_button()
-        learn_more_page.tap_learn_more_close_button()
+        learn_more_page.should_be_learn_more_menu_icon()
+        learn_more_page.tap_learn_more_menu_icon()
     #
     #     home_page.should_be_earbuds_name()
     #     home_page.should_be_connected_state()

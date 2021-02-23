@@ -5,12 +5,12 @@ from ..utilities import logger
 
 
 class LearnMorePage(BasePage):
-    def should_be_learn_more_close_button(self):
-        assert self.is_element_present(*LearnMoreLocators.CLOSE_BUTTON), "Close button not located"
+    def should_be_learn_more_menu_icon(self):
+        assert self.is_element_present(*LearnMoreLocators.MENU_ICON), "Close button not located"
 
-    def tap_learn_more_close_button(self):
+    def tap_learn_more_menu_icon(self):
         logger.LOGGER.info('Tapping close button')
-        self.click_element(*LearnMoreLocators.CLOSE_BUTTON)
+        self.click_element(*LearnMoreLocators.MENU_ICON)
 
     def should_be_page_indicator(self):
         assert self.is_element_present(*LearnMoreLocators.PAGE_INDICATOR), 'Page indicator not found'
@@ -21,8 +21,7 @@ class LearnMorePage(BasePage):
 
     def should_be_double_tap_control_subtitle(self):
         self.check_screen_subtitle(*LearnMoreLocators.DOUBLE_TAP_CONTROL_SUBTITLE,
-                                   'Double-tap the left or right earbud to\nPlay/Pause '
-                                   'audio or Answer/End calls.')
+                                   'Double-tap the left or right earbud to Play/Pause audio or Answer/End calls.')
 
     def should_be_double_tap_control_animation(self):
         self.is_element_present(*LearnMoreLocators.DOUBLE_TAP_CONTROL_ANIMATION), "Animation video not found"
@@ -32,9 +31,9 @@ class LearnMorePage(BasePage):
         self.check_screen_title(*LearnMoreLocators.CUSTOM_CONTROL_TITLE, 'Custom Control')
 
     def should_be_custom_control_subtitle(self):
-        self.check_screen_subtitle(*LearnMoreLocators.CUSTOM_CONTROL_SUBTITLE,
-                                   'Left and Right Double tap controls can be\ncustomized'
-                                   ' independently in the Settings menu.')
+        self.check_screen_subtitle(*LearnMoreLocators.CUSTOM_CONTROL_SUBTITLE, 'Left and Right Double tap controls '
+                                                                               'can be customized independently in '
+                                                                               'the Settings menu.')
 
     def should_be_custom_control_image(self):
         assert self.is_element_present(*LearnMoreLocators.CUSTOM_CONTROL_IMAGE), 'Custom control image not found'
@@ -45,9 +44,9 @@ class LearnMorePage(BasePage):
 
     def should_be_switching_devices_subtitle(self):
         self.check_screen_subtitle(*LearnMoreLocators.SWITCHING_DEVICES_SUBTITLE,
-                                   'When switching to a new device, make sure '
-                                   'the\npreviously connected device is disconnected.\nThen'
-                                   ' connect to your new device.')
+                                   'To connect to another device that has been previously '
+                                   'paired, go to the Bluetooth menu of the new device and '
+                                   'select UE FITS.')
 
     def should_be_switching_devices_image(self):
         assert self.is_element_present(*LearnMoreLocators.SWITCHING_DEVICES_IMAGE), 'Switching devices image not found'
@@ -58,7 +57,7 @@ class LearnMorePage(BasePage):
 
     def should_be_eq_customization_subtitle(self):
         self.check_screen_subtitle(*LearnMoreLocators.EQ_CUSTOMIZATION_SUBTITLE, 'Select from fine-tuned default UE '
-                                                                                 'presets or tap\nCustomize to create '
+                                                                                 'presets or tap Customize to create '
                                                                                  'your own.')
 
     def should_be_eq_customization_image(self):
@@ -71,7 +70,7 @@ class LearnMorePage(BasePage):
     def should_be_test_your_fit_subtitle(self):
         self.check_screen_subtitle(*LearnMoreLocators.TEST_YOUR_FIT_SUBTITLE,
                                    'Your fit is guaranteed for 30 days.\nFrom the main menu, '
-                                   'you can take a short quiz to\nconfirm you have the perfect '
+                                   'you can take a short quiz to confirm you have the perfect '
                                    'fit.')
 
     def should_be_test_your_fit_image(self):
@@ -83,8 +82,8 @@ class LearnMorePage(BasePage):
 
     def should_be_pair_new_device_subtitle(self):
         self.check_screen_subtitle(*LearnMoreLocators.PAIR_NEW_DEVICE_SUBTITLE,
-                                   'To pair with a new device, place your earbuds in\nthe '
-                                   'case and press the case button until the\nearbuds flash '
+                                   'To pair with a new device, place your earbuds in the '
+                                   'case and press the case button until the earbuds flash '
                                    'white.')
 
     def should_be_pair_new_device_animation(self):
@@ -92,7 +91,7 @@ class LearnMorePage(BasePage):
                                                                                       'not found'
 
     def should_be_pair_new_device_notice(self):
-        self.check_message(*LearnMoreLocators.PAIR_NEW_DEVICE_NOTICE, 'Note: You can only have one device\nconnected at'
+        self.check_message(*LearnMoreLocators.PAIR_NEW_DEVICE_NOTICE, 'Note: You can only have one device connected at'
                                                                       ' any given time.')
 
     # Status Indicators
@@ -102,12 +101,12 @@ class LearnMorePage(BasePage):
     def should_be_status_indicators_subtitle(self):
         self.check_screen_subtitle(*LearnMoreLocators.STATUS_INDICATORS_SUBTITLE,
                                    'Lighting indicators on the charging case and '
-                                   'the\nearbud indicate charging status of UE FITS.')
+                                   'the earbud indicate charging status of UE FITS.')
 
     def should_be_status_indicators_image(self):
         assert self.is_element_present(*LearnMoreLocators.STATUS_INDICATORS_IMAGE), "No status indicators image"
 
     def should_be_status_indicators_notice(self):
         self.check_message(*LearnMoreLocators.STATUS_INDICATORS_NOTICE, '*To reset your earbuds, press and hold '
-                                                                        'the\ncase button '
+                                                                        'the case button '
                                                                         'until the earbuds blink amber.')

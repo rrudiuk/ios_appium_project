@@ -401,8 +401,8 @@ class TestSmokeTest:
         learn_more_page.should_be_double_tap_control_title()
         learn_more_page.should_be_double_tap_control_subtitle()
         learn_more_page.should_be_double_tap_control_animation()
-        learn_more_page.should_be_learn_more_close_button()
-        learn_more_page.tap_learn_more_close_button()
+        learn_more_page.should_be_learn_more_menu_icon()
+        learn_more_page.tap_learn_more_menu_icon()
 
     def test_learn_more_carousel(self, driver):
         analytics_page = AnalyticsPage(driver)
@@ -485,7 +485,7 @@ class TestSmokeTest:
         learn_more_page.should_be_double_tap_control_subtitle()
         learn_more_page.should_be_double_tap_control_animation()
         # Quit learn more
-        learn_more_page.tap_learn_more_close_button()
+        learn_more_page.tap_learn_more_menu_icon()
         menu_page.should_be_learn_more_item()
 
     def test_mold_new_tips_carousel(self, driver):
