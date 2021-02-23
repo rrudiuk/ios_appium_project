@@ -83,5 +83,4 @@ class FirmwareUpdatePage(BasePage):
         self.take_screenshot()
         logger.LOGGER.info("Screenshot captured")
 
-        assert self.locate_element(*FirmwareUpdatePageLocators.UPDATE_BUTTON) or \
-               self.locate_element(*FirmwareUpdatePageLocators.YOU_ARE_ALL_SET_TITLE), "Update failed"
+        assert self.locate_element(*FirmwareUpdatePageLocators.YOU_ARE_ALL_SET_TITLE), "Update failed"

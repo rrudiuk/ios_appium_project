@@ -4,12 +4,12 @@ from .locators import WelcomePageLocators
 
 class WelcomePage(BasePage):
     def should_be_correct_welcome_title(self):
-        self.check_screen_title(*WelcomePageLocators.WELCOME_SCREEN_TITLE, "Welcome to Your\nPerfect Fit")
+        self.check_screen_title(*WelcomePageLocators.WELCOME_SCREEN_TITLE, "Welcome to Your Perfect Fit")
 
     def should_be_correct_welcome_subtitle(self):
         self.check_screen_subtitle(*WelcomePageLocators.WELCOME_SCREEN_SUBTITLE, "In just a few minutes, you’ll have "
-                                                                                 "a pair\nof perfectly fitting, "
-                                                                                 "incredibly\ncomfortable earbuds.")
+                                                                                 "a pair of perfectly fitting, "
+                                                                                 "incredibly comfortable earbuds. ")
 
     def should_be_welcome_get_started_button(self):
         self.check_button(*WelcomePageLocators.WELCOME_SCREEN_BUTTON, "Get Started")

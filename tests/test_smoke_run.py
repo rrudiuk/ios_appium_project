@@ -132,24 +132,6 @@ class TestSmokeTest:
         landing_page.should_be_case_image()
         landing_page.should_be_loader()
 
-    def test_how_to_pair_screen(self, driver):
-        analytics_page = AnalyticsPage(driver)
-        welcome_page = WelcomePage(driver)
-        landing_page = LandingPage(driver)
-        molding_page = MoldingPage(driver)
-        welcome_page.should_be_correct_welcome_title()
-        welcome_page.tap_welcome_screen_get_started()
-        analytics_page.should_be_analytics_title()
-        analytics_page.tap_share_analytics_button()
-        landing_page.check_bt_dialog_presence_and_accept_it()
-        landing_page.should_be_landing_page_title()
-        time.sleep(10)
-        molding_page.should_be_how_to_pair_title()
-        molding_page.should_be_how_to_pair_subtitle()
-        molding_page.should_be_how_to_pair_animation()
-        molding_page.tap_got_it_button()
-        molding_page.should_be_back_arrow()
-
     def test_should_be_try_them_page(self, driver):
         analytics_page = AnalyticsPage(driver)
         welcome_page = WelcomePage(driver)
@@ -273,7 +255,7 @@ class TestSmokeTest:
         # Starting soon 1
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle1()
-        time.sleep(6)
+        time.sleep(4)
         # Starting soon 2
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle2()
@@ -305,11 +287,11 @@ class TestSmokeTest:
         # Starting soon 1
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle1()
-        time.sleep(6)
+        time.sleep(4)
         # Starting soon 2
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle2()
-        time.sleep(3)
+        time.sleep(4)
         # Countdown
         molding_page.should_be_cancel_button()
         molding_page.tap_cancel_button()
@@ -342,7 +324,7 @@ class TestSmokeTest:
         # Starting soon 1
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle1()
-        time.sleep(6)
+        time.sleep(4)
         # Starting soon 2
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle2()
@@ -400,7 +382,7 @@ class TestSmokeTest:
         # Starting soon 1
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle1()
-        time.sleep(6)
+        time.sleep(4)
         # Starting soon 2
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle2()

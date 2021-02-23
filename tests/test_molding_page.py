@@ -11,9 +11,8 @@ from .pages.welcome_page import WelcomePage
 import time
 
 
-@pytest.mark.bt_connected
-@pytest.mark.smoke_test_not_molded
 class TestMoldingPage:
+    @pytest.mark.skip
     def test_how_to_pair_screen(self, driver):
         analytics_page = AnalyticsPage(driver)
         welcome_page = WelcomePage(driver)
@@ -95,8 +94,8 @@ class TestMoldingPage:
         # Get ready
         molding_page.should_be_get_ready_page_title()
         molding_page.tap_do_this_button()
-        molding_page.should_be_how_is_bass_title()
         # How is the bass
+        molding_page.should_be_how_is_bass_title()
         molding_page.should_be_correct_how_is_bass_subtitle()
         molding_page.should_be_image_volume()
         molding_page.should_be_adjust_volume_bar()
@@ -155,7 +154,7 @@ class TestMoldingPage:
         # Starting soon 1
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle1()
-        time.sleep(6)
+        time.sleep(4)
         # Starting soon 2
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle2()
@@ -187,17 +186,17 @@ class TestMoldingPage:
         # Starting soon 1
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle1()
-        time.sleep(6)
+        time.sleep(4)
         # Starting soon 2
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle2()
-        time.sleep(3)
+        time.sleep(4)
         # Countdown
         molding_page.should_be_cancel_button()
         molding_page.tap_cancel_button()
         molding_page.should_be_get_ready_page_title()
 
-    # @pytest.mark.first_molding
+    @pytest.mark.first_molding
     def test_molding_complete(self, driver):
         analytics_page = AnalyticsPage(driver)
         # eq_presets_page = EqPresetsPage(driver)
@@ -210,7 +209,6 @@ class TestMoldingPage:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.check_bt_dialog_presence_and_accept_it()
-        landing_page.should_be_landing_page_title()
         time.sleep(10)
         # Try them on
         molding_page.should_be_try_them_page_title()
@@ -224,7 +222,7 @@ class TestMoldingPage:
         # Starting soon 1
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle1()
-        time.sleep(6)
+        time.sleep(4)
         # Starting soon 2
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle2()
@@ -260,7 +258,8 @@ class TestMoldingPage:
         # eq_presets_page.should_be_ue_signature_eq_selected()
         # eq_presets_page.should_be_eq_curve_image()
 
-    @pytest.mark.first_molding
+    # @pytest.mark.first_molding
+    @pytest.mark.skip
     def test_molding_complete_and_open_learn_more(self, driver):
         analytics_page = AnalyticsPage(driver)
         # eq_presets_page = EqPresetsPage(driver)
@@ -274,7 +273,6 @@ class TestMoldingPage:
         analytics_page.should_be_analytics_title()
         analytics_page.tap_share_analytics_button()
         landing_page.check_bt_dialog_presence_and_accept_it()
-        landing_page.should_be_landing_page_title()
         time.sleep(10)
         # Try them on
         molding_page.should_be_try_them_page_title()
@@ -288,7 +286,7 @@ class TestMoldingPage:
         # Starting soon 1
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle1()
-        time.sleep(6)
+        time.sleep(4)
         # Starting soon 2
         molding_page.should_be_starting_soon_title()
         molding_page.should_be_starting_soon_subtitle2()

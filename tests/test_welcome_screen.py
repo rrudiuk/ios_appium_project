@@ -1,3 +1,5 @@
+import time
+
 import pytest
 
 from .pages.welcome_page import WelcomePage

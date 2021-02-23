@@ -1,5 +1,4 @@
 from .base_page import BasePage
-from .locators import BasePageLocators
 from .locators import MoldingPageLocators
 
 
@@ -10,8 +9,8 @@ class MoldingPage(BasePage):
 
     def should_be_how_to_pair_subtitle(self):
         self.check_screen_title(*MoldingPageLocators.HOW_TO_PAIR_SUBTITLE, 'Each of your earbuds must be connected '
-                                                                           'to\nseparately. They are listed as UE '
-                                                                           'FITS L and R.\nWatch the video below to '
+                                                                           'to separately. They are listed as UE '
+                                                                           'FITS L and R. Watch the video below to '
                                                                            'learn how to pair them.')
 
     def should_be_how_to_pair_animation(self):
@@ -29,8 +28,8 @@ class MoldingPage(BasePage):
 
     def should_be_correct_try_them_page_subtitle(self):
         self.check_screen_subtitle(*MoldingPageLocators.TRY_THEM_PAGE_SUBTITLE,
-                                   'Pop both earbuds into your ears. Gently adjust\nthem until '
-                                   'they feel comfortable and secure.\nYou will mold both sides '
+                                   'Pop both earbuds into your ears. Gently adjust them until '
+                                   'they feel comfortable and secure. You will mold both sides '
                                    'at the same time.')
 
     def should_be_try_them_animation(self):
@@ -58,10 +57,10 @@ class MoldingPage(BasePage):
 
     def should_be_message1(self):
         self.check_message(*MoldingPageLocators.MOLDING_TEXT_VIEW_MSG1, "We’ll do a quick sound test to ensure "
-                                                                        "a\nsound-isolating fit before we mold.")
+                                                                        "a sound-isolating fit before we mold.")
 
     def should_be_message2(self):
-        self.check_message(*MoldingPageLocators.MOLDING_TEXT_VIEW_MSG2, "We’ll share some quick tips for\nachieving "
+        self.check_message(*MoldingPageLocators.MOLDING_TEXT_VIEW_MSG2, "We’ll share some quick tips for achieving "
                                                                         "the best mold.")
 
     def should_be_message3(self):
@@ -71,7 +70,8 @@ class MoldingPage(BasePage):
         assert self.is_element_present(*MoldingPageLocators.MOLDING_SMILE_IMAGE), "No smile icon on Get Ready screen"
 
     def should_be_stand_by_mirror_text(self):
-        self.check_message(*MoldingPageLocators.MOLDING_STAND_BY_MIRROR, "Try standing by a mirror for this part")
+        self.check_message(*MoldingPageLocators.MOLDING_STAND_BY_MIRROR, "Try standing in front of a mirror for "
+                                                                         "this part")
 
     def should_be_do_this_button(self):
         self.check_button(*MoldingPageLocators.GET_READY_BUTTON, "Let’s Do This")
@@ -85,11 +85,10 @@ class MoldingPage(BasePage):
 
     def should_be_correct_how_is_bass_subtitle(self):
         self.check_screen_subtitle(*MoldingPageLocators.HOW_IS_THE_BASS_SUBTITLE,
-                                   'Gently adjust both earbuds until you find the\nposition '
-                                   'that maximizes the bass.')
+                                   'Gently adjust both earbuds until you find the position that maximizes the bass. ')
 
     def should_be_cancel_button(self):
-        self.check_button(*MoldingPageLocators.MOLDING_CANCEL_BUTTON, "CANCEL")
+        self.check_button(*MoldingPageLocators.MOLDING_CANCEL_BUTTON, "Cancel")
 
     def tap_cancel_button(self):
         self.click_element(*MoldingPageLocators.MOLDING_CANCEL_BUTTON)
@@ -109,8 +108,8 @@ class MoldingPage(BasePage):
                                                                                 " your ears.")
 
     def should_be_starting_soon_subtitle2(self):
-        self.check_screen_subtitle(*MoldingPageLocators.MOLDING_START_SUBTITLE2, "Gently hold your earbuds\nin place "
-                                                                                 "the entire time.")
+        self.check_screen_subtitle(*MoldingPageLocators.MOLDING_START_SUBTITLE2, "Gently hold your earbuds\nin"
+                                                                                 " place the entire time.")
 
     def should_be_progress_bar(self):
         assert self.is_element_present(*MoldingPageLocators.MOLDING_PROGRESS_BAR), "Progress bar is missing"
@@ -118,14 +117,14 @@ class MoldingPage(BasePage):
     # Molding complete
     def should_be_congratulations_title(self):
         assert self.is_element_present(*MoldingPageLocators.CONGRATULATIONS_TITLE), "No title"
-        self.check_screen_title(*MoldingPageLocators.CONGRATULATIONS_TITLE, "Congratulations!")
+        self.check_screen_title(*MoldingPageLocators.CONGRATULATIONS_TITLE, "Congratulations")
 
     def should_be_congratulations_subtitle(self):
         assert self.is_element_present(*MoldingPageLocators.CONGRATULATIONS_SUBTITLE), "No subtitle"
         self.check_screen_subtitle(*MoldingPageLocators.CONGRATULATIONS_SUBTITLE,
                                    'You now have perfectly fitting earbuds.\n\nTake the tour '
-                                   'to learn about the features\nof the app and how to make '
-                                   'the most of\nyour UE FITS.')
+                                   'to learn about the features of the app and how to make '
+                                   'the most of your UE FITS.')
 
     def should_be_congratulations_image(self):
         assert self.is_element_present(*MoldingPageLocators.CONGRATULATIONS_IMAGE), "No image on Congrats screen"
