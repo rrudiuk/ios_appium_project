@@ -3,6 +3,7 @@ import time
 import pytest
 
 from .pages.analytics_page import AnalyticsPage
+from .pages.dialogs_page import HomeScreenUpdateDialogPage
 from .pages.home_page import HomePage
 from .pages.landing_page import LandingPage
 from .pages.menu_page import MenuPage
@@ -10,10 +11,10 @@ from .pages.learn_more_page import LearnMorePage
 from .pages.welcome_page import WelcomePage
 
 
-@pytest.mark.test
 class TestLearnMorePage:
     def test_learn_more_carousel(self, driver):
         analytics_page = AnalyticsPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         home_page = HomePage(driver)
         landing_page = LandingPage(driver)
         learn_more_page = LearnMorePage(driver)
@@ -23,6 +24,7 @@ class TestLearnMorePage:
         analytics_page.tap_share_analytics_button()
         landing_page.check_bt_dialog_presence_and_accept_it()
         time.sleep(10)
+        dialog_page.check_and_close_fw_update_dialog()
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_learn_more_item()
         # Double tap control

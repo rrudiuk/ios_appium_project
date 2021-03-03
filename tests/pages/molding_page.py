@@ -5,13 +5,11 @@ from .locators import MoldingPageLocators
 class MoldingPage(BasePage):
     # How to Pair
     def should_be_how_to_pair_title(self):
-        self.check_screen_title(*MoldingPageLocators.HOW_TO_PAIR_TITLE, 'How To Pair')
+        self.check_screen_title(*MoldingPageLocators.HOW_TO_PAIR_TITLE, 'How to Pair')
 
     def should_be_how_to_pair_subtitle(self):
-        self.check_screen_title(*MoldingPageLocators.HOW_TO_PAIR_SUBTITLE, 'Each of your earbuds must be connected '
-                                                                           'to separately. They are listed as UE '
-                                                                           'FITS L and R. Watch the video below to '
-                                                                           'learn how to pair them.')
+        self.check_screen_title(*MoldingPageLocators.HOW_TO_PAIR_SUBTITLE, 'Watch the video to learn how to pair '
+                                                                           'your earbuds.')
 
     def should_be_how_to_pair_animation(self):
         assert self.is_element_present(*MoldingPageLocators.HOW_TO_PAIR_VIDEO), 'How to pair video animation not found'
@@ -143,11 +141,11 @@ class MoldingPage(BasePage):
 
 
 class MoldNewTipsPage(MoldingPage):
-    def should_be_return_arrow(self):
-        assert self.is_element_present(*MoldingPageLocators.BACK_ARROW), "Back arrow not found"
+    def should_be_mnt_menu_icon(self):
+        assert self.is_element_present(*MoldingPageLocators.MENU_ICON), "Menu icon not found"
 
-    def tap_return_arrow(self):
-        self.click_element(*MoldingPageLocators.BACK_ARROW)
+    def tap_mnt_menu_icon(self):
+        self.click_element(*MoldingPageLocators.MENU_ICON)
 
     def should_be_scroll_dots(self):
         self.is_element_present(*MoldingPageLocators.SCROLL_ELEMENTS), "Scrolling dots do not appear"
@@ -169,10 +167,9 @@ class MoldNewTipsPage(MoldingPage):
         self.check_screen_title(*MoldingPageLocators.CHANGE_YOUR_TIPS_TITLE, "Change Your Tips")
 
     def should_be_change_tips_subtitle(self):
-        self.check_screen_subtitle(*MoldingPageLocators.CHANGE_YOUR_TIPS_SUBTITLE, 'To remove tips, position one '
-                                                                                   'finger at the\ntop of the tip and'
-                                                                                   ' gently peel off.\nThen, '
-                                                                                   'open your new tips!')
+        self.check_screen_subtitle(*MoldingPageLocators.CHANGE_YOUR_TIPS_SUBTITLE,
+                                   'To remove your current tips, position one finger at the top of the tip '
+                                   'and gently peel off.')
 
     def should_be_change_tips_animation(self):
         self.is_element_present(*MoldingPageLocators.CHANGE_YOUR_TIPS_ANIMATION), "Image / Animation not located"
@@ -183,7 +180,7 @@ class MoldNewTipsPage(MoldingPage):
 
     def should_be_remove_inserts_subtitle(self):
         self.check_screen_subtitle(*MoldingPageLocators.REMOVE_INSERTS_SUBTITLE, 'Remove the hard plastic inserts '
-                                                                                 'from your new\ntips by pulling on '
+                                                                                 'from your new tips by pulling on '
                                                                                  'the insert tab.')
 
     def should_be_remove_inserts_image(self):
@@ -194,9 +191,9 @@ class MoldNewTipsPage(MoldingPage):
         self.check_screen_title(*MoldingPageLocators.MATCH_THEM_UP_TITLE, "Match Them Up")
 
     def should_be_match_them_up_subtitle(self):
-        self.check_screen_subtitle(*MoldingPageLocators.MATCH_THEM_UP_SUBTITLE, 'Match the tips to the correct '
-                                                                                'earbud. You’ll\nsee an ‘R’ and ‘L’ '
-                                                                                'on the inside of the tips.')
+        self.check_screen_subtitle(*MoldingPageLocators.MATCH_THEM_UP_SUBTITLE,
+                                   'Match the tips to the correct earbud. You’ll see an ‘R’ and ‘L’ on the '
+                                   'inside of the tips.')
 
     def should_be_match_them_image(self):
         assert self.is_element_present(*MoldingPageLocators.MATCH_THEM_UP_IMAGE), 'Match them image not found'
@@ -206,9 +203,9 @@ class MoldNewTipsPage(MoldingPage):
         self.check_screen_title(*MoldingPageLocators.ATTACH_YOUR_TIPS_TITLE, "Attach Your Tips")
 
     def should_be_attach_your_tips_subtitle(self):
-        self.check_screen_subtitle(*MoldingPageLocators.ATTACH_YOUR_TIPS_SUBTITLE, 'Insert each earbud into the '
-                                                                                   'tip.\nYou won’t have to press too'
-                                                                                   ' hard to attach them.')
+        self.check_screen_subtitle(*MoldingPageLocators.ATTACH_YOUR_TIPS_SUBTITLE,
+                                   'Insert each earbud into the tip.\nYou won’t have to press '
+                                   'too hard to attach them.')
 
     def should_be_attach_tips_image(self):
         assert self.is_element_present(*MoldingPageLocators.ATTACH_YOUR_TIPS_IMAGE), 'Attach tips image not found'
@@ -219,17 +216,16 @@ class MoldNewTipsPage(MoldingPage):
 
     def should_be_check_the_fit_subtitle(self):
         self.check_screen_subtitle(*MoldingPageLocators.CHECK_THE_FIT_SUBTITLE, 'Make sure the tips are flush with '
-                                                                                'the earphones.')
+                                                                                'the earbuds.')
 
     def should_be_check_the_fit_image(self):
         assert self.is_element_present(*MoldingPageLocators.CHECK_THE_FIT_IMAGE), 'Check the fit image not found'
 
     # Congratulations
     def should_be_congratulations_subtitle(self):
-        self.check_screen_subtitle(*MoldingPageLocators.CONGRATULATIONS_SUBTITLE_FINISH, 'You now have perfectly '
-                                                                                         'fitting earbuds.\nThrow on '
-                                                                                         'your favorite song and '
-                                                                                         'take\nthem for a spin.')
+        self.check_screen_subtitle(*MoldingPageLocators.CONGRATULATIONS_SUBTITLE_FINISH,
+                                   'You now have perfectly fitting earbuds. Throw on your favorite song and '
+                                   'take them for a spin.')
 
     def should_be_finish_button(self):
         self.check_button(*MoldingPageLocators.FINISH_BUTTON, 'Finish')

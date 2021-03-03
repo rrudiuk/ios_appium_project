@@ -1,7 +1,7 @@
 import pytest
 
 from .pages.analytics_page import AnalyticsPage
-from .pages.dialogs_page import HomeScreenWelcomeDialogPage
+from .pages.dialogs_page import HomeScreenUpdateDialogPage
 from .pages.eq_presets_page import EqPresetsPage
 from .pages.home_page import HomePage
 from .pages.landing_page import LandingPage
@@ -14,7 +14,7 @@ import time
 class TestTutorialHomeScreen:
     def test_tutorial_first_screen(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
         landing_page = LandingPage(driver)
@@ -49,7 +49,7 @@ class TestTutorialHomeScreen:
 
     def test_tutorial_second_screen(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
         landing_page = LandingPage(driver)
@@ -86,7 +86,7 @@ class TestTutorialHomeScreen:
 
     def test_tutorial_third_screen(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
         landing_page = LandingPage(driver)

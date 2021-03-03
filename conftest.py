@@ -17,7 +17,7 @@ def driver(request):
     dc["xcodeSigningId"] = "iPhone Developer"
     dc["udid"] = "auto"
     dc["platformName"] = "iOS"
-    dc["platformVersion"] = "14.3"
+    dc["platformVersion"] = "14.4"
     dc["deviceName"] = "iPhone (2)"
     dc["automationName"] = "XCUITest"
     # dc["bundleId"] = "com.logitech.ohboy"

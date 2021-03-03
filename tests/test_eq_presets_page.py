@@ -6,7 +6,7 @@ from .pages.eq_presets_page import EditPresetsPage
 from .pages.eq_presets_page import EqPresetsPage
 from .pages.eq_presets_page import EqPresetSetupPage
 from .pages.home_page import HomePage
-from .pages.dialogs_page import HomeScreenWelcomeDialogPage
+from .pages.dialogs_page import HomeScreenUpdateDialogPage
 from .pages.landing_page import LandingPage
 from .pages.welcome_page import WelcomePage
 
@@ -16,7 +16,7 @@ import time
 class TestEqPresetsPage:
     def test_initial_presets_screen_setup(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
         landing_page = LandingPage(driver)
@@ -51,7 +51,7 @@ class TestEqPresetsPage:
 
     def test_switching_between_eq_presets(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
         landing_page = LandingPage(driver)
@@ -82,7 +82,7 @@ class TestEqPresetsPage:
 
     def test_access_edit_presets_screen(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         edit_preset_page = EditPresetsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
@@ -117,7 +117,7 @@ class TestEqPresetsPage:
 
     def test_preset_reorder_should_be_possible(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         edit_preset_page = EditPresetsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
@@ -136,7 +136,7 @@ class TestEqPresetsPage:
 
     def test_reordering_should_not_be_saved_after_tapping_back_button(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         edit_preset_page = EditPresetsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
@@ -159,7 +159,7 @@ class TestEqPresetsPage:
 
     def test_reordering_should_be_saved_after_tapping_save_button(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         edit_preset_page = EditPresetsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
@@ -179,7 +179,7 @@ class TestEqPresetsPage:
 
     def test_reorder_and_delete_first_item(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         dialog_preset_page = EditPresetsDialogPage(driver)
         edit_preset_page = EditPresetsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
@@ -205,7 +205,7 @@ class TestEqPresetsPage:
 
     def test_cancel_preset_deletion(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         dialog_preset_page = EditPresetsDialogPage(driver)
         edit_preset_page = EditPresetsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
@@ -230,7 +230,7 @@ class TestEqPresetsPage:
 
     def test_delete_all_presets(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         dialog_preset_page = EditPresetsDialogPage(driver)
         edit_preset_page = EditPresetsPage(driver)
         eq_presets_page = EqPresetsPage(driver)
@@ -280,7 +280,7 @@ class TestEqPresetsPage:
 
     def test_access_new_preset_editor(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         eq_preset_setup_page = EqPresetSetupPage(driver)
         home_page = HomePage(driver)

@@ -1,7 +1,7 @@
 import pytest
 
 from .pages.analytics_page import AnalyticsPage
-from .pages.dialogs_page import HomeScreenWelcomeDialogPage
+from .pages.dialogs_page import HomeScreenUpdateDialogPage
 from .pages.landing_page import LandingPage
 from .pages.welcome_page import WelcomePage
 
@@ -14,7 +14,7 @@ class TestDialogPage:
         analytics_page = AnalyticsPage(driver)
         welcome_page = WelcomePage(driver)
         landing_page = LandingPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_get_started()
         analytics_page.should_be_analytics_title()

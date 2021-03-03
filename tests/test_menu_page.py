@@ -1,7 +1,7 @@
 import pytest
 
 from .pages.analytics_page import AnalyticsPage
-from .pages.dialogs_page import HomeScreenWelcomeDialogPage
+from .pages.dialogs_page import HomeScreenUpdateDialogPage
 from .pages.home_page import HomePage
 from .pages.menu_page import MenuPage
 from .pages.welcome_page import WelcomePage
@@ -12,7 +12,7 @@ import time
 class TestMenuPage:
     def test_all_menu_items_appear(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         home_page = HomePage(driver)
         menu_page = MenuPage(driver)
         welcome_page = WelcomePage(driver)

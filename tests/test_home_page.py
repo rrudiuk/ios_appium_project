@@ -1,7 +1,7 @@
 import pytest
 
 from .pages.analytics_page import AnalyticsPage
-from .pages.dialogs_page import HomeScreenWelcomeDialogPage
+from .pages.dialogs_page import HomeScreenUpdateDialogPage
 from .pages.eq_presets_page import EqPresetsPage
 from .pages.landing_page import LandingPage
 from .pages.home_page import HomePage
@@ -14,7 +14,7 @@ class TestHomePage:
     @pytest.mark.smoke_test_molded
     def test_home_screen_connected(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         landing_page = LandingPage(driver)
         home_page = HomePage(driver)
@@ -47,7 +47,7 @@ class TestHomePage:
         eq_presets_page.should_be_eq_curve_image()
 
     def test_home_screen_not_connected(self, driver):
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         home_page = HomePage(driver)
         welcome_page = WelcomePage(driver)
@@ -73,7 +73,7 @@ class TestHomePage:
 
     def test_home_screen_after_closing_presets_screen(self, driver):
         analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenWelcomeDialogPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         eq_presets_page = EqPresetsPage(driver)
         landing_page = LandingPage(driver)
         home_page = HomePage(driver)

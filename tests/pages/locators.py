@@ -78,9 +78,10 @@ class DemoPageLocators:
 
 
 class DialogPageLocators:
-    DIALOG_MESSAGE = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_message")
-    DIALOG_ACTION_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/button_action")
-    DIALOG_ADDITIONAL_ACTION_BUTTON = (By.ID, f"{APP_PACKAGE_NAME}:id/text_view_additional_action")
+    DIALOG_TITLE = (MobileBy.ACCESSIBILITY_ID, 'PopupTitle')
+    DIALOG_MESSAGE = (MobileBy.ACCESSIBILITY_ID, 'PopupSubtitle')
+    UPDATE_DIALOG_ACTION_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Update Earbuds"]')
+    UPDATE_DIALOG_DISMISS_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Dismiss"]')
 
 
 class EqPresetsPageLocators:
@@ -265,10 +266,8 @@ class MenuPageLocators:
 
 class MoldingPageLocators:
     # How to pair
-    HOW_TO_PAIR_TITLE = (MobileBy.ACCESSIBILITY_ID, 'How To Pair')
-    HOW_TO_PAIR_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Each of your earbuds must be connected to separately. They '
-                                                       'are listed as UE FITS L and R. Watch the video below to '
-                                                       'learn how to pair them.')
+    HOW_TO_PAIR_TITLE = (MobileBy.ACCESSIBILITY_ID, 'How to Pair')
+    HOW_TO_PAIR_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Watch the video to learn how to pair your earbuds.')
     HOW_TO_PAIR_VIDEO = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                          '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
@@ -325,7 +324,8 @@ class MoldingPageLocators:
     CONGRATULATIONS_SUBTITLE_FINISH = (MobileBy.ACCESSIBILITY_ID, 'You now have perfectly fitting earbuds. Throw on '
                                                                   'your favorite song and take them for a spin.')
     # Mold new tips
-    BACK_ARROW = (MobileBy.ACCESSIBILITY_ID, 'backArrow')
+    MENU_ICON = (MobileBy.XPATH, '//XCUIElementTypeNavigationBar['
+                                 '@name="UE_FITS_beta.YourTipsView"]/XCUIElementTypeButton')
     SCROLL_ELEMENTS = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                                        '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                        '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
@@ -340,22 +340,22 @@ class MoldingPageLocators:
                                                   '/XCUIElementTypeScrollView/XCUIElementTypeOther'
                                                   '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther')
     CHANGE_YOUR_TIPS_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Change Your Tips')
-    CHANGE_YOUR_TIPS_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'To remove tips, position one finger at the\ntop of the '
-                                                            'tip and gently peel off.\nThen, open your new tips!')
+    CHANGE_YOUR_TIPS_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'To remove your current tips, position one finger at '
+                                                            'the top of the tip and gently peel off.')
     # REMOVE INSERTS
     REMOVE_INSERTS_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Remove Inserts')
-    REMOVE_INSERTS_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Remove the hard plastic inserts from your new\ntips by '
+    REMOVE_INSERTS_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Remove the hard plastic inserts from your new tips by '
                                                           'pulling on the insert tab.')
     REMOVE_INSERTS_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'yt_2')
     # MATCH THEM UP
     MATCH_THEM_UP_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Match Them Up')
-    MATCH_THEM_UP_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Match the tips to the correct earbud. You’ll\nsee an ‘R’ '
-                                                         'and ‘L’ on the inside of the tips.')
+    MATCH_THEM_UP_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, "Match the tips to the correct earbud. You’ll\nsee an "
+                                                         "‘R’ and ‘L’ on the inside of the tips.")
     MATCH_THEM_UP_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'yt_3')
     # Attach your tips
     ATTACH_YOUR_TIPS_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Attach Your Tips')
-    ATTACH_YOUR_TIPS_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Insert each earbud into the tip.\nYou won’t have to '
-                                                            'press too hard to attach them.')
+    ATTACH_YOUR_TIPS_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Insert each earbud into the tip.\nYou won’t have to press '
+                                                            'too hard to attach them.')
     ATTACH_YOUR_TIPS_IMAGE = (MobileBy.XPATH,
                               '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther '
@@ -365,7 +365,7 @@ class MoldingPageLocators:
                               '/XCUIElementTypeOther')
     # CHECK THE FIT
     CHECK_THE_FIT_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Check The Fit')
-    CHECK_THE_FIT_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Make sure the tips are flush with the earphones.')
+    CHECK_THE_FIT_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Make sure the tips are flush with the earbuds.')
     CHECK_THE_FIT_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'tips_attached_diagram')
 
 

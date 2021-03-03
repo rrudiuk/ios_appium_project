@@ -1,6 +1,7 @@
 import pytest
 
 from .pages.analytics_page import AnalyticsPage
+from .pages.dialogs_page import HomeScreenUpdateDialogPage
 from .pages.firmware_update_page import FirmwareUpdatePage
 from .pages.home_page import HomePage
 from .pages.menu_page import MenuPage
@@ -11,9 +12,11 @@ import time
 
 
 class TestFirmwareUpdatePage:
+    @pytest.mark.test
     def test_firmware_update(self, driver):
         analytics_page = AnalyticsPage(driver)
         firmware_update_page = FirmwareUpdatePage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         home_page = HomePage(driver)
         menu_page = MenuPage(driver)
         support_page = SupportPage(driver)
@@ -22,13 +25,14 @@ class TestFirmwareUpdatePage:
         analytics_page.tap_share_analytics_button()
         analytics_page.check_bt_dialog_presence_and_accept_it()
         time.sleep(10)
+        dialog_page.check_and_close_fw_update_dialog()
         home_page.should_be_hamburger_menu()
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_support_item()
         support_page.should_be_firmware_item()
         support_page.tap_firmware_item()
         time.sleep(5)
-        firmware_update_page.should_up_to_date_title()
+        # firmware_update_page.should_up_to_date_title()
         firmware_update_page.activate_fw_update()
         time.sleep(5)
         firmware_update_page.should_be_update_available_title()
@@ -41,17 +45,19 @@ class TestFirmwareUpdatePage:
     @pytest.mark.skip
     def test_firmware_update_no_installation(self, driver):
         firmware_update_page = FirmwareUpdatePage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         home_page = HomePage(driver)
         menu_page = MenuPage(driver)
         support_page = SupportPage(driver)
         time.sleep(10)
+        dialog_page.check_and_close_fw_update_dialog()
         home_page.should_be_hamburger_menu()
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_support_item()
         support_page.should_be_firmware_item()
         support_page.tap_firmware_item()
         time.sleep(5)
-        firmware_update_page.should_up_to_date_title()
+        # firmware_update_page.should_up_to_date_title()
         firmware_update_page.activate_fw_update()
         time.sleep(5)
         firmware_update_page.should_be_update_available_title()

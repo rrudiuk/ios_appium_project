@@ -20,7 +20,7 @@ class FirmwareUpdatePage(BasePage):
                 logger.LOGGER.info("Update activated")
                 break
             else:
-                logger.LOGGER.error("Update activation error")
+                logger.LOGGER.error(f"Update activation error. Title is {title}")
                 break
 
     def tap_page_title_10_times(self):
@@ -75,8 +75,8 @@ class FirmwareUpdatePage(BasePage):
 
         if self.get_text(*FirmwareUpdatePageLocators.FW_UPDATE_TITLE) == "Restarting":
             logger.LOGGER.info("Restarting")
-            time.sleep(30)
-            duration = duration + 30
+            time.sleep(45)
+            duration = duration + 45
 
         logger.LOGGER.info(f"FW update duration: {duration}")
 
