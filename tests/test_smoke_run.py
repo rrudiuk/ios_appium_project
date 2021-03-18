@@ -258,7 +258,6 @@ class TestSmokeTest:
         molding_page.tap_cancel_button()
         molding_page.should_be_get_ready_page_title()
 
-    @pytest.mark.first_molding
     def test_molding_complete(self, driver):
         analytics_page = AnalyticsPage(driver)
         # eq_presets_page = EqPresetsPage(driver)
@@ -319,7 +318,7 @@ class TestSmokeTest:
         analytics_page = AnalyticsPage(driver)
         learn_more_page = LearnMorePage(driver)
         molding_page = MoldingPage(driver)
-        menu_page = MenuPage(driver)
+        home_page = HomePage(driver)
         welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_get_started()
@@ -361,7 +360,7 @@ class TestSmokeTest:
         learn_more_page.tap_learn_more_menu_icon()
         # Quit learn more
         learn_more_page.tap_learn_more_menu_icon()
-        menu_page.should_be_learn_more_item()
+        home_page.should_be_hamburger_menu()
 
     def test_curring_mode_activation2(self, driver):
         welcome_page = WelcomePage(driver)
@@ -380,7 +379,7 @@ class TestSmokeTest:
         analytics_page = AnalyticsPage(driver)
         learn_more_page = LearnMorePage(driver)
         molding_page = MoldingPage(driver)
-        menu_page = MenuPage(driver)
+        home_page = HomePage(driver)
         welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_get_started()
@@ -422,8 +421,9 @@ class TestSmokeTest:
         learn_more_page.tap_learn_more_menu_icon()
         # Quit learn more
         learn_more_page.tap_learn_more_menu_icon()
-        menu_page.should_be_learn_more_item()
+        home_page.should_be_hamburger_menu()
 
+    @pytest.mark.xfail
     def test_learn_more_carousel(self, driver):
         analytics_page = AnalyticsPage(driver)
         dialog_page = HomeScreenUpdateDialogPage(driver)
@@ -1048,4 +1048,4 @@ class TestSmokeTest:
         firmware_update_page.check_active_update()
 
 # run with
-# pytest -v --reruns 2 --tb=line -m smoke_test --html=/Users/rudiuk/PyCharmProjects/ios_appium_project/test_report/report.html --capture sys
+# pytest -s -v --reruns 1 -m smoke_test --html=/Users/rudiuk/PyCharmProjects/ios_appium_project/test_report/report.html --capture sys

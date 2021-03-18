@@ -6,6 +6,7 @@ from .pages.welcome_page import WelcomePage
 
 
 class TestWelcomePage:
+    @pytest.mark.welcome
     def test_should_be_welcome_screen(self, driver):
         welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()

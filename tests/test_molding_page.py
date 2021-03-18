@@ -184,7 +184,7 @@ class TestMoldingPage:
         molding_page.tap_cancel_button()
         molding_page.should_be_get_ready_page_title()
 
-    @pytest.mark.first_molding
+    # @pytest.mark.first_molding
     def test_molding_complete(self, driver):
         analytics_page = AnalyticsPage(driver)
         molding_page = MoldingPage(driver)
@@ -227,13 +227,12 @@ class TestMoldingPage:
         time.sleep(5)
         home_page.should_be_hamburger_menu()
 
-    # @pytest.mark.first_molding
-    @pytest.mark.skip
+    @pytest.mark.first_molding
     def test_molding_complete_and_open_learn_more(self, driver):
         analytics_page = AnalyticsPage(driver)
         learn_more_page = LearnMorePage(driver)
         molding_page = MoldingPage(driver)
-        menu_page = MenuPage(driver)
+        home_page = HomePage(driver)
         welcome_page = WelcomePage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_get_started()
@@ -275,4 +274,4 @@ class TestMoldingPage:
         learn_more_page.tap_learn_more_menu_icon()
         # Quit learn more
         learn_more_page.tap_learn_more_menu_icon()
-        menu_page.should_be_learn_more_item()
+        home_page.should_be_hamburger_menu()
