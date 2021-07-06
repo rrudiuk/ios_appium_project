@@ -117,6 +117,20 @@ class EqPresetsPageLocators:
     PROGRESS_HISTORY_BAR = (By.ID, f"{APP_PACKAGE_NAME}:id/seek_bar_history")
 
 
+class EmailEntryPageLocators:
+    EMAIL_ENTRY_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Never Miss A Beat')
+    EMAIL_ENTRY_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Stay up to date on firmware updates, giveaways, beta '
+                                                       'testing opportunities, and more.')
+    SIGN_ME_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Sign Me Up"]')
+    NO_THANKS_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="No Thanks"]')
+    EMAIL_ENTRY_REASON_DESCRIPTION = (MobileBy.ACCESSIBILITY_ID, 'This can be changed from the Main Menu under '
+                                                                 'Support. Learn more about our Privacy Policy.')
+    EMAIL_ENTRY_INPUT = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                         '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                         '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                         '/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeTextField')
+
+
 class FirmwareUpdatePageLocators:
     UPDATE_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                                      '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'

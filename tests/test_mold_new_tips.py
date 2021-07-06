@@ -155,7 +155,6 @@ class TestYourFit:
         mold_new_tips_page.tap_back_arrow()
         mold_new_tips_page.should_be_check_the_fit_title()
 
-    @pytest.mark.test
     def test_mnt_get_ready_screen(self, driver):
         analytics_page = AnalyticsPage(driver)
         dialog_page = HomeScreenUpdateDialogPage(driver)
