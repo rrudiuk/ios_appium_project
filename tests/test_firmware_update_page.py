@@ -12,26 +12,29 @@ from .pages.welcome_page import WelcomePage
 import time
 
 
-@pytest.mark.test
+def initial_setup_non_molding(driver):
+    analytics_page = AnalyticsPage(driver)
+    email_entry_page = EmailEntryPage(driver)
+    dialog_page = HomeScreenUpdateDialogPage(driver)
+    welcome_page = WelcomePage(driver)
+    welcome_page.should_be_correct_welcome_title()
+    welcome_page.tap_welcome_screen_get_started()
+    email_entry_page.should_be_email_entry_title()
+    email_entry_page.should_be_correct_email_entry_subtitle()
+    email_entry_page.tap_no_thanks_button()
+    analytics_page.tap_share_analytics_button()
+    analytics_page.check_bt_dialog_presence_and_accept_it()
+    dialog_page.wait_for_connection()
+    dialog_page.check_and_close_fw_update_dialog()
+
+
 class TestFirmwareUpdatePage:
     def test_firmware_update(self, driver):
-        analytics_page = AnalyticsPage(driver)
-        email_entry_page = EmailEntryPage(driver)
+        initial_setup_non_molding(driver)
         firmware_update_page = FirmwareUpdatePage(driver)
-        dialog_page = HomeScreenUpdateDialogPage(driver)
         home_page = HomePage(driver)
         menu_page = MenuPage(driver)
         support_page = SupportPage(driver)
-        welcome_page = WelcomePage(driver)
-        welcome_page.should_be_correct_welcome_title()
-        welcome_page.tap_welcome_screen_get_started()
-        email_entry_page.should_be_email_entry_title()
-        email_entry_page.should_be_correct_email_entry_subtitle()
-        email_entry_page.tap_no_thanks_button()
-        analytics_page.tap_share_analytics_button()
-        analytics_page.check_bt_dialog_presence_and_accept_it()
-        time.sleep(10)
-        dialog_page.check_and_close_fw_update_dialog()
         home_page.should_be_hamburger_menu()
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_support_item()

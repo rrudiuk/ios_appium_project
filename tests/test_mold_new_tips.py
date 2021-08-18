@@ -1,30 +1,38 @@
-import time
-
 import pytest
 
 from .pages.analytics_page import AnalyticsPage
 from .pages.dialogs_page import HomeScreenUpdateDialogPage
+from .pages.email_entry_page import EmailEntryPage
 from .pages.home_page import HomePage
-from .pages.landing_page import LandingPage
 from .pages.menu_page import MenuPage
 from .pages.molding_page import MoldNewTipsPage
 from .pages.welcome_page import WelcomePage
 
+import time
 
-class TestYourFit:
+
+def initial_setup_non_molding(driver):
+    analytics_page = AnalyticsPage(driver)
+    email_entry_page = EmailEntryPage(driver)
+    dialog_page = HomeScreenUpdateDialogPage(driver)
+    welcome_page = WelcomePage(driver)
+    welcome_page.should_be_correct_welcome_title()
+    welcome_page.tap_welcome_screen_get_started()
+    email_entry_page.should_be_email_entry_title()
+    email_entry_page.should_be_correct_email_entry_subtitle()
+    email_entry_page.tap_no_thanks_button()
+    analytics_page.tap_share_analytics_button()
+    analytics_page.check_bt_dialog_presence_and_accept_it()
+    dialog_page.wait_for_connection()
+    dialog_page.check_and_close_fw_update_dialog()
+
+
+class TestMoldNewTips:
     def test_mold_new_tips_carousel(self, driver):
-        analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenUpdateDialogPage(driver)
+        initial_setup_non_molding(driver)
         home_page = HomePage(driver)
-        landing_page = LandingPage(driver)
         menu_page = MenuPage(driver)
         mold_new_tips_page = MoldNewTipsPage(driver)
-        welcome_page = WelcomePage(driver)
-        welcome_page.tap_welcome_screen_get_started()
-        analytics_page.tap_share_analytics_button()
-        landing_page.check_bt_dialog_presence_and_accept_it()
-        time.sleep(10)
-        dialog_page.check_and_close_fw_update_dialog()
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_mold_new_tips_item()
         # Change your tips
@@ -112,18 +120,10 @@ class TestYourFit:
         menu_page.should_be_mold_new_tips_item()
 
     def test_mnt_how_to_pair_screen(self, driver):
-        analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenUpdateDialogPage(driver)
+        initial_setup_non_molding(driver)
         home_page = HomePage(driver)
-        landing_page = LandingPage(driver)
         menu_page = MenuPage(driver)
         mold_new_tips_page = MoldNewTipsPage(driver)
-        welcome_page = WelcomePage(driver)
-        welcome_page.tap_welcome_screen_get_started()
-        analytics_page.tap_share_analytics_button()
-        landing_page.check_bt_dialog_presence_and_accept_it()
-        time.sleep(10)
-        dialog_page.check_and_close_fw_update_dialog()
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_mold_new_tips_item()
         # Carousel
@@ -156,18 +156,10 @@ class TestYourFit:
         mold_new_tips_page.should_be_check_the_fit_title()
 
     def test_mnt_get_ready_screen(self, driver):
-        analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenUpdateDialogPage(driver)
+        initial_setup_non_molding(driver)
         home_page = HomePage(driver)
-        landing_page = LandingPage(driver)
         menu_page = MenuPage(driver)
         mold_new_tips_page = MoldNewTipsPage(driver)
-        welcome_page = WelcomePage(driver)
-        welcome_page.tap_welcome_screen_get_started()
-        analytics_page.tap_share_analytics_button()
-        landing_page.check_bt_dialog_presence_and_accept_it()
-        time.sleep(10)
-        dialog_page.check_and_close_fw_update_dialog()
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_mold_new_tips_item()
         # Carousel
@@ -204,18 +196,10 @@ class TestYourFit:
         mold_new_tips_page.should_be_try_them_button()
 
     def test_mnt_warnings(self, driver):
-        analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenUpdateDialogPage(driver)
+        initial_setup_non_molding(driver)
         home_page = HomePage(driver)
-        landing_page = LandingPage(driver)
         menu_page = MenuPage(driver)
         mold_new_tips_page = MoldNewTipsPage(driver)
-        welcome_page = WelcomePage(driver)
-        welcome_page.tap_welcome_screen_get_started()
-        analytics_page.tap_share_analytics_button()
-        landing_page.check_bt_dialog_presence_and_accept_it()
-        time.sleep(10)
-        dialog_page.check_and_close_fw_update_dialog()
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_mold_new_tips_item()
         # Carousel
@@ -256,18 +240,10 @@ class TestYourFit:
         mold_new_tips_page.should_be_get_ready_page_title()
 
     def test_mnt_molding(self, driver):
-        analytics_page = AnalyticsPage(driver)
-        dialog_page = HomeScreenUpdateDialogPage(driver)
+        initial_setup_non_molding(driver)
         home_page = HomePage(driver)
-        landing_page = LandingPage(driver)
         menu_page = MenuPage(driver)
         mold_new_tips_page = MoldNewTipsPage(driver)
-        welcome_page = WelcomePage(driver)
-        welcome_page.tap_welcome_screen_get_started()
-        analytics_page.tap_share_analytics_button()
-        landing_page.check_bt_dialog_presence_and_accept_it()
-        dialog_page.check_and_close_fw_update_dialog()
-        time.sleep(10)
         home_page.tap_hamburger_menu_icon()
         menu_page.tap_mold_new_tips_item()
         # Carousel

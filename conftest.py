@@ -12,7 +12,7 @@ def driver(request):
 
     # This is the Application and ‘app’ desired capability to specify a path to Appium
     path_to_current_directory = Path().absolute()
-    # dc['app'] = str(path_to_current_directory) + '/app/app-debug.ipa'
+    dc['app'] = str(path_to_current_directory) + '/app/app-debug.ipa'
     dc["xcodeOrgId"] = "9AGXVW6QVL"
     dc["xcodeSigningId"] = "iPhone Developer"
     dc["udid"] = "auto"
@@ -20,7 +20,7 @@ def driver(request):
     dc["platformVersion"] = "14.6"
     dc["deviceName"] = "Ruslan's iPhone"
     dc["automationName"] = "XCUITest"
-    dc["bundleId"] = "com.logitech.uefits"
+    # dc["bundleId"] = "com.logitech.uefits"
     # dc["showIOSLog"] = "true"
     # accept alerts and grant permissions
     # dc['autoAcceptAlerts'] = 'true'

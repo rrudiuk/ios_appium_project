@@ -432,3 +432,23 @@ class WelcomePageLocators:
                                               'beta"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther'
                                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                               '/XCUIElementTypeOther')
+
+
+class UGCPageLocators:
+    IMAGE_COLLAGE = (MobileBy.ACCESSIBILITY_ID, 'ugc_gotit_images')
+    MENU_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeNavigationBar['
+                                   '@name="UE_FITS_beta.YouDidItView"]/XCUIElementTypeButton')
+    SKIP_FOR_NOW_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Skip For Now"]')
+    # SKIP_FOR_NOW_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Skip For Now"]')
+    # TAKE_SELFIE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'You Did It!')
+    TAKE_SELFIE_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="You Did It!"]')
+    TAKE_SELFIE_TITLE_MENU = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Take a Selfie"])[1]')
+    # TAKE_SELFIE_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Check out the tech that molds your earbuds and capture the '
+    #                                                    'experience to save and share. Activating tech will not alter'
+    #                                                    ' earbud tip.')
+    TAKE_SELFIE_SUBTITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Check out the Lightform technology up '
+                                            'close and capture the experience to save and share."]')
+    UGC_GIF = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                               '/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]')

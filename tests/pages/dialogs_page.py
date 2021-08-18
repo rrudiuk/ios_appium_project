@@ -6,9 +6,11 @@ from ..utilities import logger
 
 class HomeScreenUpdateDialogPage(BasePage):
     def check_and_close_fw_update_dialog(self):
+        # logger.LOGGER.info("Checking for the dialog")
         if self.is_element_present(*DialogPageLocators.DIALOG_TITLE):
             self.click_element(*DialogPageLocators.UPDATE_DIALOG_DISMISS_BUTTON)
             logger.LOGGER.info("Dialog dismissed")
+        # logger.LOGGER.info("Finished checking")
 
 
 class EditPresetsDialogPage(BasePage):

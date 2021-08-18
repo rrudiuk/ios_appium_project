@@ -179,3 +179,6 @@ class BasePage:
 
     def tap_keyboard_return_key(self):
         self.click_element(*BasePageLocators.KEYBOARD_RETURN)
+
+    def wait_for_connection(self):
+        time.sleep(14)
