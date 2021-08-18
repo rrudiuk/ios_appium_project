@@ -146,6 +146,7 @@ class FirmwareUpdatePageLocators:
     UPDATE_AVAILABLE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Update Available')
     UPDATE_EARBUDS_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Update Earbuds"]')
     READY_TO_UPDATE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Ready to Update')
+    ROLLBACK_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Rollback Earbuds"]')
     INSTALL_NOW_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Install Now"]')
     CANCEL_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Cancel"]')
     INSTALLING_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Installing')
@@ -155,6 +156,19 @@ class FirmwareUpdatePageLocators:
     RECONNECTING_DIALOG_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Reconnecting...')
     ERROR_DIALOG_TITLE = (MobileBy.ACCESSIBILITY_ID, 'PopupTitle')
     ERROR_MESSAGE_TEXT = (MobileBy.ACCESSIBILITY_ID, 'PopupSubtitle')
+    # Enable push notifications
+    ENABLE_PUSH_NOTIFICATIONS_IMAGE = (MobileBy.ACCESSIBILITY_ID, 'mobile')
+    ENABLE_PUSH_NOTIFICATIONS_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Enable Push Notifications')
+    ENABLE_PUSH_NOTIFICATIONS_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Enabling push notifications allows you to stay '
+                                                                     'up to date with the latest version of the UE FITS'
+                                                                     ' firmware.')
+    ENABLE_PUSH_NOTIFICATIONS_NOTICE = (MobileBy.ACCESSIBILITY_ID, 'This can be changed from your device Settings.')
+    ENABLE_PUSH_NOTIFICATIONS_CLOSE_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeNavigationBar['
+                                                              '@name="UE_FITS_beta.PushNotificationRequestView'
+                                                              '"]/XCUIElementTypeButton')
+    PUSH_NOTIFICATIONS_ENABLE_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Yes, Enable Push '
+                                                        'Notifications"]')
+    PUSH_NOTIFICATIONS_NO_THANKS_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="No Thanks"]')
 
 
 class HomePageLocators:

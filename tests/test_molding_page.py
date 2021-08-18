@@ -1,6 +1,7 @@
 import pytest
 
 from .pages.analytics_page import AnalyticsPage
+from .pages.dialogs_page import HomeScreenUpdateDialogPage
 from .pages.landing_page import LandingPage
 from .pages.learn_more_page import LearnMorePage
 from .pages.menu_page import MenuPage
@@ -187,6 +188,7 @@ class TestMoldingPage:
     # @pytest.mark.first_molding
     def test_molding_complete(self, driver):
         analytics_page = AnalyticsPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         molding_page = MoldingPage(driver)
         home_page = HomePage(driver)
         welcome_page = WelcomePage(driver)
@@ -225,11 +227,13 @@ class TestMoldingPage:
         molding_page.should_skip_for_now_button()
         molding_page.tap_skip_for_now_button()
         time.sleep(5)
+        dialog_page.check_and_close_fw_update_dialog()
         home_page.should_be_hamburger_menu()
 
-    @pytest.mark.first_molding
+    # @pytest.mark.first_molding
     def test_molding_complete_and_open_learn_more(self, driver):
         analytics_page = AnalyticsPage(driver)
+        dialog_page = HomeScreenUpdateDialogPage(driver)
         learn_more_page = LearnMorePage(driver)
         molding_page = MoldingPage(driver)
         home_page = HomePage(driver)
@@ -274,4 +278,5 @@ class TestMoldingPage:
         learn_more_page.tap_learn_more_menu_icon()
         # Quit learn more
         learn_more_page.tap_learn_more_menu_icon()
+        dialog_page.check_and_close_fw_update_dialog()
         home_page.should_be_hamburger_menu()

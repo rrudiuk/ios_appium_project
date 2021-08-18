@@ -68,22 +68,6 @@ class BasePage:
             return False
         return True
 
-    def take_screenshot(self):
-        ts = time.strftime("%Y_%m_%d_%H%M%S")
-        path_to_current_directory = Path().absolute()
-        path_to_screenshots_folder = str(path_to_current_directory) + '/Screenshots/'
-        self.driver.save_screenshot(path_to_screenshots_folder + ts + ".png")
-
-    def two_finger_tap_element_10_times(self, how, what):
-        time.sleep(1)
-        try:
-            el = self.driver.find_element(how, what)
-            for i in range(10):
-                self.driver.execute_script('mobile:twoFingerTap', {'element': el})
-        except NoSuchElementException:
-            return False
-        return True
-
     def count_elements(self, how, what):
         try:
             return len(self.driver.find_elements(how, what))
@@ -160,12 +144,38 @@ class BasePage:
     def scroll_down(self):
         TouchAction(self.driver).press(x=443, y=1965).move_to(x=436, y=1470).release().perform()
 
+    def show_available_elements(self):
+        self.driver.execute_script("mobile: source", {'format': 'description'})
+        logger.LOGGER.info("\n-----------------Values---------------")
+
+    def take_screenshot(self):
+        ts = time.strftime("%Y_%m_%d_%H%M%S")
+        path_to_current_directory = Path().absolute()
+        path_to_screenshots_folder = str(path_to_current_directory) + '/Screenshots/'
+        self.driver.save_screenshot(path_to_screenshots_folder + ts + ".png")
+
+    def two_finger_tap_element_5_times(self, how, what):
+        time.sleep(1)
+        try:
+            el = self.driver.find_element(how, what)
+            for i in range(5):
+                self.driver.execute_script('mobile:twoFingerTap', {'element': el})
+        except NoSuchElementException:
+            return False
+        return True
+
+    def two_finger_tap_element_10_times(self, how, what):
+        time.sleep(1)
+        try:
+            el = self.driver.find_element(how, what)
+            for i in range(10):
+                self.driver.execute_script('mobile:twoFingerTap', {'element': el})
+        except NoSuchElementException:
+            return False
+        return True
+
     def tap_back_arrow(self):
         self.click_element(*BasePageLocators.BACK_ARROW)
 
     def tap_keyboard_return_key(self):
         self.click_element(*BasePageLocators.KEYBOARD_RETURN)
-
-    def show_available_elements(self):
-        self.driver.execute_script("mobile: source", {'format': 'description'})
-        logger.LOGGER.info("\n-----------------Values---------------")

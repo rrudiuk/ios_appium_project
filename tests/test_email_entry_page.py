@@ -4,7 +4,6 @@ from .pages.email_entry_page import EmailEntryPage
 from .pages.welcome_page import WelcomePage
 
 
-@pytest.mark.test
 class TestEmailEntryPage:
     def test_should_be_email_entry_screen(self, driver):
         email_entry_page = EmailEntryPage(driver)
