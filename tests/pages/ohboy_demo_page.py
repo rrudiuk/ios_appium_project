@@ -1,42 +1,41 @@
 from .base_page import BasePage
-from .locators import BasePageLocators
-from .locators import DemoPageLocators
+from .locators import OhboyDemoPageLocators
 
 import time
 
 
-class DemoPage(BasePage):
+class OhboyDemoPage(BasePage):
     def should_be_debug_button(self):
-        assert self.is_element_present(*DemoPageLocators.DEMO_DEBUG_BUTTON), "Debug button not located"
+        assert self.is_element_present(*OhboyDemoPageLocators.DEBUG_BUTTON), "Debug button not located"
 
     def tap_debug_button(self):
-        self.click_element(*DemoPageLocators.DEMO_DEBUG_BUTTON)
+        self.click_element(*OhboyDemoPageLocators.DEBUG_BUTTON)
 
     def should_be_demo_debug_screen(self):
-        assert self.is_element_present(*DemoPageLocators.DEMO_LIST_OF_RESPONSES), "No list of responses. Debug screen" \
+        assert self.is_element_present(*OhboyDemoPageLocators.LIST_OF_RESPONSES), "No list of responses. Debug screen" \
                                                                                   " is not shown"
 
     def tap_first_commands_list_item(self):
-        self.click_element(*DemoPageLocators.DEMO_FIRST_RESPONSE)
+        self.click_element(*OhboyDemoPageLocators.FIRST_RESPONSE)
 
     def tap_second_commands_list_item(self):
-        self.click_element(*DemoPageLocators.DEMO_SECOND_RESPONSE)
+        self.click_element(*OhboyDemoPageLocators.SECOND_RESPONSE)
 
     def set_vendor_id(self):
-        vendor_id = self.locate_element(*DemoPageLocators.DEMO_VENDOR_ID)
+        vendor_id = self.locate_element(*OhboyDemoPageLocators.VENDOR_ID)
         vendor_id.send_keys("01DA")
 
     def enter_enable_curring_mode_command(self):
-        command = self.locate_element(*DemoPageLocators.DEMO_COMMAND)
+        command = self.locate_element(*OhboyDemoPageLocators.COMMAND)
         command.send_keys("0422")
 
     def set_curring_mode_payload(self):
-        payload = self.locate_element(*DemoPageLocators.DEMO_PAYLOAD)
+        payload = self.locate_element(*OhboyDemoPageLocators.PAYLOAD)
         payload.send_keys("01")
 
     def tap_send_command_button(self):
-        assert self.is_element_present(*DemoPageLocators.DEMO_SEND_COMMAND_BUTTON), "Send button not found"
-        self.click_element(*DemoPageLocators.DEMO_SEND_COMMAND_BUTTON)
+        assert self.is_element_present(*OhboyDemoPageLocators.SEND_COMMAND_BUTTON), "Send button not found"
+        self.click_element(*OhboyDemoPageLocators.SEND_COMMAND_BUTTON)
 
     def activate_curring_mode(self):
         vendor_id = "01DA"
@@ -81,13 +80,13 @@ class DemoPage(BasePage):
     def send_command(self, set_vendor, set_command, set_payload, expected_payload):
         expected_status = "success"
         # Enter necessary values
-        vendor_id = self.locate_element(*DemoPageLocators.DEMO_VENDOR_ID)
+        vendor_id = self.locate_element(*OhboyDemoPageLocators.VENDOR_ID)
         vendor_id.clear()
         vendor_id.send_keys(set_vendor)
-        command = self.locate_element(*DemoPageLocators.DEMO_COMMAND)
+        command = self.locate_element(*OhboyDemoPageLocators.COMMAND)
         command.clear()
         command.send_keys(set_command)
-        payload = self.locate_element(*DemoPageLocators.DEMO_PAYLOAD)
+        payload = self.locate_element(*OhboyDemoPageLocators.PAYLOAD)
         payload.clear()
         payload.send_keys(set_payload)
         # Send values
@@ -96,15 +95,15 @@ class DemoPage(BasePage):
 
         time.sleep(3)
         # Open two top elements
-        self.click_element(*DemoPageLocators.DEMO_FIRST_RESPONSE)
-        self.click_element(*DemoPageLocators.DEMO_SECOND_RESPONSE)
+        self.click_element(*OhboyDemoPageLocators.FIRST_RESPONSE)
+        self.click_element(*OhboyDemoPageLocators.SECOND_RESPONSE)
         # Get the results
-        first_earbud_code = self.get_text(*DemoPageLocators.DEMO_SENT_COMMAND_FIRST)
-        first_earbud_status = self.get_text(*DemoPageLocators.DEMO_SENT_COMMAND_FIRST_STATUS)
-        first_earbud_payload = self.get_text(*DemoPageLocators.DEMO_SENT_COMMAND_FIRST_PAYLOAD)
-        second_earbud_code = self.get_text(*DemoPageLocators.DEMO_SENT_COMMAND_SECOND)
-        second_earbud_status = self.get_text(*DemoPageLocators.DEMO_SENT_COMMAND_SECOND_STATUS)
-        second_earbud_payload = self.get_text(*DemoPageLocators.DEMO_SENT_COMMAND_SECOND_PAYLOAD)
+        first_earbud_code = self.get_text(*OhboyDemoPageLocators.SENT_COMMAND_FIRST)
+        first_earbud_status = self.get_text(*OhboyDemoPageLocators.SENT_COMMAND_FIRST_STATUS)
+        first_earbud_payload = self.get_text(*OhboyDemoPageLocators.SENT_COMMAND_FIRST_PAYLOAD)
+        second_earbud_code = self.get_text(*OhboyDemoPageLocators.SENT_COMMAND_SECOND)
+        second_earbud_status = self.get_text(*OhboyDemoPageLocators.SENT_COMMAND_SECOND_STATUS)
+        second_earbud_payload = self.get_text(*OhboyDemoPageLocators.SENT_COMMAND_SECOND_PAYLOAD)
         # Compare result to expectations
         assert first_earbud_code == "0x" + set_command, f"Code {first_earbud_code} appears, should be \
                                                           '0x' + {set_command} "

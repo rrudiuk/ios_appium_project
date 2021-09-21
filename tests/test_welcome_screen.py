@@ -28,6 +28,7 @@ class TestWelcomePage:
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_10_times()
         welcome_page.should_be_demo_flow_button()
+        welcome_page.should_be_centurion_button()
 
     @pytest.mark.skip
     def test_should_be_welcome_code_screen(self, driver):

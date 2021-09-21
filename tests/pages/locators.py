@@ -29,52 +29,52 @@ class AnalyticsPageLocators:
                                                        ' more about our Privacy Policy.')
 
 
-class DemoPageLocators:
-    DEMO_CLOSE_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Close"]')
-    DEMO_DEBUG_BUTTON = (By.XPATH, '//XCUIElementTypeNavigationBar['
+class OhboyDemoPageLocators:
+    CLOSE_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Close"]')
+    DEBUG_BUTTON = (By.XPATH, '//XCUIElementTypeNavigationBar['
                                    '@name="UE_FITS_beta.ModlingDebugView"]/XCUIElementTypeButton[5]')
-    DEMO_START_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Start"]')
-    DEMO_STATE_BUTTON = (By.XPATH, '//XCUIElementTypeStaticText[@name="IDLE"]')
-    DEMO_CLEAR_HISTORY_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Delete"]')
+    START_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Start"]')
+    STATE_BUTTON = (By.XPATH, '//XCUIElementTypeStaticText[@name="IDLE"]')
+    CLEAR_HISTORY_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Delete"]')
     # Vendor ID
-    DEMO_VENDOR_ID_LABEL = (MobileBy.ACCESSIBILITY_ID, 'Vendor ID: 0x')
-    DEMO_VENDOR_ID = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+    VENDOR_ID_LABEL = (MobileBy.ACCESSIBILITY_ID, 'Vendor ID: 0x')
+    VENDOR_ID = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                                 '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                 '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                 '/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeTextField[1]')
     # Command
-    DEMO_COMMAND_LABEL = (MobileBy.ACCESSIBILITY_ID, 'Command ID: 0x')
-    DEMO_COMMAND = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+    COMMAND_LABEL = (MobileBy.ACCESSIBILITY_ID, 'Command ID: 0x')
+    COMMAND = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther['
                               '2]/XCUIElementTypeOther[2]/XCUIElementTypeTextField[2]')
     # Payload
-    DEMO_PAYLOAD_LABEL = (MobileBy.ACCESSIBILITY_ID, 'Payload: 0x')
-    DEMO_PAYLOAD = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+    PAYLOAD_LABEL = (MobileBy.ACCESSIBILITY_ID, 'Payload: 0x')
+    PAYLOAD = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther['
                               '2]/XCUIElementTypeOther[2]/XCUIElementTypeTextField[3]')
     # Send command
-    DEMO_SEND_COMMAND_BUTTON = (By.XPATH, '//XCUIElementTypeStaticText[@name="Send"]')
+    SEND_COMMAND_BUTTON = (By.XPATH, '//XCUIElementTypeStaticText[@name="Send"]')
     # Check responses
-    DEMO_LIST_OF_RESPONSES = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+    LIST_OF_RESPONSES = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                                         '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                         '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                         '/XCUIElementTypeTable')
-    DEMO_FIRST_RESPONSE = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+    FIRST_RESPONSE = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                                      '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                      '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                      '/XCUIElementTypeTable/XCUIElementTypeCell[1]')
-    DEMO_SECOND_RESPONSE = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+    SECOND_RESPONSE = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                                       '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                       '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                       '/XCUIElementTypeTable/XCUIElementTypeCell[2]')
-    DEMO_SENT_COMMAND_FIRST = (By.XPATH, '(//XCUIElementTypeStaticText[@name="0x0422"])[1]')
-    DEMO_SENT_COMMAND_FIRST_STATUS = (By.XPATH, '(//XCUIElementTypeStaticText[@name="success"])[1]')
-    DEMO_SENT_COMMAND_FIRST_PAYLOAD = (By.XPATH, '(//XCUIElementTypeStaticText[@name="00"])[1]')
-    DEMO_SENT_COMMAND_SECOND = (By.XPATH, '(//XCUIElementTypeStaticText[@name="0x0422"])[2]')
-    DEMO_SENT_COMMAND_SECOND_STATUS = (By.XPATH, '(//XCUIElementTypeStaticText[@name="success"])[2]')
-    DEMO_SENT_COMMAND_SECOND_PAYLOAD = (By.XPATH, '(//XCUIElementTypeStaticText[@name="00"])[2]')
+    SENT_COMMAND_FIRST = (By.XPATH, '(//XCUIElementTypeStaticText[@name="0x0422"])[1]')
+    SENT_COMMAND_FIRST_STATUS = (By.XPATH, '(//XCUIElementTypeStaticText[@name="success"])[1]')
+    SENT_COMMAND_FIRST_PAYLOAD = (By.XPATH, '(//XCUIElementTypeStaticText[@name="00"])[1]')
+    SENT_COMMAND_SECOND = (By.XPATH, '(//XCUIElementTypeStaticText[@name="0x0422"])[2]')
+    SENT_COMMAND_SECOND_STATUS = (By.XPATH, '(//XCUIElementTypeStaticText[@name="success"])[2]')
+    SENT_COMMAND_SECOND_PAYLOAD = (By.XPATH, '(//XCUIElementTypeStaticText[@name="00"])[2]')
 
 
 class DialogPageLocators:
@@ -417,6 +417,7 @@ class TutorialHomePageLocators:
 
 class WelcomePageLocators:
     CODE_SCREEN_TITLE = (MobileBy.ACCESSIBILITY_ID, 'WELCOME')
+    CENTURION_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Centurion++"]')
     DEMO_FLOW_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Demo Flow"]')
     SEND_CODE_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="GET STARTED"]')
     WELCOME_SCREEN_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Get Started"]')
@@ -439,7 +440,7 @@ class UGCPageLocators:
     MENU_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeNavigationBar['
                                    '@name="UE_FITS_beta.YouDidItView"]/XCUIElementTypeButton')
     SKIP_FOR_NOW_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Skip For Now"]')
-    # SKIP_FOR_NOW_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Skip For Now"]')
+    TAKE_SELFIE_BUTTON = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Take a Selfie"])[2]')
     # TAKE_SELFIE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'You Did It!')
     TAKE_SELFIE_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="You Did It!"]')
     TAKE_SELFIE_TITLE_MENU = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Take a Selfie"])[1]')

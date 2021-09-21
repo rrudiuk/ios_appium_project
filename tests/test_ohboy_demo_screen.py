@@ -1,7 +1,7 @@
 import pytest
 
 from .pages.welcome_page import WelcomePage
-from .pages.demo_page import DemoPage
+from .pages.ohboy_demo_page import OhboyDemoPage
 
 import time
 
@@ -10,7 +10,7 @@ import time
 class TestDemoPage:
     def test_access_demo_molding_screen(self, driver):
         welcome_page = WelcomePage(driver)
-        demo_page = DemoPage(driver)
+        demo_page = OhboyDemoPage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_10_times()
         welcome_page.should_be_demo_flow_button()
@@ -21,7 +21,7 @@ class TestDemoPage:
 
     def test_access_demo_debug_screen(self, driver):
         welcome_page = WelcomePage(driver)
-        demo_page = DemoPage(driver)
+        demo_page = OhboyDemoPage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_10_times()
         welcome_page.should_be_demo_flow_button()
@@ -34,7 +34,7 @@ class TestDemoPage:
 
     def test_check_first_two_items_codes(self, driver):
         welcome_page = WelcomePage(driver)
-        demo_page = DemoPage(driver)
+        demo_page = OhboyDemoPage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_10_times()
         welcome_page.should_be_demo_flow_button()
@@ -51,7 +51,7 @@ class TestDemoPage:
     @pytest.mark.first_molding
     def test_curring_mode_activation(self, driver):
         welcome_page = WelcomePage(driver)
-        demo_page = DemoPage(driver)
+        demo_page = OhboyDemoPage(driver)
         welcome_page.should_be_correct_welcome_title()
         welcome_page.tap_welcome_screen_10_times()
         welcome_page.should_be_demo_flow_button()

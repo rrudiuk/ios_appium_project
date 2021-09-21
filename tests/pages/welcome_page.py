@@ -20,6 +20,12 @@ class WelcomePage(BasePage):
     def tap_welcome_screen_10_times(self):
         self.click_element_10_times(*WelcomePageLocators.WELCOME_SCREEN_TITLE)
 
+    def should_be_centurion_button(self):
+        self.check_button(*WelcomePageLocators.CENTURION_BUTTON, "Centurion++")
+
+    def tap_centurion_button(self):
+        self.click_element(*WelcomePageLocators.CENTURION_BUTTON)
+
     def should_be_demo_flow_button(self):
         self.check_button(*WelcomePageLocators.DEMO_FLOW_BUTTON, "Demo Flow")
 
