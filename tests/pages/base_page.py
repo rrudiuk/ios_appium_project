@@ -141,8 +141,17 @@ class BasePage:
     def swipe_right(self):
         self.driver.execute_script('mobile:swipe', {'direction': 'right'})
 
+    def swipe_up(self):
+        self.driver.execute_script('mobile:swipe', {'direction': 'up'})
+
+    def swipe_down(self):
+        self.driver.execute_script('mobile:swipe', {'direction': 'down'})
+
     def scroll_down(self):
         TouchAction(self.driver).press(x=443, y=1965).move_to(x=436, y=1470).release().perform()
+
+    def scroll_down_one_item(self):
+        TouchAction(self.driver).press(x=209, y=819).move_to(x=211, y=779).release().perform()
 
     def show_available_elements(self):
         self.driver.execute_script("mobile: source", {'format': 'description'})

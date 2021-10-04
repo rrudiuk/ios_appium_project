@@ -128,10 +128,12 @@ class FirmwareUpdatePage(BasePage):
                                                                                          "your device Settings.")
 
     def should_be_push_notifications_close_button(self):
-        self.check_button(*FirmwareUpdatePageLocators.ENABLE_PUSH_NOTIFICATIONS_CLOSE_BUTTON)
+        assert self.is_element_present(*FirmwareUpdatePageLocators.ENABLE_PUSH_NOTIFICATIONS_CLOSE_BUTTON), \
+            "Close 'X' button not found"
 
     def should_be_push_notifications_enable_button(self):
-        self.check_button(*FirmwareUpdatePageLocators.PUSH_NOTIFICATIONS_ENABLE_BUTTON)
+        self.check_button(*FirmwareUpdatePageLocators.PUSH_NOTIFICATIONS_ENABLE_BUTTON, "Yes, Enable Push "
+                                                                                        "Notifications")
 
     def should_be_push_notifications_no_thanks_button(self):
-        self.check_button(*FirmwareUpdatePageLocators.PUSH_NOTIFICATIONS_NO_THANKS_BUTTON)
+        self.check_button(*FirmwareUpdatePageLocators.PUSH_NOTIFICATIONS_NO_THANKS_BUTTON, "No Thanks")

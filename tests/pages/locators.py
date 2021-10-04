@@ -32,43 +32,43 @@ class AnalyticsPageLocators:
 class OhboyDemoPageLocators:
     CLOSE_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Close"]')
     DEBUG_BUTTON = (By.XPATH, '//XCUIElementTypeNavigationBar['
-                                   '@name="UE_FITS_beta.ModlingDebugView"]/XCUIElementTypeButton[5]')
+                              '@name="UE_FITS_beta.ModlingDebugView"]/XCUIElementTypeButton[5]')
     START_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Start"]')
     STATE_BUTTON = (By.XPATH, '//XCUIElementTypeStaticText[@name="IDLE"]')
     CLEAR_HISTORY_BUTTON = (By.XPATH, '//XCUIElementTypeButton[@name="Delete"]')
     # Vendor ID
     VENDOR_ID_LABEL = (MobileBy.ACCESSIBILITY_ID, 'Vendor ID: 0x')
     VENDOR_ID = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                                '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                '/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeTextField[1]')
+                           '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                           '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                           '/XCUIElementTypeOther[2]/XCUIElementTypeOther[2]/XCUIElementTypeTextField[1]')
     # Command
     COMMAND_LABEL = (MobileBy.ACCESSIBILITY_ID, 'Command ID: 0x')
     COMMAND = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                              '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                              '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther['
-                              '2]/XCUIElementTypeOther[2]/XCUIElementTypeTextField[2]')
+                         '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                         '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther['
+                         '2]/XCUIElementTypeOther[2]/XCUIElementTypeTextField[2]')
     # Payload
     PAYLOAD_LABEL = (MobileBy.ACCESSIBILITY_ID, 'Payload: 0x')
     PAYLOAD = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                              '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                              '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther['
-                              '2]/XCUIElementTypeOther[2]/XCUIElementTypeTextField[3]')
+                         '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                         '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther['
+                         '2]/XCUIElementTypeOther[2]/XCUIElementTypeTextField[3]')
     # Send command
     SEND_COMMAND_BUTTON = (By.XPATH, '//XCUIElementTypeStaticText[@name="Send"]')
     # Check responses
     LIST_OF_RESPONSES = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                                        '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                        '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                        '/XCUIElementTypeTable')
+                                   '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                   '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                   '/XCUIElementTypeTable')
     FIRST_RESPONSE = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                                     '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                     '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                     '/XCUIElementTypeTable/XCUIElementTypeCell[1]')
+                                '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                '/XCUIElementTypeTable/XCUIElementTypeCell[1]')
     SECOND_RESPONSE = (By.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                                      '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                      '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                      '/XCUIElementTypeTable/XCUIElementTypeCell[2]')
+                                 '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                 '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                 '/XCUIElementTypeTable/XCUIElementTypeCell[2]')
     SENT_COMMAND_FIRST = (By.XPATH, '(//XCUIElementTypeStaticText[@name="0x0422"])[1]')
     SENT_COMMAND_FIRST_STATUS = (By.XPATH, '(//XCUIElementTypeStaticText[@name="success"])[1]')
     SENT_COMMAND_FIRST_PAYLOAD = (By.XPATH, '(//XCUIElementTypeStaticText[@name="00"])[1]')
@@ -121,8 +121,8 @@ class EmailEntryPageLocators:
     EMAIL_ENTRY_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Never Miss A Beat')
     EMAIL_ENTRY_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'Stay up to date on firmware updates, giveaways, beta '
                                                        'testing opportunities, and more.')
-    SIGN_ME_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Sign Me Up"]')
-    NO_THANKS_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="No Thanks"]')
+    SIGN_ME_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Sign Me Up"]')
+    NO_THANKS_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="No Thanks"]')
     EMAIL_ENTRY_REASON_DESCRIPTION = (MobileBy.ACCESSIBILITY_ID, 'This can be changed from the Main Menu under '
                                                                  'Support. Learn more about our Privacy Policy.')
     EMAIL_ENTRY_INPUT = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
@@ -402,6 +402,73 @@ class PairYourEarbudsLocators:
     BLUETOOTH_SETTINGS = (By.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget"
                                     ".FrameLayout/android.widget.LinearLayout/android.view.ViewGroup/android.widget"
                                     ".TextView")
+
+
+class SebulbaDemoPageLocators:
+    CLOSE_BUTTON = (MobileBy.ACCESSIBILITY_ID, 'Close')
+    M_BUTTON = (MobileBy.ACCESSIBILITY_ID, 'M')
+    SEND_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Send"]')
+    # FEATURE SELECTOR
+    FEATURE_ID_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Feature ID')
+    FEATURE_SELECTOR = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                        '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                        '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                        '/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther['
+                                        '2]/XCUIElementTypeTextField[1]')
+    DONE_BUTTON = (MobileBy.ACCESSIBILITY_ID, 'Done')
+    I_ROOT = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                              '3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypePicker'
+                              '/XCUIElementTypePickerWheel/XCUIElementTypeOther[1]')
+    I_FEATURE_SET = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                     '3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypePicker'
+                                     '/XCUIElementTypePickerWheel/XCUIElementTypeOther[2]')
+    I_DEVICE_INFO = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                     '3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypePicker'
+                                     '/XCUIElementTypePickerWheel/XCUIElementTypeOther[3]')
+    I_DEVICE_NAME = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                     '3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypePicker'
+                                     '/XCUIElementTypePickerWheel/XCUIElementTypeOther[4]')
+    I_BT_HOST_INFO = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                      '3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypePicker'
+                                      '/XCUIElementTypePickerWheel/XCUIElementTypeOther[5]')
+    I_HEADSET_PARA_EQ = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                         '3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypePicker'
+                                         '/XCUIElementTypePickerWheel/XCUIElementTypeOther[6]')
+    I_FITS_MOLDING = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                      '3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypePicker'
+                                      '/XCUIElementTypePickerWheel/XCUIElementTypeOther[7]')
+    I_FITS_TAP_CONTROL = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                          '3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypePicker'
+                                          '/XCUIElementTypePickerWheel/XCUIElementTypeOther[8]')
+    I_FITS_PROXIMITY_DETECTION = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                                  'beta"]/XCUIElementTypeWindow['
+                                                  '3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypePicker'
+                                                  '/XCUIElementTypePickerWheel/XCUIElementTypeOther[9]')
+    I_FITS_MOTION_DETECTION = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                               'beta"]/XCUIElementTypeWindow['
+                                               '3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypePicker'
+                                               '/XCUIElementTypePickerWheel/XCUIElementTypeOther[10]')
+    # FUNCTION SELECTOR
+    FUNCTION_ID_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Function ID')
+    FUNCTION_SELECTOR = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                         '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                         '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                         '/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther['
+                                         '2]/XCUIElementTypeTextField[2]')
+    GET_MOLDING_PREP_MODE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android'
+                                       '.widget.ListView/android.widget.TextView[1]')
+    SET_MOLDING_PREP_MODE = (By.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android'
+                                       '.widget.ListView/android.widget.TextView[2]')
+    # Payload
+    PAYLOAD_INPUT = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                     '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                     '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                     '/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeOther['
+                                     '2]/XCUIElementTypeTextField[3]')
+    PAYLOAD_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Payload: 0x')
+    # Molding state check screen
+    MOLDING_ENABLED_STATE = (MobileBy.ACCESSIBILITY_ID, 'Current state: bothBudsEnabled')
+    MOLDING_DISABLED_STATE = (MobileBy.ACCESSIBILITY_ID, 'Current state: bothBudsDisabled')
 
 
 class SupportPageLocators:

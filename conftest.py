@@ -20,7 +20,7 @@ def driver(request):
     dc["platformVersion"] = "14.6"
     dc["deviceName"] = "Ruslan's iPhone"
     dc["automationName"] = "XCUITest"
-    # dc["bundleId"] = "com.logitech.uefits"
+    # dc["bundleId"] = "com.logitech.ohboy"
     # dc["showIOSLog"] = "true"
     # accept alerts and grant permissions
     # dc['autoAcceptAlerts'] = 'true'

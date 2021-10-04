@@ -158,7 +158,7 @@ class TestMoldingPage:
         molding_page.tap_cancel_button()
         molding_page.should_be_get_ready_page_title()
 
-    # @pytest.mark.first_molding
+    # @pytest.mark.ohboy_first_molding
     def test_molding_complete(self, driver):
         initial_setup_molding(driver)
         dialog_page = HomeScreenUpdateDialogPage(driver)
@@ -209,7 +209,7 @@ class TestMoldingPage:
         dialog_page.check_and_close_fw_update_dialog()
         home_page.should_be_hamburger_menu()
 
-    @pytest.mark.first_molding
+    @pytest.mark.ohboy_first_molding
     def test_molding_complete_and_open_learn_more(self, driver):
         initial_setup_molding(driver)
         dialog_page = HomeScreenUpdateDialogPage(driver)
