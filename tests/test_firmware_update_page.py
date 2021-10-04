@@ -78,7 +78,6 @@ class TestFirmwareUpdatePage:
         time.sleep(15)
         firmware_update_page.check_active_update()
 
-    @pytest.mark.test
     def test_enable_push_notifications(self, driver):
         initial_setup_non_molding(driver)
         firmware_update_page = FirmwareUpdatePage(driver)

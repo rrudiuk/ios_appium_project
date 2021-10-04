@@ -11,12 +11,6 @@ class SebulbaDemoPage(BasePage):
     def tap_close_button(self):
         self.click_element(*SebulbaDemoPageLocators.CLOSE_BUTTON)
 
-    def should_be_m_button(self):
-        self.check_button(*SebulbaDemoPageLocators.M_BUTTON, "M")
-
-    def tap_m_button(self):
-        self.click_element(*SebulbaDemoPageLocators.M_BUTTON)
-
     def should_be_send_button(self):
         self.check_button(*SebulbaDemoPageLocators.SEND_BUTTON, "Send")
 
@@ -25,7 +19,7 @@ class SebulbaDemoPage(BasePage):
 
     # Feature selector
     def should_be_feature_id_title(self):
-        self.check_screen_title(*SebulbaDemoPageLocators.FEATURE_ID_TITLE, 'Feature ID')
+        self.check_screen_title(*SebulbaDemoPageLocators.FEATURE_ID_TITLE, 'Feature ID:')
 
     def should_feature_selector(self):
         assert self.locate_element(*SebulbaDemoPageLocators.FEATURE_SELECTOR), "Feature selector not found"
@@ -35,7 +29,7 @@ class SebulbaDemoPage(BasePage):
 
     # Function selector
     def should_be_function_id_title(self):
-        self.check_screen_title(*SebulbaDemoPageLocators.FUNCTION_ID_TITLE, 'Function ID')
+        self.check_screen_title(*SebulbaDemoPageLocators.FUNCTION_ID_TITLE, 'Function ID:')
 
     def should_function_selector(self):
         assert self.locate_element(*SebulbaDemoPageLocators.FUNCTION_SELECTOR), "Function selector not found"
@@ -54,3 +48,16 @@ class SebulbaDemoPage(BasePage):
         payload = self.locate_element(*SebulbaDemoPageLocators.PAYLOAD_INPUT)
         payload.clear()
         payload.send_keys("03")
+
+    # Molding activation
+    def should_be_m_button(self):
+        self.check_button(*SebulbaDemoPageLocators.M_BUTTON, "M")
+
+    def tap_m_button(self):
+        self.click_element(*SebulbaDemoPageLocators.M_BUTTON)
+
+    def should_be_reset_button(self):
+        self.check_button(*SebulbaDemoPageLocators.RESET_BUTTON, "Reset")
+
+    def tap_reset_button(self):
+        self.click_element(*SebulbaDemoPageLocators.RESET_BUTTON)

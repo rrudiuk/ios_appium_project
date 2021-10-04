@@ -408,8 +408,9 @@ class SebulbaDemoPageLocators:
     CLOSE_BUTTON = (MobileBy.ACCESSIBILITY_ID, 'Close')
     M_BUTTON = (MobileBy.ACCESSIBILITY_ID, 'M')
     SEND_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Send"]')
+    RESET_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Reset"]')
     # FEATURE SELECTOR
-    FEATURE_ID_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Feature ID')
+    FEATURE_ID_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Feature ID:')
     FEATURE_SELECTOR = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                                         '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                         '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
@@ -449,7 +450,7 @@ class SebulbaDemoPageLocators:
                                                '3]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypePicker'
                                                '/XCUIElementTypePickerWheel/XCUIElementTypeOther[10]')
     # FUNCTION SELECTOR
-    FUNCTION_ID_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Function ID')
+    FUNCTION_ID_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Function ID:')
     FUNCTION_SELECTOR = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                          '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
