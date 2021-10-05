@@ -285,11 +285,14 @@ class MenuPageLocators:
     HEADER_CONTAINER = (MobileBy.ACCESSIBILITY_ID, 'UE_FITS_beta.LeftMenuView')
     APPLICATION_LOGO = (MobileBy.ACCESSIBILITY_ID, 'ue-fits-dark')
     CLOSE_ICON = (MobileBy.ACCESSIBILITY_ID, 'Close')
+    EMAIL_ENTRY_ITEM = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Email Entry"]')
     HOME_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Home"]')
-    MOLD_NEW_TIPS_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Mold New Tips"]')
-    TEST_YOUR_FIT_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Test Your Fit"]')
+    MOLD_NEW_TIPS_ITEM = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Mold New Tips"]')
+    TEST_YOUR_FIT_ITEM = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Test Your Fit"]')
     LEARN_MORE_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Learn More"]')
-    SUPPORT_ITEM = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Support"]')
+    SUPPORT_ITEM = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Support"]')
+    TAKE_SELFIE_ITEM = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Take a Selfie"]')
+    USER_GUIDE_ITEM = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="User Guide"])')
 
 
 class MoldingPageLocators:

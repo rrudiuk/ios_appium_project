@@ -15,32 +15,36 @@ class MenuPage(BasePage):
     def tap_exit_x_button(self):
         self.click_element(*MenuPageLocators.CLOSE_ICON)
 
+    # Email Entry
+    def should_be_email_entry_item(self):
+        self.check_button(*MenuPageLocators.EMAIL_ENTRY_ITEM, "Email Entry")
+
+    def tap_email_entry_item(self):
+        self.click_element(*MenuPageLocators.EMAIL_ENTRY_ITEM)
+
     # Home
     def should_be_home_item(self):
-        expected_result = "Home"
-        actual_result = self.get_text(*MenuPageLocators.HOME_ITEM)
-        assert actual_result == expected_result, f"Item text {actual_result}, should be {expected_result}"
+        self.check_button(*MenuPageLocators.HOME_ITEM, "Home")
+
+    def tap_home_item(self):
+        self.click_element(*MenuPageLocators.HOME_ITEM)
 
     # Mold new tips
     def should_be_mold_new_tips_item(self):
-        expected_result = "Mold New Tips"
-        actual_result = self.get_text(*MenuPageLocators.MOLD_NEW_TIPS_ITEM)
-        assert actual_result == expected_result, f"Item text {actual_result}, should be {expected_result}"
+        self.check_button(*MenuPageLocators.MOLD_NEW_TIPS_ITEM, "Mold New Tips")
 
     def tap_mold_new_tips_item(self):
         self.click_element(*MenuPageLocators.MOLD_NEW_TIPS_ITEM)
 
     # Test your fit
     def should_be_test_your_fit_item(self):
-        expected_result = "Test Your Fit"
-        actual_result = self.get_text(*MenuPageLocators.TEST_YOUR_FIT_ITEM)
-        assert actual_result == expected_result, f"Item text {actual_result}, should be {expected_result}"
+        self.check_button(*MenuPageLocators.TEST_YOUR_FIT_ITEM, "Test Your Fit")
 
-    # Learn more
+    def tap_test_your_fit_item(self):
+        self.click_element(*MenuPageLocators.TEST_YOUR_FIT_ITEM)
+
+    # Learn more (outdated)
     def should_be_learn_more_item(self):
-        # expected_result = "Learn More"
-        # actual_result = self.get_text(*MenuPageLocators.LEARN_MORE_ITEM)
-        # assert actual_result == expected_result, f"Item text {actual_result}, should be {expected_result}"
         self.check_button(*MenuPageLocators.LEARN_MORE_ITEM, "Learn More")
 
     def tap_learn_more_item(self):
@@ -52,3 +56,17 @@ class MenuPage(BasePage):
 
     def tap_support_item(self):
         self.click_element(*MenuPageLocators.SUPPORT_ITEM)
+
+    # Take a Selfie
+    def should_be_take_selfie_item(self):
+        self.check_button(*MenuPageLocators.TAKE_SELFIE_ITEM, "Take a Selfie")
+
+    def tap_take_selfie_item(self):
+        self.click_element(*MenuPageLocators.TAKE_SELFIE_ITEM)
+
+    # User guide
+    def should_be_user_guide_item(self):
+        self.check_button(*MenuPageLocators.USER_GUIDE_ITEM, "User Guide")
+
+    def tap_user_guide_item(self):
+        self.click_element(*MenuPageLocators.LEARN_MORE_ITEM)

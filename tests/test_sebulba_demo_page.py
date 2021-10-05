@@ -8,7 +8,6 @@ import time
 
 @pytest.mark.sebulba_demo
 class TestSebulbaDemoPage:
-    @pytest.mark.test
     def test_access_sebulba_centurion_screen(self, driver):
         welcome_page = WelcomePage(driver)
         centurion_page = SebulbaDemoPage(driver)
