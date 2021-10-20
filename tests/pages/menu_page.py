@@ -69,4 +69,4 @@ class MenuPage(BasePage):
         self.check_button(*MenuPageLocators.USER_GUIDE_ITEM, "User Guide")
 
     def tap_user_guide_item(self):
-        self.click_element(*MenuPageLocators.LEARN_MORE_ITEM)
+        self.click_element(*MenuPageLocators.USER_GUIDE_ITEM)

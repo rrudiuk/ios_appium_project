@@ -486,24 +486,306 @@ class TutorialHomePageLocators:
     pass
 
 
-class WelcomePageLocators:
-    CODE_SCREEN_TITLE = (MobileBy.ACCESSIBILITY_ID, 'WELCOME')
-    CENTURION_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Centurion++"]')
-    DEMO_FLOW_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Demo Flow"]')
-    SEND_CODE_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="GET STARTED"]')
-    WELCOME_SCREEN_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Get Started"]')
-    WELCOME_SCREEN_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Welcome to Your Perfect Fit')
-    WELCOME_SCREEN_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'In just a few minutes, you’ll have a pair of perfectly '
-                                                          'fitting, incredibly comfortable earbuds. ')
-    WELCOME_SCREEN_EDIT_TEXT_CODE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
-                                                     'beta"]/XCUIElementTypeWindow['
-                                                     '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                                     '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                                     '/XCUIElementTypeTextField')
-    WELCOME_SCREEN_WRAPPER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
-                                              'beta"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther'
-                                              '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                              '/XCUIElementTypeOther')
+class UserGuidePageLocators:
+    NAVIGATION_BAR = (MobileBy.XPATH, '//XCUIElementTypeNavigationBar[@name="User Guide"]')
+    NAV_BAR_HAMBURGER_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeNavigationBar[@name="User '
+                                                'Guide"]/XCUIElementTypeButton')
+    NAV_BAR_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="User Guide"]')
+    USER_GUIDE_SCREEN_BACK_ARROW = (MobileBy.ACCESSIBILITY_ID, 'User Guide')
+    # PAIRING
+    PAIRING_ITEM = (MobileBy.ACCESSIBILITY_ID, 'Pairing')
+    PAIRING_ARROW = (MobileBy.XPATH, '(//XCUIElementTypeImage[@name="back_arrow"])[1]')
+    PAIRING_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                       '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                       '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                       '/XCUIElementTypeTable/XCUIElementTypeCell[1]/XCUIElementTypeOther[2]')
+    PAIRING_SCREEN_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Pairing"]')
+    PAIRING_TEXT1 = (MobileBy.ACCESSIBILITY_ID, 'To pair a new device, place the earbuds in the case with '
+                                                'the lid open.')
+    PAIRING_TEXT2 = (MobileBy.ACCESSIBILITY_ID, 'Press and hold the upper right button inside the case until'
+                                                ' the earbuds flash white—approximately three seconds—then'
+                                                ' release the button.')
+    PAIRING_CASE_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeImage')
+    OHBOY_PAIRING_WATCH_VIDEO = (MobileBy.ACCESSIBILITY_ID, 'Watch the video to learn how to pair your earbuds.')
+    # OHBOY_PAIRING_VIDEO = (MobileBy.ACCESSIBILITY_ID, '//XCUIElementTypeApplication[@name="UE FITS '
+    #                                                   'beta"]/XCUIElementTypeWindow['
+    #                                                   '1]/XCUIElementTypeOther/XCUIElementTypeOther'
+    #                                                   '/XCUIElementTypeOther/XCUIElementTypeOther'
+    #                                                   '/XCUIElementTypeOther/XCUIElementTypeOther'
+    #                                                   '/XCUIElementTypeScrollView/XCUIElementTypeOther'
+    #                                                   '/XCUIElementTypeOther')
+    OHBOY_PAIRING_VIDEO = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                           '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                           '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                           '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther'
+                                           '/XCUIElementTypeOther')
+    OHBOY_PAIRING_ONE_NOT_CONNECTED = (MobileBy.ACCESSIBILITY_ID, 'After pairing, one of the earbuds will be listed'
+                                                                  ' as Not Connected. This is normal.')
+    SEBULBA_PAIRING_SELECT_UE_FITS = (MobileBy.ACCESSIBILITY_ID, 'In your Bluetooth settings, select UE FITS to '
+                                                                 'begin pairing.')
+    SEBULBA_PAIRING_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                             'beta"]/XCUIElementTypeWindow['
+                                             '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                             '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                             '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeImage[2]')
+    # MOLDING
+    MOLDING_ITEM = (MobileBy.ACCESSIBILITY_ID, 'Molding')
+    MOLDING_ARROW = (MobileBy.XPATH, '(//XCUIElementTypeImage[@name="back_arrow"])[2]')
+    MOLDING_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                       '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                       '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                       '/XCUIElementTypeTable/XCUIElementTypeCell[2]/XCUIElementTypeOther[2]')
+    MOLDING_SCREEN_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Molding"]')
+    MOLDING_A_FEW_THINGS = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="A few things to know before '
+                                            'molding your new ear tips."])[1]')
+
+    MOLDING_SOUND_TEST = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Sound Test page"])[1]')
+    MOLDING_ADJUST_BOTH_EARBUDS = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Adjust both earbuds until '
+                                                   'you find the position that maximizes the bass."])[1]')
+    MOLDING_APPLY_GENTLE_PRESSURE = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Apply gentle pressure to'
+                                                     ' both earbuds—just enough to get a good seal with the ear '
+                                                     'tip—and maintain that pressure throughout the entire molding'
+                                                     ' process."])[1]')
+    MOLDING_AFTER_SOUND_TEST = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="After the sound test, the app'
+                                                ' will show a short countdown and automatically start molding your'
+                                                ' tips."])[1]')
+    MOLDING_MIX_AMD_MATCH = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Mix and match tips"])[1]')
+    MOLDING_SEVERAL_PAIRS = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="If you have several pairs of tips,'
+                                             ' feel free to mix and match the left and right tips between sets to get'
+                                             ' the best fit for each ear."])[1]')
+    MOLDING_CLICK_ON_APP_MENU = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Click on the app menu and '
+                                                 'select “Mold New Tips” to start molding your new tips."])[1]')
+    # CONTROLS
+    CONTROLS_ITEM = (MobileBy.ACCESSIBILITY_ID, 'Controls')
+    CONTROLS_ARROW = (MobileBy.XPATH, '(//XCUIElementTypeImage[@name="back_arrow"])[3]')
+    CONTROLS_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                        '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                        '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                        '/XCUIElementTypeTable/XCUIElementTypeCell[3]/XCUIElementTypeOther[2]')
+    CONTROLS_SCREEN_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Controls"]')
+    CONTROLS_DOUBLE_AND_SINGLE = (MobileBy.ACCESSIBILITY_ID, 'Double and Single Tap Control')
+    CONTROLS_EACH_FITS_EARBUD = (MobileBy.ACCESSIBILITY_ID, 'Each FITS earbud has a double-tap control that defaults'
+                                                            ' to play/pause on both left and right earbuds.')
+    CONTROLS_PHONE_CALL = (MobileBy.ACCESSIBILITY_ID, 'When a phone call is active, double-tap to accept or '
+                                                      'end the call.')
+    CONTROLS_ENABLE_SINGLE_TAP = (MobileBy.ACCESSIBILITY_ID, 'Enable single tap for even more control options.')
+    CONTROLS_TO_USE = (MobileBy.ACCESSIBILITY_ID, 'To use the controls, tap directly on the earbud body.')
+    CONTROLS_HOW_TO_USE_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                                 'beta"]/XCUIElementTypeWindow['
+                                                 '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                 '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                 '/XCUIElementTypeScrollView/XCUIElementTypeOther'
+                                                 '/XCUIElementTypeImage[1]')
+    CONTROLS_CUSTOMIZATION = (MobileBy.ACCESSIBILITY_ID, 'Control Customization')
+    CONTROLS_EACH_EARBUD = (MobileBy.ACCESSIBILITY_ID, 'Each earbud can be customized separately in the Settings menu.')
+    CONTROLS_ACCESS_SETTINGS = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                                'beta"]/XCUIElementTypeWindow['
+                                                '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                '/XCUIElementTypeScrollView/XCUIElementTypeOther'
+                                                '/XCUIElementTypeImage[2]')
+    # CONNECTIVITY AND SWITCHING DEVICES
+    CONNECTIVITY_AND_SWITCHING_ITEM = (MobileBy.ACCESSIBILITY_ID, 'Connectivity and Switching Devices')
+    CONNECTIVITY_AND_SWITCHING_ARROW = (MobileBy.XPATH, '(//XCUIElementTypeImage[@name="back_arrow"])[4]')
+    CONNECTIVITY_AND_SWITCHING_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                                          'beta"]/XCUIElementTypeWindow['
+                                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                          '/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                          '/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                          '/XCUIElementTypeTable/XCUIElementTypeCell['
+                                                          '4]/XCUIElementTypeOther[2]')
+    CONNECTIVITY_AND_SWITCHING_SCREEN_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Connectivity and '
+                                                               'Switching Devices"]')
+    CONNECTIVITY_AND_SWITCHING_TITLE = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Switching Between Paired '
+                                                        'Devices"])[1]')
+    CONNECTIVITY_AND_SWITCHING_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                                        'beta"]/XCUIElementTypeWindow['
+                                                        '1]/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                        '/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                        '/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                        '/XCUIElementTypeScrollView/XCUIElementTypeOther'
+                                                        '/XCUIElementTypeImage[1]')
+    CONNECTIVITY_AND_SWITCHING_FIRST_ENSURE = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="First, ensure you '
+                                                               'have the latest firmware. See the “Update your '
+                                                               'Firmware” section of the user guide for more '
+                                                               'information."])[1]')
+    CONNECTIVITY_AND_SWITCHING_YOU_CAN_SWITCH_OHBOY = (MobileBy.XPATH,
+                                                       '//XCUIElementTypeStaticText[@name="You can switch between '
+                                                       'multiple paired devices by selecting UE FITS L or UE FITS R '
+                                                       'in the Bluetooth settings menu of the device you wish to '
+                                                       'connect to. In some cases, you may have to select UE FITS a '
+                                                       'second time in order to complete the connection."]')
+    CONNECTIVITY_AND_SWITCHING_YOU_CAN_SWITCH_SEBULBA = (MobileBy.ACCESSIBILITY_ID,
+                                                         'You can switch between multiple paired devices by selecting '
+                                                         'UE FITS in the Bluetooth settings menu of the device you '
+                                                         'wish to connect to. In some cases, you may have to select '
+                                                         'UE FITS a second time in order to complete the connection')
+    CONNECTIVITY_AND_SWITCHING_CASE_INTERACTIONS = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Case '
+                                                                    'Connectivity Interactions"])[1]')
+    CONNECTIVITY_AND_SWITCHING_IN_CASE = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="When the earbuds are '
+                                                          'in the case, opening the case will auto-connect them to '
+                                                          'the last paired device."])[1]')
+    CONNECTIVITY_AND_SWITCHING_AUTO_CONNECTION = (MobileBy.XPATH,
+                                                  '(//XCUIElementTypeStaticText[@name="Auto-connect may not occur if '
+                                                  'the case battery is empty. In this case, double tap the earbuds to '
+                                                  'wake them from standby. It may take a few seconds for the earbuds '
+                                                  'to reconnect after manually waking them from standby mode."])[1]')
+    CONNECTIVITY_AND_SWITCHING_USING_SINGLE_EARBUD = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Using a '
+                                                                      'single earbud for communication"])[1]')
+    CONNECTIVITY_AND_SWITCHING_TO_USE_SINGLE = (MobileBy.XPATH,
+                                                '(//XCUIElementTypeStaticText[@name="To use a single earbud for '
+                                                'communication, place the earbud you are not using in the case. This '
+                                                'ensures that the mics on the earbud you are wearing are '
+                                                'activated."])[1]')
+    CONNECTIVITY_AND_SWITCHING_STANDBY = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Standby"])[1]')
+    CONNECTIVITY_AND_SWITCHING_AFTER_60 = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="After 60 minutes with '
+                                                           'no audio streaming, your earbuds will automatically go '
+                                                           'into standby mode. A tone can be heard when the earbuds '
+                                                           'go into standby."])[1]')
+    CONNECTIVITY_AND_SWITCHING_TO_WAKE = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="To wake your earbuds '
+                                                          'up from Standby mode, either take them in and out of the '
+                                                          'charged case or double tap the earbuds. It may take a few '
+                                                          'seconds for the earbuds to power on and reconnect after '
+                                                          'waking from standby."])[1]')
+    CONNECTIVITY_AND_SWITCHING_TO_APP = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Connecting to the '
+                                                         'app"])[1]')
+    CONNECTIVITY_AND_SWITCHING_WILL_CONNECT = (MobileBy.XPATH,
+                                               '(//XCUIElementTypeStaticText[@name="UE FITS will connect to the app '
+                                               'when they are in the case with the lid open or they are out of the '
+                                               'case completely."])[1]')
+    CONNECTIVITY_AND_SWITCHING_SECOND_DEVICE = (MobileBy.XPATH,
+                                                '(//XCUIElementTypeStaticText[@name="You may be connected to a second '
+                                                'device and still use the app on the primary device. For example, '
+                                                'you can use your phone app to control the earbud EQ and settings '
+                                                'even if you’re currently connected to your computer."])[1]')
+    CONNECTIVITY_AND_SWITCHING_APP_WILL_DISPLAY = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="The app will '
+                                                                   'display the currently connected device name on '
+                                                                   'the home screen."])[1]')
+    # CHARGING
+    CHARGING_ITEM = (MobileBy.ACCESSIBILITY_ID, 'Charging')
+    CHARGING_ARROW = (MobileBy.XPATH, '(//XCUIElementTypeImage[@name="back_arrow"])[5]')
+    CHARGING_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                        '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                        '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                        '/XCUIElementTypeTable/XCUIElementTypeCell[5]/XCUIElementTypeOther[2]')
+    CHARGING_SCREEN_TITLE = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Charging"])[1]')
+    CHARGING_YOUR_DEVICE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Charging your Device')
+    CHARGING_UE_FITS_WILL_SUPPORT = (MobileBy.ACCESSIBILITY_ID,
+                                     'UE FITS will support an average of 8 hours of listening time outside of the '
+                                     'case and a total of 20 hours with the case included.')
+    CHARGING_USB_C_CABLE = (MobileBy.ACCESSIBILITY_ID, 'A USB-C cable is included for charging. Simply plug the case'
+                                                       ' and cable into a standard USB power source (5V 500mA).')
+    CHARGING_LED_INTERACTIONS = (MobileBy.ACCESSIBILITY_ID, 'Charging LED Interactions')
+    CHARGING_INDICATION_TABLE = (MobileBy.XPATH,
+                                 '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                 '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                 '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                 '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther')
+    # ADJUSTING_EQ
+    ADJUSTING_EQ_ITEM = (MobileBy.ACCESSIBILITY_ID, 'Adjusting EQ')
+    ADJUSTING_EQ_ARROW = (MobileBy.XPATH, '(//XCUIElementTypeImage[@name="back_arrow"])[6]')
+    ADJUSTING_EQ_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                            'beta"]/XCUIElementTypeWindow['
+                                            '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                            '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                            '/XCUIElementTypeTable/XCUIElementTypeCell[6]/XCUIElementTypeOther[2]')
+    ADJUSTING_EQ_SCREEN_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Adjusting EQ"]')
+    ADJUSTING_EQ_TO_ACCESS = (MobileBy.ACCESSIBILITY_ID, 'To access the EQ menu, remove the earbuds from the case, '
+                                                         'open the UE FITS app and select the curve at the bottom of '
+                                                         'the app home screen.')
+    ADJUSTING_EQ_TO_CHANGE = (MobileBy.ACCESSIBILITY_ID, 'To change presets, select one of the available presets.')
+    ADJUSTING_EQ_TO_CREATE = (MobileBy.ACCESSIBILITY_ID, 'To create a custom preset, select “customize” and adjust the'
+                                                         ' 5-band EQ to your liking, then select “Save As” in the '
+                                                         'upper right hand corner.')
+    ADJUSTING_EQ_CREATE_A_PRESET = (MobileBy.ACCESSIBILITY_ID,
+                                    'Create a preset name, choose a color and icon to recall your preset more easily,'
+                                    ' and select “Save” from the upper right hand corner.')
+    ADJUSTING_EQ_IMAGE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeImage')
+    # TYF
+    TYF_ITEM = (MobileBy.ACCESSIBILITY_ID, 'Testing Your Fit')
+    TYF_ARROW = (MobileBy.XPATH, '(//XCUIElementTypeImage[@name="back_arrow"])[7]')
+    TYF_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                   '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                   '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                   '/XCUIElementTypeTable/XCUIElementTypeCell[7]/XCUIElementTypeOther[2]')
+    TYF_SCREEN_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Testing Your Fit"]')
+    TYF_GREAT_FIT = (MobileBy.ACCESSIBILITY_ID, 'A great fit makes for a comfortable and quality listening '
+                                                'experience. If you feel your eartips are not appropriately fitted, '
+                                                '“Test Your Fit” will help you assess your fit.')
+    TYF_BY_ANSWERING = (MobileBy.ACCESSIBILITY_ID,
+                        'By answering a few questions, Test Your Fit will offer suggestions to improve your fit or '
+                        'provide your insights to our support team so they can solve your fit issue more quickly.')
+    TYF_WHEN_USING = (MobileBy.ACCESSIBILITY_ID, 'When using the fit test, remember to touch each slider on the '
+                                                 'pages to proceed to the next page.')
+    # UPDATING FIRMWARE
+    UPDATING_FIRMWARE_ITEM = (MobileBy.ACCESSIBILITY_ID, 'Updating Firmware')
+    UPDATING_FIRMWARE_ARROW = (MobileBy.XPATH, '(//XCUIElementTypeImage[@name="back_arrow"])[8]')
+    UPDATING_FIRMWARE_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                                 'beta"]/XCUIElementTypeWindow['
+                                                 '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                 '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                 '/XCUIElementTypeTable/XCUIElementTypeCell[8]/XCUIElementTypeOther['
+                                                 '2]')
+    UPDATING_FIRMWARE_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Updating Firmware"]')
+    UPDATING_FIRMWARE_IF_FW_UPDATE = (MobileBy.ACCESSIBILITY_ID,
+                                      'If a firmware update is available for your FITS, you’ll be shown a pop-up that '
+                                      'prompts you to install the new firmware as soon as you open the app.')
+    UPDATING_FIRMWARE_UPDATES_CAN = (MobileBy.ACCESSIBILITY_ID,
+                                     'Updates can also be accessed from the hamburger menu in the upper left corner '
+                                     'of the app under Support > Firmware. Here you can see if you have the latest'
+                                     ' version or access an available update.')
+    UPDATING_FIRMWARE_TO_COMPLETE = (MobileBy.ACCESSIBILITY_ID, 'To complete the update, make sure your UE FITS are '
+                                                                'in the case with the lid open and charging.')
+    UPDATING_FIRMWARE_MOST_UPDATES = (MobileBy.ACCESSIBILITY_ID, 'Most updates will take around 10 minutes to '
+                                                                 'complete.')
+    # TROUBLESHOOTING
+    TROUBLESHOOTING_ITEM = (MobileBy.ACCESSIBILITY_ID, 'Troubleshooting')
+    TROUBLESHOOTING_ARROW = (MobileBy.XPATH, '(//XCUIElementTypeImage[@name="back_arrow"])[9]')
+    TROUBLESHOOTING_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                               'beta"]/XCUIElementTypeWindow['
+                                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                               '/XCUIElementTypeTable/XCUIElementTypeCell[9]/XCUIElementTypeOther[2]')
+    TROUBLESHOOTING_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Troubleshooting"]')
+    TROUBLESHOOTING_FIRST_ACTION = (MobileBy.ACCESSIBILITY_ID,
+                                    'The first action you should take while troubleshooting is checking that your '
+                                    'firmware is up to date. Reference instructions to update in the “Updating '
+                                    'Firmware” section of this user guide.')
+    TROUBLESHOOTING_CONNECTING_ISSUES = (MobileBy.ACCESSIBILITY_ID, 'Issues related to connecting')
+    TROUBLESHOOTING_IF_YOU_HAVE_CONNECTING_ISSUES = (MobileBy.ACCESSIBILITY_ID, 'If you are having issues connecting '
+                                                                                'or with dropouts, a reset may solve '
+                                                                                'the issue.')
+    TROUBLESHOOTING_TO_RESET = (MobileBy.ACCESSIBILITY_ID,
+                                'To reset and clear pairing memory, place your FITS in their case and press and hold '
+                                'the upper right button inside the case for 8 seconds, or until the earbuds flash '
+                                'amber. Then release the button.')
+    TROUBLESHOOTING_CONNECTING_ISSUES_NOTE = (MobileBy.ACCESSIBILITY_ID,
+                                              'Note: Auto-connect may not occur if the case battery is empty. In this '
+                                              'case, double tap the earbuds to wake them from standby. It may take a '
+                                              'few seconds for the earbuds to reconnect after manually waking them '
+                                              'from standby mode.')
+    TROUBLESHOOTING_CONNECTING_ISSUES_STANDBY = (MobileBy.ACCESSIBILITY_ID,
+                                                 'Your earbuds may go into standby mode if there is no audio '
+                                                 'streaming for 60 minutes. To wake your earbuds up from Standby '
+                                                 'mode, either double tap the earbuds just as you would to activate a '
+                                                 'control or place them in and then remove them from a charged case. '
+                                                 'It may take a few seconds for the earbuds to power on and reconnect '
+                                                 'after waking from standby.')
+    TROUBLESHOOTING_CHARGING_ISSUES = (MobileBy.ACCESSIBILITY_ID, 'Issues related to charging')
+    TROUBLESHOOTING_NOT_CHARGING = (MobileBy.ACCESSIBILITY_ID,
+                                    'If your earbuds are not charging properly, make sure they are properly seated on '
+                                    'the charging pins before closing the lid. Each earbud has a dedicated seat in '
+                                    'the case—they are not interchangeable.')
+    TROUBLESHOOTING_IF_CONTINUE = (MobileBy.ACCESSIBILITY_ID,
+                                   'If you continue to have trouble charging, plug the case in and factory reset the '
+                                   'earbuds in the case by pressing and holding the charge case button until the LEDs '
+                                   'glow amber, approximately 15 seconds.')
 
 
 class UGCPageLocators:
@@ -524,3 +806,23 @@ class UGCPageLocators:
                                '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                '/XCUIElementTypeScrollView/XCUIElementTypeOther[1]/XCUIElementTypeOther[2]')
+
+
+class WelcomePageLocators:
+    CODE_SCREEN_TITLE = (MobileBy.ACCESSIBILITY_ID, 'WELCOME')
+    CENTURION_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Centurion++"]')
+    DEMO_FLOW_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Demo Flow"]')
+    SEND_CODE_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="GET STARTED"]')
+    WELCOME_SCREEN_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Get Started"]')
+    WELCOME_SCREEN_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Welcome to Your Perfect Fit')
+    WELCOME_SCREEN_SUBTITLE = (MobileBy.ACCESSIBILITY_ID, 'In just a few minutes, you’ll have a pair of perfectly '
+                                                          'fitting, incredibly comfortable earbuds. ')
+    WELCOME_SCREEN_EDIT_TEXT_CODE = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                                     'beta"]/XCUIElementTypeWindow['
+                                                     '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                     '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                     '/XCUIElementTypeTextField')
+    WELCOME_SCREEN_WRAPPER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                              'beta"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther'
+                                              '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                              '/XCUIElementTypeOther')

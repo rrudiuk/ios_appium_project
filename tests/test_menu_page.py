@@ -24,7 +24,6 @@ def initial_setup_non_molding(driver):
     dialog_page.check_and_close_fw_update_dialog()
 
 
-@pytest.mark.test
 class TestMenuPage:
     def test_all_menu_items_appear(self, driver):
         initial_setup_non_molding(driver)

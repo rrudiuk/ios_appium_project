@@ -11,6 +11,7 @@ from .pages.menu_page import MenuPage
 from .pages.molding_page import MoldingPage, MoldNewTipsPage
 from .pages.support_page import SupportPage
 from .pages.ugc_page import UGCPage
+from .pages.user_guide_page import UserGuidePage
 from .pages.welcome_page import WelcomePage
 
 import time
@@ -89,6 +90,7 @@ class TestSmokeTest:
         analytics_page.should_be_correct_not_share_analytics_button_text()
         analytics_page.should_be_privacy_notice()
 
+    # Demo screen
     def test_access_demo_molding_screen(self, driver):
         welcome_page = WelcomePage(driver)
         demo_page = OhboyDemoPage(driver)
@@ -141,6 +143,7 @@ class TestSmokeTest:
         demo_page.tap_debug_button()
         demo_page.activate_curring_mode()
 
+    # Pre-molding
     def test_should_be_try_them_page(self, driver):
         initial_setup_molding(driver)
         molding_page = MoldingPage(driver)
@@ -252,6 +255,7 @@ class TestSmokeTest:
         molding_page.tap_cancel_button()
         molding_page.should_be_get_ready_page_title()
 
+    # Molding
     def test_molding_complete(self, driver):
         initial_setup_molding(driver)
         dialog_page = HomeScreenUpdateDialogPage(driver)
@@ -374,6 +378,27 @@ class TestSmokeTest:
         dialog_page.check_and_close_fw_update_dialog()
         home_page.should_be_hamburger_menu()
 
+    # Menu
+    def test_all_menu_items_appear(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        home_page.should_be_hamburger_menu()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_header()
+        menu_page.should_be_app_logo()
+        menu_page.should_be_exit_x_button()
+        menu_page.should_be_home_item()
+        menu_page.should_be_mold_new_tips_item()
+        menu_page.should_be_test_your_fit_item()
+        menu_page.should_be_user_guide_item()
+        menu_page.should_be_support_item()
+        menu_page.should_be_email_entry_item()
+        menu_page.should_be_take_selfie_item()
+        menu_page.tap_exit_x_button()
+        home_page.should_be_earbuds_name()
+
+    # Mold new tips
     def test_mold_new_tips_carousel(self, driver):
         initial_setup_non_molding(driver)
         home_page = HomePage(driver)
@@ -634,6 +659,170 @@ class TestSmokeTest:
         mold_new_tips_page.tap_finish_button()
         home_page.should_be_hamburger_menu()
 
+    # User guide
+    def test_all_user_guide_items_appear(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_pairing_item()
+        user_guide_page.should_be_molding_item()
+        user_guide_page.should_be_controls_item()
+        user_guide_page.should_be_connectivity_and_switching_item()
+        user_guide_page.should_be_charging_item()
+        user_guide_page.should_be_adjusting_eq_item()
+        user_guide_page.should_be_tyf_item()
+        user_guide_page.should_be_updating_fw_item()
+        user_guide_page.should_be_troubleshooting_item()
+
+    def test_user_guide_pairing_ohboy(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_pairing_item()
+        user_guide_page.tap_pairing_item()
+        user_guide_page.should_be_pairing_ohboy_screen()
+
+    def test_user_guide_pairing_sebulba(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_pairing_item()
+        user_guide_page.tap_pairing_item()
+        user_guide_page.should_be_pairing_sebulba_screen()
+
+    def test_user_guide_molding(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_molding_item()
+        user_guide_page.tap_molding_item()
+        user_guide_page.should_be_molding_screen()
+
+    def test_user_guide_controls(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_controls_item()
+        user_guide_page.tap_controls_item()
+        user_guide_page.should_be_controls_screen()
+
+    def test_user_guide_connectivity_and_switching_ohboy(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_connectivity_and_switching_item()
+        user_guide_page.tap_connectivity_and_switching_item()
+        user_guide_page.should_be_connectivity_and_switching_ohboy_screen()
+
+    def test_user_guide_connectivity_and_switching_sebulba(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_connectivity_and_switching_item()
+        user_guide_page.tap_connectivity_and_switching_item()
+        user_guide_page.should_be_connectivity_and_switching_sebulba_screen()
+
+    def test_user_guide_charging(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_charging_item()
+        user_guide_page.tap_charging_item()
+        user_guide_page.should_be_charging_screen()
+
+    def test_user_guide_adjusting_eq(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_adjusting_eq_item()
+        user_guide_page.tap_adjusting_eq_item()
+        user_guide_page.should_be_adjusting_eq_screen()
+
+    def test_user_guide_tyf(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_tyf_item()
+        user_guide_page.tap_tyf_item()
+        user_guide_page.should_be_tyf_screen()
+
+    def test_user_guide_updating_fw(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_updating_fw_item()
+        user_guide_page.tap_updating_fw_item()
+        user_guide_page.should_be_updating_fw_screen()
+
+    def test_user_guide_troubleshooting(self, driver):
+        initial_setup_non_molding(driver)
+        home_page = HomePage(driver)
+        menu_page = MenuPage(driver)
+        user_guide_page = UserGuidePage(driver)
+        home_page.should_be_hamburger_menu()
+        home_page.tap_hamburger_menu_icon()
+        menu_page.should_be_user_guide_item()
+        menu_page.tap_user_guide_item()
+        user_guide_page.should_be_troubleshooting_item()
+        user_guide_page.tap_troubleshooting_item()
+        user_guide_page.should_be_troubleshooting_screen()
+
+    # FW update
     def test_enable_push_notifications(self, driver):
         initial_setup_non_molding(driver)
         firmware_update_page = FirmwareUpdatePage(driver)
@@ -696,7 +885,6 @@ class TestSmokeTest:
         time.sleep(15)
         firmware_update_page.check_active_update()
 
-    @pytest.mark.skip
     def test_firmware_update2(self, driver):
         initial_setup_non_molding(driver)
         firmware_update_page = FirmwareUpdatePage(driver)
@@ -718,7 +906,6 @@ class TestSmokeTest:
         time.sleep(15)
         firmware_update_page.check_active_update()
 
-    @pytest.mark.skip
     def test_firmware_update3(self, driver):
         initial_setup_non_molding(driver)
         firmware_update_page = FirmwareUpdatePage(driver)
@@ -740,7 +927,6 @@ class TestSmokeTest:
         time.sleep(15)
         firmware_update_page.check_active_update()
 
-    @pytest.mark.skip
     def test_firmware_update4(self, driver):
         initial_setup_non_molding(driver)
         firmware_update_page = FirmwareUpdatePage(driver)
