@@ -79,8 +79,8 @@ class UserGuidePage(BasePage):
 
     # Controls
     def should_be_controls_item(self):
-        assert self.is_element_present(*UserGuidePageLocators.CONTROLS_ITEM), "Controls arrow not found"
-        assert self.is_element_present(*UserGuidePageLocators.CONTROLS_ITEM), "Controls divider not found"
+        assert self.is_element_present(*UserGuidePageLocators.CONTROLS_ARROW), "Controls arrow not found"
+        assert self.is_element_present(*UserGuidePageLocators.CONTROLS_DIVIDER), "Controls divider not found"
         self.check_button(*UserGuidePageLocators.CONTROLS_ITEM, "Controls")
 
     def tap_controls_item(self):
@@ -108,13 +108,10 @@ class UserGuidePage(BasePage):
 
     # Connectivity and Switching Devices
     def should_be_connectivity_and_switching_item(self):
-        self.check_screen_title(*UserGuidePageLocators.CONNECTIVITY_AND_SWITCHING_SCREEN_TITLE,
-                                "Connectivity and Switching Devices")
-        self.should_be_back_arrow()
         assert self.is_element_present(*UserGuidePageLocators.CONNECTIVITY_AND_SWITCHING_ARROW), \
-            "Connectivity and Switching Devices arrow not found "
+            "Connectivity and Switching Devices arrow not found"
         assert self.is_element_present(*UserGuidePageLocators.CONNECTIVITY_AND_SWITCHING_DIVIDER), \
-            "Connectivity and Switching Devices divider not found "
+            "Connectivity and Switching Devices divider not found"
         self.check_button(*UserGuidePageLocators.CONNECTIVITY_AND_SWITCHING_ITEM, "Connectivity and Switching Devices")
 
     def tap_connectivity_and_switching_item(self):

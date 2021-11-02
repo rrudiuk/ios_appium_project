@@ -286,4 +286,4 @@ class TestMoldNewTips:
         mold_new_tips_page.should_be_congratulations_subtitle()
         mold_new_tips_page.should_be_finish_button()
         mold_new_tips_page.tap_finish_button()
-        home_page.should_be_hamburger_menu()
+        home_page.should_be_hamburger_menu_icon()

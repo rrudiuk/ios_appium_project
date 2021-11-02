@@ -207,7 +207,7 @@ class TestMoldingPage:
         molding_page.tap_skip_for_now_button()
         time.sleep(2)
         dialog_page.check_and_close_fw_update_dialog()
-        home_page.should_be_hamburger_menu()
+        home_page.should_be_hamburger_menu_icon()
 
     @pytest.mark.ohboy_first_molding
     def test_molding_complete_and_open_learn_more(self, driver):
@@ -267,4 +267,4 @@ class TestMoldingPage:
         # Quit learn more
         learn_more_page.tap_learn_more_menu_icon()
         dialog_page.check_and_close_fw_update_dialog()
-        home_page.should_be_hamburger_menu()
+        home_page.should_be_hamburger_menu_icon()

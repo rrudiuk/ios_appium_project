@@ -29,7 +29,7 @@ class TestMenuPage:
         initial_setup_non_molding(driver)
         home_page = HomePage(driver)
         menu_page = MenuPage(driver)
-        home_page.should_be_hamburger_menu()
+        home_page.should_be_hamburger_menu_icon()
         home_page.tap_hamburger_menu_icon()
         menu_page.should_be_header()
         menu_page.should_be_app_logo()
