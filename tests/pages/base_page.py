@@ -82,6 +82,13 @@ class BasePage:
             return False
         return True
 
+    def enter_text(self, how, what, text):
+
+        try:
+            self.driver.find_element(how, what).send_keys(text)
+        except NoSuchElementException:
+            return False
+
     def get_text(self, how, what, encoding=None):
 
         try:

@@ -826,3 +826,206 @@ class WelcomePageLocators:
                                               'beta"]/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther'
                                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
                                               '/XCUIElementTypeOther')
+
+
+class SettingsPageLocators:
+    CHECK_MARK = (MobileBy.ACCESSIBILITY_ID, "check-default")
+    SETTINGS_BACK_BUTTON = (MobileBy.ACCESSIBILITY_ID, 'Settings')
+    SETTINGS_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Settings"]')
+    SAVE_BUTTON = (MobileBy.ACCESSIBILITY_ID, 'Save')
+    # NAME
+    NAME_ITEM = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                 '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                 '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                 '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther[1]')
+    NAME_TITLE = (MobileBy.ACCESSIBILITY_ID, 'NAME')
+    NAME_VALUE = (MobileBy.ACCESSIBILITY_ID, 'SettingEarbudName')
+    NAME_ACTION_ARROW = (MobileBy.XPATH, '(//XCUIElementTypeImage[@name="chevron-forward"])[1]')
+    NAME_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                    '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                    '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                    '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther['
+                                    '1]/XCUIElementTypeOther')
+    # Edit name
+    EDIT_NAME_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Edit Name"]')
+    EDIT_NAME_INPUT = (MobileBy.ACCESSIBILITY_ID, 'RenamingName')
+    EDIT_NAME_INPUT_CLEAR = (MobileBy.ACCESSIBILITY_ID, 'Clear text')
+    EDIT_NAME_MAX = (MobileBy.ACCESSIBILITY_ID, 'RenamingCharCount')
+    EDIT_NAME_HINT = (MobileBy.ACCESSIBILITY_ID, 'RenamingInfoName')
+    EDIT_NAME_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Update Name"]')
+    EDIT_NAME_BUTTON_TEXT = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Update Name"]')
+    # SINGLE TAP
+    SINGLE_TAP_TITLE = (MobileBy.ACCESSIBILITY_ID, 'SINGLE TAP')
+    SINGLE_TAP_STATUS_TITLE = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Off / On"])[1]')
+    SINGLE_TAP_SWITCHER = (MobileBy.ACCESSIBILITY_ID, 'SingleTapSwitch')
+    SINGLE_TAP_STATUS_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                                 'beta"]/XCUIElementTypeWindow['
+                                                 '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                 '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                 '/XCUIElementTypeScrollView/XCUIElementTypeOther'
+                                                 '/XCUIElementTypeOther[2]/XCUIElementTypeOther['
+                                                 '1]/XCUIElementTypeOther')
+    # single tap left
+    SINGLE_TAP_LEFT_ITEM = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                            'beta"]/XCUIElementTypeWindow['
+                                            '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                            '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                            '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther['
+                                            '2]/XCUIElementTypeOther[2]/XCUIElementTypeButton[1]')
+    SINGLE_TAP_LEFT_TITLE = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="LEFT"])[1]')
+    SINGLE_TAP_LEFT_STATE = (MobileBy.ACCESSIBILITY_ID, 'LeftSingleTapName')
+    SINGLE_TAP_LEFT_ACTION_ARROW = (MobileBy.XPATH, '(//XCUIElementTypeImage[@name="chevron-forward"])[2]')
+    SINGLE_TAP_LEFT_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                               'beta"]/XCUIElementTypeWindow['
+                                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                               '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther['
+                                               '2]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]')
+    # single tap right
+    SINGLE_TAP_RIGHT_ITEM = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                             'beta"]/XCUIElementTypeWindow['
+                                             '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                             '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                             '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther['
+                                             '2]/XCUIElementTypeOther[2]/XCUIElementTypeButton[2]')
+    SINGLE_TAP_RIGHT_TITLE = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="RIGHT"])[1]')
+    SINGLE_TAP_RIGHT_STATE = (MobileBy.ACCESSIBILITY_ID, 'RightSingleTapName')
+    SINGLE_TAP_RIGHT_ACTION_ARROW = (MobileBy.XPATH, '(//XCUIElementTypeImage[@name="chevron-forward"])[3]')
+    SINGLE_TAP_RIGHT_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                                'beta"]/XCUIElementTypeWindow['
+                                                '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                '/XCUIElementTypeScrollView/XCUIElementTypeOther'
+                                                '/XCUIElementTypeOther[2]/XCUIElementTypeOther['
+                                                '2]/XCUIElementTypeOther[2]')
+    # tap items
+    SINGLE_TAP_LEFT_SELECTION_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Single Tap - Left"]')
+    SINGLE_TAP_RIGHT_SELECTION_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Single Tap - Right"]')
+    DOUBLE_TAP_LEFT_SELECTION_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Double Tap - Left"]')
+    DOUBLE_TAP_RIGHT_SELECTION_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Double Tap - Right"]')
+    SIRI = (MobileBy.ACCESSIBILITY_ID, 'Siri')
+    PLAY_PAUSE = (MobileBy.ACCESSIBILITY_ID, 'Play / Pause')
+    NEXT_TRACK = (MobileBy.ACCESSIBILITY_ID, 'Next Track')
+    PREVIOUS_TRACK = (MobileBy.ACCESSIBILITY_ID, 'Previous Track')
+    VOLUME_UP = (MobileBy.ACCESSIBILITY_ID, 'Volume Up')
+    VOLUME_DOWN = (MobileBy.ACCESSIBILITY_ID, 'Volume Down')
+    # DOUBLE TAP
+    DOUBLE_TAP_TITLE = (MobileBy.ACCESSIBILITY_ID, 'DOUBLE TAP')
+    DOUBLE_TAP_STATUS_TITLE = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Off / On"])[2]')
+    DOUBLE_TAP_SWITCHER = (MobileBy.ACCESSIBILITY_ID, 'DoubleTapSwitch')
+    DOUBLE_TAP_STATUS_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                                 'beta"]/XCUIElementTypeWindow['
+                                                 '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                 '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                 '/XCUIElementTypeScrollView/XCUIElementTypeOther'
+                                                 '/XCUIElementTypeOther[3]/XCUIElementTypeOther['
+                                                 '1]/XCUIElementTypeOther')
+    DOUBLE_TAP_LEFT_ITEM = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                            'beta"]/XCUIElementTypeWindow['
+                                            '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                            '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                            '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther['
+                                            '3]/XCUIElementTypeOther[2]/XCUIElementTypeButton[1]')
+    DOUBLE_TAP_LEFT_TITLE = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="LEFT"])[2]')
+    DOUBLE_TAP_LEFT_STATE = (MobileBy.ACCESSIBILITY_ID, 'LeftDoubleTapName')
+    DOUBLE_TAP_LEFT_ACTION_ARROW = (MobileBy.XPATH, '(//XCUIElementTypeImage[@name="chevron-forward"])[4]')
+    DOUBLE_TAP_LEFT_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                               'beta"]/XCUIElementTypeWindow['
+                                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                               '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther['
+                                               '3]/XCUIElementTypeOther[2]/XCUIElementTypeOther[1]')
+    DOUBLE_TAP_RIGHT_ITEM = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                             'beta"]/XCUIElementTypeWindow['
+                                             '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                             '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                             '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther['
+                                             '3]/XCUIElementTypeOther[2]/XCUIElementTypeButton[2]')
+    DOUBLE_TAP_RIGHT_TITLE = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="RIGHT"])[2]')
+    DOUBLE_TAP_RIGHT_STATE = (MobileBy.ACCESSIBILITY_ID, 'RightDoubleTapName')
+    DOUBLE_TAP_RIGHT_ACTION_ARROW = (MobileBy.XPATH, '(//XCUIElementTypeImage[@name="chevron-forward"])[5]')
+    DOUBLE_TAP_RIGHT_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                                'beta"]/XCUIElementTypeWindow['
+                                                '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                '/XCUIElementTypeScrollView/XCUIElementTypeOther'
+                                                '/XCUIElementTypeOther[3]/XCUIElementTypeOther['
+                                                '2]/XCUIElementTypeOther[2]')
+    # DARK MODE
+    DARK_MODE_ITEM = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                      '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                      '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                      '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther['
+                                      '4]/XCUIElementTypeOther/XCUIElementTypeButton')
+    DARK_MODE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'DARK MODE')
+    DARK_MODE_VALUE = (MobileBy.ACCESSIBILITY_ID, 'ThemeName')
+    DARK_MODE_ACTION_ARROW = (MobileBy.XPATH, '(//XCUIElementTypeImage[@name="chevron-forward"])[6]')
+    DARK_MODE_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                         '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                         '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                         '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther['
+                                         '4]/XCUIElementTypeOther/XCUIElementTypeOther')
+    DARK_MODE_SWITCHER_TITLE = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Dark Mode"])[2]')
+    DARK_MODE_SWITCHER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                          '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                          '/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeSwitch')
+    DARK_MODE_SWITCHER_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS '
+                                                  'beta"]/XCUIElementTypeWindow['
+                                                  '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                  '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                                  '/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther')
+    DARK_MODE_DEVICE_DEFAULT_SWITCHER_TITLE = (MobileBy.ACCESSIBILITY_ID, 'Use Device Settings')
+    DARK_MODE_DEVICE_DEFAULT_SWITCHER = (MobileBy.XPATH,
+                                         '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                         '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                         '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                         '/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeSwitch')
+    DARK_MODE_DEVICE_DEFAULT_DIVIDER = (MobileBy.XPATH,
+                                        '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                        '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                        '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                        '/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther')
+    DARK_MODE_HINT = (MobileBy.ACCESSIBILITY_ID, 'Set Dark mode to use the Light or Dark selection located in your'
+                                                 ' device Display settings.')
+    DARK_MODE_SCREEN_TITLE = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Dark Mode"])[1]')
+    # LANGUAGE
+    LANGUAGE_ITEM = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                     '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                     '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                     '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther['
+                                     '5]/XCUIElementTypeOther/XCUIElementTypeButton')
+    LANGUAGE_TITLE = (MobileBy.ACCESSIBILITY_ID, 'LANGUAGE')
+    LANGUAGE_VALUE = (MobileBy.ACCESSIBILITY_ID, 'LanguageName')
+    LANGUAGE_ACTION_ARROW = (MobileBy.XPATH, '(//XCUIElementTypeImage[@name="chevron-forward"])[7]')
+    LANGUAGE_DIVIDER = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                        '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                        '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                        '/XCUIElementTypeScrollView/XCUIElementTypeOther/XCUIElementTypeOther['
+                                        '5]/XCUIElementTypeOther/XCUIElementTypeOther')
+    # language items
+    LANGUAGE_SCREEN_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Language"]')
+    SYSTEM_DEFAULT = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                                      '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                      '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                                      '/XCUIElementTypeTable/XCUIElementTypeCell[1]')
+    DEUTSCH = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                               '/XCUIElementTypeTable/XCUIElementTypeCell[2]')
+    ENGLISH = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                               '/XCUIElementTypeTable/XCUIElementTypeCell[3]')
+    SPANISH = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                               '/XCUIElementTypeTable/XCUIElementTypeCell[4]')
+    FRENCH = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                              '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                              '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                              '/XCUIElementTypeTable/XCUIElementTypeCell[5]')
+    ITALIAN = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
+                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
+                               '/XCUIElementTypeTable/XCUIElementTypeCell[6]')
