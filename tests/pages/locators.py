@@ -855,6 +855,8 @@ class SettingsPageLocators:
     EDIT_NAME_BUTTON = (MobileBy.XPATH, '//XCUIElementTypeButton[@name="Update Name"]')
     EDIT_NAME_BUTTON_TEXT = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Update Name"]')
     # SINGLE TAP
+    SINGLE_TAP_LEFT_SCREEN_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Single Tap - Left"]')
+    SINGLE_TAP_RIGHT_SCREEN_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Single Tap - Right"]')
     SINGLE_TAP_TITLE = (MobileBy.ACCESSIBILITY_ID, 'SINGLE TAP')
     SINGLE_TAP_STATUS_TITLE = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Off / On"])[1]')
     SINGLE_TAP_SWITCHER = (MobileBy.ACCESSIBILITY_ID, 'SingleTapSwitch')
@@ -910,6 +912,8 @@ class SettingsPageLocators:
     VOLUME_UP = (MobileBy.ACCESSIBILITY_ID, 'Volume Up')
     VOLUME_DOWN = (MobileBy.ACCESSIBILITY_ID, 'Volume Down')
     # DOUBLE TAP
+    DOUBLE_TAP_LEFT_SCREEN_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Double Tap - Left"]')
+    DOUBLE_TAP_RIGHT_SCREEN_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Double Tap - Right"]')
     DOUBLE_TAP_TITLE = (MobileBy.ACCESSIBILITY_ID, 'DOUBLE TAP')
     DOUBLE_TAP_STATUS_TITLE = (MobileBy.XPATH, '(//XCUIElementTypeStaticText[@name="Off / On"])[2]')
     DOUBLE_TAP_SWITCHER = (MobileBy.ACCESSIBILITY_ID, 'DoubleTapSwitch')
@@ -1005,27 +1009,9 @@ class SettingsPageLocators:
                                         '5]/XCUIElementTypeOther/XCUIElementTypeOther')
     # language items
     LANGUAGE_SCREEN_TITLE = (MobileBy.XPATH, '//XCUIElementTypeStaticText[@name="Language"]')
-    SYSTEM_DEFAULT = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                                      '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                      '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                                      '/XCUIElementTypeTable/XCUIElementTypeCell[1]')
-    DEUTSCH = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                               '/XCUIElementTypeTable/XCUIElementTypeCell[2]')
-    ENGLISH = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                               '/XCUIElementTypeTable/XCUIElementTypeCell[3]')
-    SPANISH = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                               '/XCUIElementTypeTable/XCUIElementTypeCell[4]')
-    FRENCH = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                              '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                              '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                              '/XCUIElementTypeTable/XCUIElementTypeCell[5]')
-    ITALIAN = (MobileBy.XPATH, '//XCUIElementTypeApplication[@name="UE FITS beta"]/XCUIElementTypeWindow['
-                               '1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                               '/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther'
-                               '/XCUIElementTypeTable/XCUIElementTypeCell[6]')
+    SYSTEM_DEFAULT = (MobileBy.ACCESSIBILITY_ID, 'System default')
+    DEUTSCH = (MobileBy.ACCESSIBILITY_ID, 'Deutsch')
+    ENGLISH = (MobileBy.ACCESSIBILITY_ID, 'English')
+    SPANISH = (MobileBy.ACCESSIBILITY_ID, 'Español')
+    FRENCH = (MobileBy.ACCESSIBILITY_ID, 'Français')
+    ITALIAN = (MobileBy.ACCESSIBILITY_ID, 'Italiano')

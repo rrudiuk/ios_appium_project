@@ -1,3 +1,5 @@
+import time
+
 from .base_page import BasePage
 from .locators import HomePageLocators
 
@@ -37,6 +39,7 @@ class HomePage(BasePage):
 
     def tap_settings_icon(self):
         self.click_element(*HomePageLocators.HOME_SCREEN_SETTINGS)
+        time.sleep(2)
 
     def should_be_left_earbud_image(self):
         assert self.is_element_present(*HomePageLocators.LEFT_EARBUD_IMAGE), "Left earbud image doesn't appear"
