@@ -257,69 +257,6 @@ class TestSmokeTest:
         molding_page.should_be_get_ready_page_title()
 
     # Molding
-    def test_molding_complete(self, driver):
-        initial_setup_molding(driver)
-        dialog_page = HomeScreenUpdateDialogPage(driver)
-        molding_page = MoldingPage(driver)
-        home_page = HomePage(driver)
-        ugc_page = UGCPage(driver)
-
-        # Try them on
-        molding_page.should_be_try_them_page_title()
-        molding_page.tap_try_them_button()
-
-        # Get ready
-        molding_page.should_be_get_ready_page_title()
-        molding_page.tap_do_this_button()
-
-        # How is the bass
-        molding_page.should_be_how_is_bass_title()
-        time.sleep(20)
-
-        # Starting soon 1
-        molding_page.should_be_starting_soon_title()
-        molding_page.should_be_starting_soon_subtitle1()
-        time.sleep(4)
-
-        # Starting soon 2
-        molding_page.should_be_starting_soon_title()
-        molding_page.should_be_starting_soon_subtitle2()
-
-        # Molding starts
-        time.sleep(45)
-        molding_page.should_be_progress_bar()
-        time.sleep(45)
-
-        # UGC
-        ugc_page.should_be_ugc_title()
-        ugc_page.should_be_correct_ugc_subtitle()
-        ugc_page.tap_skip_button()
-
-        # Congratulations
-        molding_page.should_be_congratulations_title()
-        molding_page.should_be_congratulations_subtitle()
-        molding_page.should_be_take_the_tour_button()
-        molding_page.should_be_take_the_tour_button()
-        molding_page.should_skip_for_now_button()
-        molding_page.should_skip_for_now_button()
-        molding_page.tap_skip_for_now_button()
-        time.sleep(2)
-        dialog_page.check_and_close_fw_update_dialog()
-        home_page.should_be_hamburger_menu_icon()
-
-    def test_curring_mode_activation1(self, driver):
-        welcome_page = WelcomePage(driver)
-        demo_page = OhboyDemoPage(driver)
-        welcome_page.should_be_correct_welcome_title()
-        welcome_page.tap_welcome_screen_10_times()
-        welcome_page.should_be_demo_flow_button()
-        welcome_page.tap_demo_flow_button()
-        demo_page.check_bt_dialog_presence_and_accept_it()
-        time.sleep(6)
-        demo_page.should_be_debug_button()
-        demo_page.tap_debug_button()
-        demo_page.activate_curring_mode()
-
     def test_molding_complete_and_open_learn_more(self, driver):
         initial_setup_molding(driver)
         dialog_page = HomeScreenUpdateDialogPage(driver)

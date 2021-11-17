@@ -17,7 +17,7 @@ class SettingsPage(BasePage):
     def save_selection(self):
         assert self.is_element_present(*SettingsPageLocators.SAVE_BUTTON), "Save button not found"
         self.click_element(*SettingsPageLocators.SAVE_BUTTON)
-        time.sleep(1)
+        time.sleep(2)
 
     def tap_back_arrow(self):
         self.is_element_present(*SettingsPageLocators.SETTINGS_BACK_BUTTON), "Back arrow not located"
